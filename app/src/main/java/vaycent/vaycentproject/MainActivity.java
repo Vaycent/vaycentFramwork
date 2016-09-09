@@ -1,5 +1,6 @@
 package vaycent.vaycentproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -14,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import vaycent.vaycentproject.DemoPackage.TextViewDemo;
 import Ormlite.OrmliteHelper;
 import VolleySharp.VolleySharpHelper;
 
@@ -82,8 +84,9 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
+        if (id == R.id.textview_demo) {
+            Intent intent = new Intent(this, TextViewDemo.class);
+            startActivity(intent);
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -132,19 +135,22 @@ public class MainActivity extends AppCompatActivity
         db_add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ormliteHelper.addBP();
+                ormliteHelper.dbHelper_bp.addBP();
+                ormliteHelper.dbHelper_bg.addBG();
             }
         });
         db_update_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ormliteHelper.updateBP();
+                ormliteHelper.dbHelper_bp.updateBP();
+                ormliteHelper.dbHelper_bg.updateBG();
             }
         });
         db_delete_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ormliteHelper.deleteBP();
+                ormliteHelper.dbHelper_bp.deleteBP();
+                ormliteHelper.dbHelper_bg.deleteBG();
             }
         });
     }

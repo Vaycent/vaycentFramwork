@@ -28,7 +28,6 @@ public class BP
         this.sys = sys;
         this.dia = dia;
         this.hr = hr;
-        this.dia = dia;
         this.recordtime=recordtime;
     }
 

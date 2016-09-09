@@ -10,6 +10,7 @@ import com.j256.ormlite.table.TableUtils;
 
 import java.sql.SQLException;
 
+import Ormlite.Bean.BG;
 import Ormlite.Bean.BP;
 
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper
@@ -17,13 +18,12 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper
 
     private static DatabaseHelper instance;
 
-
-
     private static final String TABLE_NAME = "vaycent.test.db";
     /**
      * Should create once Dao for every table
      */
     private Dao<BP, Integer> bpDao;
+    private Dao<BG, Integer> bgDao;
 
     private DatabaseHelper(Context context)
     {
@@ -37,6 +37,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper
         try
         {
             TableUtils.createTable(connectionSource, BP.class);
+            TableUtils.createTable(connectionSource, BG.class);
         } catch (SQLException e)
         {
             e.printStackTrace();
@@ -50,6 +51,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper
         try
         {
             TableUtils.dropTable(connectionSource, BP.class, true);
+            TableUtils.dropTable(connectionSource, BG.class,true);
             onCreate(database, connectionSource);
         } catch (SQLException e)
         {
@@ -58,14 +60,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper
     }
 
 
-    /**
-     * 单例获取该Helper
-     *
-     * @param context
-     * @return
-     */
-    public static synchronized DatabaseHelper getHelper(Context context)
-    {
+    public static synchronized DatabaseHelper getHelper(Context context) {
         if (instance == null)
         {
             synchronized (DatabaseHelper.class)
@@ -74,16 +69,20 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper
                     instance = new DatabaseHelper(context);
             }
         }
-
         return instance;
     }
 
-    /**
-     * 获得userDao
-     *
-     * @return
-     * @throws SQLException
-     */
+    @Override
+    public void close() {
+        super.close();
+        bpDao = null;
+        bgDao = null;
+    }
+
+
+    /*********************** Get Dao as below ***************************/
+
+
     public Dao<BP, Integer> getBPDao() throws SQLException
     {
         if (bpDao == null)
@@ -93,14 +92,16 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper
         return bpDao;
     }
 
-    /**
-     * 释放资源
-     */
-    @Override
-    public void close()
+    public Dao<BG, Integer> getBGDao() throws SQLException
     {
-        super.close();
-        bpDao = null;
+        if (bgDao == null)
+        {
+            bgDao = getDao(BG.class);
+        }
+        return bgDao;
     }
+
+
+
 
 }

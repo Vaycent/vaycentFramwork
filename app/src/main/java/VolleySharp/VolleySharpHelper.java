@@ -7,6 +7,8 @@ import com.android.volley.VolleyError;
 import java.util.HashMap;
 import java.util.Map;
 
+import Ormlite.Bean.BPList;
+import XmlParser.XmlParserHelper;
 import vaycent.vaycentproject.ApplicationContext;
 import vaycent.volleysharp.JsonListenerInterface;
 import vaycent.volleysharp.StringListenerInterface;
@@ -17,6 +19,7 @@ import vaycent.volleysharp.StringListenerInterface;
 public class VolleySharpHelper {
     private Context context;
     private ApplicationContext appContext;
+    private XmlParserHelper xmlParserHelper=new XmlParserHelper();
 
     public VolleySharpHelper(Context ct, ApplicationContext ac){
         context=ct;
@@ -50,11 +53,16 @@ public class VolleySharpHelper {
         {
             @Override
             public void responseAction(String response) {
-                System.out.println("response:"+response);
+//                System.out.println("response:"+response);
+                String respnseStatus=xmlParserHelper.checkXmlParserDom_Status(response);
+                if(respnseStatus.equalsIgnoreCase("succ")){
+                    BPList bpList=xmlParserHelper.xmlParserDom_Demo(response);
+                    //Can add db here.
+                }
             }
             @Override
             public void errorAction(VolleyError error) {
-                System.out.println("error:"+error.getMessage());
+//                System.out.println("error:"+error.getMessage());
             }
         };
 

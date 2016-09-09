@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity
 
         initLayout();
 
-        vsHelper.testGetRequest();
-        vsHelper.testPostRequest();
+//        vsHelper.testGetRequest();
+        vsHelper.testPostRequest(); //use to test post request and xml dom parser
         vsHelper.testJsonRequest();
 
 

@@ -3,6 +3,8 @@ package Ormlite.Bean;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import java.util.ArrayList;
+
 @DatabaseTable(tableName = "tb_bp")
 public class BP
 {
@@ -19,6 +21,11 @@ public class BP
     @DatabaseField(columnName = "recordtime")
     private String recordtime;
 
+    @DatabaseField(columnName = "month")
+    private String month;
+    @DatabaseField(columnName = "missprevious")
+    private String missprevious;
+
     public BP()
     {
     }
@@ -30,6 +37,8 @@ public class BP
         this.hr = hr;
         this.recordtime=recordtime;
     }
+
+
 
     public int getId()
     {
@@ -80,5 +89,27 @@ public class BP
     public void setRecordtime(String value)
     {
         this.recordtime = value;
+    }
+
+
+
+    public String getMonth()
+    {
+        return month;
+    }
+
+    public void setMonth(String value)
+    {
+        this.month = value;
+    }
+
+    public String getMissprevious()
+    {
+        return missprevious;
+    }
+
+    public void setMissprevious(String value)
+    {
+        this.missprevious = value;
     }
 }

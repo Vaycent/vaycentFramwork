@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import vaycent.vaycentproject.DemoPackage.AnimationDemo;
 import vaycent.vaycentproject.DemoPackage.NotificationDemo;
 import vaycent.vaycentproject.DemoPackage.TextViewDemo;
 import Ormlite.OrmliteHelper;
@@ -91,9 +92,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.notification_demo) {
             Intent intent = new Intent(this, NotificationDemo.class);
             startActivity(intent);
-
-        } else if (id == R.id.nav_slideshow) {
-
+        } else if (id == R.id.animation_demo) {
+            Intent intent = new Intent(this, AnimationDemo.class);
+            startActivity(intent);
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {

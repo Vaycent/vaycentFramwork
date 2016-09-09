@@ -14,6 +14,6 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/startNotificationBrn"
+        android:id="@+id/startNotificationBtn"
         android:text="Start Notification"/>
 </RelativeLayout>

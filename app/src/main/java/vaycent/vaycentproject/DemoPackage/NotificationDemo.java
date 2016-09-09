@@ -14,15 +14,15 @@ import vaycent.vaycentproject.R;
  * Created by Vaycent on 16/9/9.
  */
 public class NotificationDemo extends AppCompatActivity {
-    private Button startNotificationBrn;
+    private Button startNotificationBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notification_demo);
 
-        startNotificationBrn=(Button)findViewById(R.id.startNotificationBrn);
-        startNotificationBrn.setOnClickListener(new View.OnClickListener() {
+        startNotificationBtn=(Button)findViewById(R.id.startNotificationBtn);
+        startNotificationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 pushLocationNotification1();

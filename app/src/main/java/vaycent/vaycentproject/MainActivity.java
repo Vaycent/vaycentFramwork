@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import vaycent.vaycentproject.DemoPackage.NotificationDemo;
 import vaycent.vaycentproject.DemoPackage.TextViewDemo;
 import Ormlite.OrmliteHelper;
 import VolleySharp.VolleySharpHelper;
@@ -87,7 +88,9 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.textview_demo) {
             Intent intent = new Intent(this, TextViewDemo.class);
             startActivity(intent);
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.notification_demo) {
+            Intent intent = new Intent(this, NotificationDemo.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_slideshow) {
 

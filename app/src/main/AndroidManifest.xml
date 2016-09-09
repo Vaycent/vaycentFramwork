@@ -29,6 +29,10 @@
             android:name=".DemoPackage.TextViewDemo"
             android:label="@string/app_name" />
 
+        <activity
+            android:name=".DemoPackage.NotificationDemo"
+            android:label="@string/app_name" />
+
     </application>
 
 </manifest>

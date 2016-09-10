@@ -9,7 +9,10 @@ import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
+import BaseClass.BaseValue;
 import Ormlite.Bean.BG;
 import Ormlite.Bean.BP;
 
@@ -17,23 +20,17 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper
 {
 
     private static DatabaseHelper instance;
+    private Map<String, Dao> daos = new HashMap<String, Dao>();
 
-    private static final String TABLE_NAME = "vaycent.test.db";
-    /**
-     * Should create once Dao for every table
-     */
-    private Dao<BP, Integer> bpDao;
-    private Dao<BG, Integer> bgDao;
+    private static final String dbName = BaseValue.DATABASE_NAME;
+    private static final int dbVersion= BaseValue.DATABASE_VERSION;
 
-    private DatabaseHelper(Context context)
-    {
-        super(context, TABLE_NAME, null, 2);
+    private DatabaseHelper(Context context) {
+        super(context, dbName, null, dbVersion);
     }
 
     @Override
-    public void onCreate(SQLiteDatabase database,
-                         ConnectionSource connectionSource)
-    {
+    public void onCreate(SQLiteDatabase database, ConnectionSource connectionSource) {
         try
         {
             TableUtils.createTable(connectionSource, BP.class);
@@ -72,33 +69,34 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper
         return instance;
     }
 
+
     @Override
-    public void close() {
+    public void close()
+    {
         super.close();
-        bpDao = null;
-        bgDao = null;
+
+        for (String key : daos.keySet())
+        {
+            Dao dao = daos.get(key);
+            dao = null;
+        }
     }
 
-
-    /*********************** Get Dao as below ***************************/
-
-
-    public Dao<BP, Integer> getBPDao() throws SQLException
+    public synchronized Dao getDao(Class clazz) throws SQLException
     {
-        if (bpDao == null)
-        {
-            bpDao = getDao(BP.class);
-        }
-        return bpDao;
-    }
+        Dao dao = null;
+        String className = clazz.getSimpleName();
 
-    public Dao<BG, Integer> getBGDao() throws SQLException
-    {
-        if (bgDao == null)
+        if (daos.containsKey(className))
         {
-            bgDao = getDao(BG.class);
+            dao = daos.get(className);
         }
-        return bgDao;
+        if (dao == null)
+        {
+            dao = super.getDao(clazz);
+            daos.put(className, dao);
+        }
+        return dao;
     }
 
 

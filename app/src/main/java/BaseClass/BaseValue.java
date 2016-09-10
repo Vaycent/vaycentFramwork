@@ -20,6 +20,9 @@ public class BaseValue {
     public static final String API_DOMAIN2 = "";
     public static final int versionControl=1;
 
+    public static final String DATABASE_NAME="vaycent.db";
+    public static final int DATABASE_VERSION=1;
+
 
 
     /* ＊**************************************************

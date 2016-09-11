@@ -1,4 +1,4 @@
-package Ormlite.Database;
+package OrmliteSharp.Bean.Database;
 
 import android.content.Context;
 import android.util.Log;
@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import Ormlite.Bean.BG;
+import OrmliteSharp.Bean.BG;
 
 /**
  * Created by Vaycent on 16/9/8.

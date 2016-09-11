@@ -4,8 +4,12 @@ import android.os.Environment;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import OrmliteSharp.Bean.BG;
+import OrmliteSharp.Bean.BP;
 
 /**
  * Created by Vaycent on 16/9/7.

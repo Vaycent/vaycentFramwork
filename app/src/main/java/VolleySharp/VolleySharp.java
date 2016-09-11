@@ -7,7 +7,7 @@ import com.android.volley.VolleyError;
 import java.util.HashMap;
 import java.util.Map;
 
-import Ormlite.Bean.BPList;
+import OrmliteSharp.Bean.BPList;
 import XmlParser.XmlParserHelper;
 import vaycent.vaycentproject.ApplicationContext;
 import vaycent.volleysharp.JsonListenerInterface;
@@ -16,12 +16,12 @@ import vaycent.volleysharp.StringListenerInterface;
 /**
  * Created by Vaycent on 16/9/7.
  */
-public class VolleySharpHelper {
+public class VolleySharp {
     private Context context;
     private ApplicationContext appContext;
     private XmlParserHelper xmlParserHelper=new XmlParserHelper();
 
-    public VolleySharpHelper(Context ct, ApplicationContext ac){
+    public VolleySharp(Context ct, ApplicationContext ac){
         context=ct;
         appContext=ac;
     }

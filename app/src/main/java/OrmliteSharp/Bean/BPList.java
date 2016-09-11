@@ -1,4 +1,4 @@
-package Ormlite.Bean;
+package OrmliteSharp.Bean;
 
 import java.util.ArrayList;
 

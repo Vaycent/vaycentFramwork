@@ -1,4 +1,4 @@
-package Ormlite.Bean;
+package OrmliteSharp.Bean;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;

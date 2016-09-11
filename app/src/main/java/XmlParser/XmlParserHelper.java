@@ -4,8 +4,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import OrmliteSharp.Bean.BP;
-import OrmliteSharp.Bean.BPList;
+import DataBase.Bean.BP;
+import DataBase.Bean.BPList;
 
 /**
  * Created by Vaycent on 16/9/9.

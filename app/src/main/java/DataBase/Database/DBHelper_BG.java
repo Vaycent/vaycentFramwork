@@ -1,4 +1,4 @@
-package OrmliteSharp.Bean.Database;
+package DataBase.Database;
 
 import android.content.Context;
 import android.util.Log;
@@ -9,7 +9,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import OrmliteSharp.Bean.BG;
+import DataBase.Bean.BG;
+import vaycent.ormlitesharp.OrmliteSharp;
 
 /**
  * Created by Vaycent on 16/9/8.
@@ -27,11 +28,9 @@ public class DBHelper_BG {
 
     public void addBG() {
 
-
-
         randomValue();
         BG u1 = new BG(bgValue, type,recordtime);
-        DatabaseHelper helper = DatabaseHelper.getHelper(context);
+        OrmliteSharp helper = OrmliteSharp.getHelper(context);
         try
         {
             helper.getBGDao().create(u1);
@@ -70,7 +69,7 @@ public class DBHelper_BG {
     }
 
     public void deleteBG() {
-        DatabaseHelper helper = DatabaseHelper.getHelper(context);
+        OrmliteSharp helper = OrmliteSharp.getHelper(context);
         try
         {
             helper.getBGDao().deleteById(2);
@@ -81,7 +80,7 @@ public class DBHelper_BG {
     }
 
     public void deleteAllBG() {
-        DatabaseHelper helper = DatabaseHelper.getHelper(context);
+        OrmliteSharp helper = OrmliteSharp.getHelper(context);
         try
         {
             helper.getBGDao().deleteById(2);
@@ -92,7 +91,7 @@ public class DBHelper_BG {
     }
 
     public void updateBG() {
-        DatabaseHelper helper = DatabaseHelper.getHelper(context);
+        OrmliteSharp helper = OrmliteSharp.getHelper(context);
         try
         {
             randomValue();
@@ -108,7 +107,7 @@ public class DBHelper_BG {
     }
 
     public void testList() {
-        DatabaseHelper helper = DatabaseHelper.getHelper(context);
+        OrmliteSharp helper = OrmliteSharp.getHelper(context);
         try
         {
             randomValue();

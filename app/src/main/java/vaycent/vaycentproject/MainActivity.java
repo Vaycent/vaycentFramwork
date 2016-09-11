@@ -15,8 +15,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import OrmliteSharp.OrmliteSharp;
-import VolleySharp.VolleySharp;
+import DataBase.DB_Helper;
+import Request.Request_Helper;
 import vaycent.vaycentproject.DemoPackage.AnimationDemo;
 import vaycent.vaycentproject.DemoPackage.NotificationDemo;
 import vaycent.vaycentproject.DemoPackage.TextViewDemo;
@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ApplicationContext appContext;
-    private VolleySharp myVolleySharp;
-    private OrmliteSharp myOrmliteSharp;
+    private Request_Helper myVolleySharp;
+    private DB_Helper myOrmliteSharp;
 
     private Button db_add_btn,db_update_btn,db_delete_btn;
 
@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         appContext = ((ApplicationContext) this.getApplication());
-        myVolleySharp=new VolleySharp(this, appContext);
-        myOrmliteSharp =new OrmliteSharp(this, appContext);
+        myVolleySharp=new Request_Helper(this, appContext);
+        myOrmliteSharp =new DB_Helper(this, appContext);
 
         initLayout();
 

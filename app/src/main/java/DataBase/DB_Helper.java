@@ -2,14 +2,13 @@ package DataBase;
 
 import android.content.Context;
 
-import java.util.ArrayList;
-
 import BaseClass.BaseValue;
 import DataBase.Bean.BG;
 import DataBase.Bean.BP;
-import DataBase.Database.DBHelper_BG;
-import DataBase.Database.DBHelper_BP;
-import vaycent.ormlitesharp.OrmliteSharp;
+import DataBase.Database.DB_BG;
+import DataBase.Database.DB_BP;
+import DataBase.OrmliteSharp.ArrayListClass;
+import DataBase.OrmliteSharp.OrmliteSharp;
 import vaycent.vaycentproject.ApplicationContext;
 
 /**
@@ -19,27 +18,31 @@ public class DB_Helper {
     private Context context;
     private ApplicationContext appContext;
 
-    public DBHelper_BP dbHelper_bp;
-    public DBHelper_BG dbHelper_bg;
+    private OrmliteSharp ormliteSharp;
+    public DB_BP db_bp;
+    public DB_BG db_bg;
 
-    private OrmliteSharp ormDBHelper;
 
 
     public DB_Helper(Context ct, ApplicationContext ac){
         context=ct;
         appContext=ac;
 
-        ArrayList<Class> classList = new ArrayList<Class>();
-        classList.add(BP.class);
-        classList.add(BG.class);
-        ormDBHelper.init(BaseValue.DATABASE_NAME,BaseValue.DATABASE_VERSION,classList);
 
-        dbHelper_bp=new DBHelper_BP(context);
-        dbHelper_bg=new DBHelper_BG(context);
+        initOrmliteSharp();
+        db_bp =new DB_BP(context,ormliteSharp);
+        db_bg =new DB_BG(context,ormliteSharp);
 
     }
 
+    private void initOrmliteSharp(){
 
+        ArrayListClass classList = new ArrayListClass();
+        classList.setVar(BP.class);
+        classList.setVar(BG.class);
+
+        ormliteSharp = new OrmliteSharp(context, BaseValue.DATABASE_NAME,BaseValue.DATABASE_VERSION,classList);
+    }
 
 
 }

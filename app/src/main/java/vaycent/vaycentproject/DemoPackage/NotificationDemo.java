@@ -45,7 +45,7 @@ public class NotificationDemo extends AppCompatActivity {
 //        bigTextStyle.bigText(message);
 
         Notification updateNotification = new Notification.Builder(this)
-                .setSmallIcon(R.drawable.ic_launcher)
+                .setSmallIcon(R.mipmap.ic_launcher)
 //                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.drawable.ic_launcher))//notification
                 .setContentTitle("notification title")
                 .setContentText("notification message")

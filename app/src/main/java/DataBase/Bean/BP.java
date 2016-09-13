@@ -1,11 +1,11 @@
 package DataBase.Bean;
 
+
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName = "tb_bp")
-public class BP
-{
+public class BP {
     @DatabaseField(generatedId = true)
     private int id;
 

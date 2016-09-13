@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ApplicationContext appContext;
-    private Request_Helper myVolleySharp;
-    private DB_Helper myOrmliteSharp;
+    private Request_Helper requestHelper;
+    private DB_Helper dbHelper;
 
     private Button db_add_btn,db_update_btn,db_delete_btn;
 
@@ -36,14 +36,14 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         appContext = ((ApplicationContext) this.getApplication());
-        myVolleySharp=new Request_Helper(this, appContext);
-        myOrmliteSharp =new DB_Helper(this, appContext);
+        requestHelper = new Request_Helper(this, appContext);
+        dbHelper = new DB_Helper(this, appContext);
 
         initLayout();
 
-//        vsHelper.testGetRequest();
-        myVolleySharp.testPostRequest(); //use to test post request and xml dom parser
-        myVolleySharp.testJsonRequest();
+//      requestHelper.testGetRequest();
+        requestHelper.testPostRequest(); //use to test post request and xml dom parser
+        requestHelper.testJsonRequest();
 
 
     }
@@ -139,22 +139,24 @@ public class MainActivity extends AppCompatActivity
         db_add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myOrmliteSharp.dbHelper_bp.addBP();
-                myOrmliteSharp.dbHelper_bg.addBG();
+//                dbHelper.db_bp.testBPFunc();
+                dbHelper.db_bp.addBP();
+                dbHelper.db_bg.addBG();
+
             }
         });
         db_update_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myOrmliteSharp.dbHelper_bp.updateBP();
-                myOrmliteSharp.dbHelper_bg.updateBG();
+//                dbHelper.db_bp.updateBP();
+//                dbHelper.db_bg.updateBG();
             }
         });
         db_delete_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myOrmliteSharp.dbHelper_bp.deleteBP();
-                myOrmliteSharp.dbHelper_bg.deleteBG();
+//                dbHelper.db_bp.deleteBP();
+//                dbHelper.db_bg.deleteBG();
             }
         });
     }

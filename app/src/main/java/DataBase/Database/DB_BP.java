@@ -5,14 +5,15 @@ import android.util.Log;
 
 import com.j256.ormlite.dao.Dao;
 
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 import DataBase.Bean.BP;
-import DataBase.OrmliteSharp.OrmliteSharp;
-import DataBase.OrmliteSharp.OrmliteSharpHelper;
+import vaycent.ormlitesharp.OrmliteSharp;
+import vaycent.ormlitesharp.OrmliteSharpHelper;
 
 
 /**
@@ -59,31 +60,30 @@ public class DB_BP {
 
         try
         {
-
-            ormliteSharp.getOS_Dao(BP.class).create(u1);
+            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).create(u1);
             randomValue();
             u1 = new BP(sys, dia,hr,recordtime);
-            ormliteSharp.getOS_Dao(BP.class).create(u1);
-
-            randomValue();
-            u1 = new BP(sys, dia,hr,recordtime);
-            ormliteSharp.getOS_Dao(BP.class).create(u1);
+            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).create(u1);
 
             randomValue();
             u1 = new BP(sys, dia,hr,recordtime);
-            ormliteSharp.getOS_Dao(BP.class).create(u1);
+            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).create(u1);
 
             randomValue();
             u1 = new BP(sys, dia,hr,recordtime);
-            ormliteSharp.getOS_Dao(BP.class).create(u1);
+            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).create(u1);
 
             randomValue();
             u1 = new BP(sys, dia,hr,recordtime);
-            ormliteSharp.getOS_Dao(BP.class).create(u1);
+            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).create(u1);
 
             randomValue();
             u1 = new BP(sys, dia,hr,recordtime);
-            ormliteSharp.getOS_Dao(BP.class).create(u1);
+            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).create(u1);
+
+            randomValue();
+            u1 = new BP(sys, dia,hr,recordtime);
+            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).create(u1);
 
             testList();
 
@@ -95,9 +95,10 @@ public class DB_BP {
     }
 
     public void deleteBP() {
+        OrmliteSharpHelper ormliteSharpHelper = ormliteSharp.synchronizedDB();
         try
         {
-            ormliteSharp.getOS_Dao(BP.class).deleteById(2);
+            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).deleteById(2);
         } catch (SQLException e)
         {
             e.printStackTrace();
@@ -105,9 +106,10 @@ public class DB_BP {
     }
 
     public void deleteAllBP() {
+        OrmliteSharpHelper ormliteSharpHelper = ormliteSharp.synchronizedDB();
         try
         {
-            ormliteSharp.getOS_Dao(BP.class).deleteById(2);
+            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).deleteById(2);
         } catch (SQLException e)
         {
             e.printStackTrace();
@@ -115,13 +117,14 @@ public class DB_BP {
     }
 
     public void updateBP() {
+        OrmliteSharpHelper ormliteSharpHelper = ormliteSharp.synchronizedDB();
         try
         {
             randomValue();
 
             BP u1 = new BP(sys, dia,hr,recordtime);
             u1.setId(3);
-            ormliteSharp.getOS_Dao(BP.class).update(u1);
+            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).update(u1);
 
         } catch (SQLException e)
         {
@@ -130,13 +133,15 @@ public class DB_BP {
     }
 
     public void testList() {
+        OrmliteSharpHelper ormliteSharpHelper = ormliteSharp.synchronizedDB();
+
         try
         {
             randomValue();
 
             BP u1 = new BP(sys, dia,hr,recordtime);
             u1.setId(2);
-            List<BP> bps = ormliteSharp.getOS_Dao(BP.class).queryForAll();
+            List<BP> bps = ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).queryForAll();
             Log.e("TAG", bps.toString());
         } catch (SQLException e)
         {

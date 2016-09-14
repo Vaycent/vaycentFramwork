@@ -7,8 +7,8 @@ import DataBase.Bean.BG;
 import DataBase.Bean.BP;
 import DataBase.Database.DB_BG;
 import DataBase.Database.DB_BP;
-import DataBase.OrmliteSharp.ArrayListClass;
-import DataBase.OrmliteSharp.OrmliteSharp;
+import vaycent.ormlitesharp.ArrayListClass;
+import vaycent.ormlitesharp.OrmliteSharp;
 import vaycent.vaycentproject.ApplicationContext;
 
 /**

@@ -7,7 +7,6 @@ import com.android.volley.VolleyError;
 import java.util.HashMap;
 import java.util.Map;
 
-import DataBase.Bean.BPList;
 import XmlParser.XmlParserHelper;
 import vaycent.vaycentproject.ApplicationContext;
 import vaycent.volleysharp.JsonListenerInterface;
@@ -40,7 +39,7 @@ public class Request_Helper {
             }
         };
 
-        String link="http://waptest.smartone.com/ehc.api.app.BP?action=R&mac=04:EA:72:EA:50:49:80&period=360&grouptype=m";
+        String link="https://vaycent.github.io/atom.xml";
         appContext.volleySharp.startGetRequest(link,listenerInterface);
 
 
@@ -53,12 +52,12 @@ public class Request_Helper {
         {
             @Override
             public void responseAction(String response) {
-//                System.out.println("response:"+response);
-                String respnseStatus=xmlParserHelper.checkXmlParserDom_Status(response);
-                if(respnseStatus.equalsIgnoreCase("succ")){
-                    BPList bpList=xmlParserHelper.xmlParserDom_Demo(response);
-                    //Can add db here.
-                }
+                System.out.println("response:"+response);
+//                String respnseStatus=xmlParserHelper.checkXmlParserDom_Status(response);
+//                if(respnseStatus.equalsIgnoreCase("succ")){
+//                    BPList bpList=xmlParserHelper.xmlParserDom_Demo(response);
+//                    //Can add db here.
+//                }
             }
             @Override
             public void errorAction(VolleyError error) {
@@ -66,14 +65,13 @@ public class Request_Helper {
             }
         };
 
-        String link="http://waptest.smartone.com/ehc.api.app.BP";
+        String link="http://dynamic.12306.cn/otsquery/query/queryRemanentTicketAction.do?method=queryststrainall";
 
         Map<String, String> map = new HashMap<String, String>();
-        map.put("action", "R");
-        map.put("period", "360");
-        map.put("mac", "04:09:9A:F2:58:2B:80");
-        map.put("grouptype", "m");
-
+        map.put("date", "2016-09-16");
+        map.put("fromstation", "BJP");
+        map.put("tostation", "SHH");
+        map.put("starttime", "00:00--24:00");
 
         appContext.volleySharp.startPostRequest(link,listenerInterface,map);
 

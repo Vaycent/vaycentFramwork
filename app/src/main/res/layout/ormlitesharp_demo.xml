@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="15dp">
+
+        <Button
+            android:id="@+id/db_add_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add 3 records to Table"/>
+        <Button
+            android:id="@+id/db_update_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update Id=3 record"/>
+        <Button
+            android:id="@+id/db_delete_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="delete Id=3 record"/>
+        <Button
+            android:id="@+id/db_select_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="select Id=1 record"/>
+
+        <Button
+            android:id="@+id/db_selectall_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="select all in table"/>
+
+
+        <Button
+            android:id="@+id/db_deleteall_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="delete all in table"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

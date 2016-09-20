@@ -13,22 +13,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
-import DataBase.DB_Helper;
-import Request.Request_Helper;
 import vaycent.vaycentproject.DemoPackage.AnimationDemo;
 import vaycent.vaycentproject.DemoPackage.NotificationDemo;
+import vaycent.vaycentproject.DemoPackage.OrmliteSharpDemo;
 import vaycent.vaycentproject.DemoPackage.TextViewDemo;
+import vaycent.vaycentproject.DemoPackage.Volleysharp_demo;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ApplicationContext appContext;
-    private Request_Helper requestHelper;
-    private DB_Helper dbHelper;
 
-    private Button db_add_btn,db_update_btn,db_delete_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +32,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         appContext = ((ApplicationContext) this.getApplication());
-        requestHelper = new Request_Helper(this, appContext);
-        dbHelper = new DB_Helper(this, appContext);
-
         initLayout();
-
-//      requestHelper.testGetRequest();
-        requestHelper.testPostRequest(); //use to test post request and xml dom parser
-        requestHelper.testJsonRequest();
-
-
     }
 
     @Override
@@ -86,7 +73,13 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.textview_demo) {
+        if (id == R.id.ormlitesharp_demo) {
+            Intent intent = new Intent(this, OrmliteSharpDemo.class);
+            startActivity(intent);
+        }else if (id == R.id.volleysharp_demo) {
+            Intent intent = new Intent(this, Volleysharp_demo.class);
+            startActivity(intent);
+        } else if (id == R.id.textview_demo) {
             Intent intent = new Intent(this, TextViewDemo.class);
             startActivity(intent);
         } else if (id == R.id.notification_demo) {
@@ -129,36 +122,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
-
-        db_add_btn=(Button)findViewById(R.id.db_add_btn);
-        db_update_btn=(Button)findViewById(R.id.db_update_btn);
-        db_delete_btn=(Button)findViewById(R.id.db_delete_btn);
-
-        db_add_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                dbHelper.db_bp.testBPFunc();
-                dbHelper.db_bp.addBP();
-                dbHelper.db_bg.addBG();
-
-            }
-        });
-        db_update_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                dbHelper.db_bp.updateBP();
-//                dbHelper.db_bg.updateBG();
-            }
-        });
-        db_delete_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                dbHelper.db_bp.deleteBP();
-//                dbHelper.db_bg.deleteBG();
-            }
-        });
     }
 
 

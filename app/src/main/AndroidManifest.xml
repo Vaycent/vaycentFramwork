@@ -26,6 +26,13 @@
 
 
         <activity
+            android:name=".DemoPackage.Volleysharp_demo"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name=".DemoPackage.OrmliteSharpDemo"
+            android:label="@string/app_name" />
+        <activity
             android:name=".DemoPackage.TextViewDemo"
             android:label="@string/app_name" />
 

@@ -2,26 +2,38 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
+
         <item
-            android:id="@+id/textview_demo"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="TextView Demo" />
-        <item
-            android:id="@+id/notification_demo"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Notification Demo" />
-        <item
-            android:id="@+id/animation_demo"
+            android:id="@+id/ormlitesharp_demo"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Animation Demo" />
+            android:title="OrmliteSharp Demo" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/volleysharp_demo"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="VolleySharp Demo" />
+
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Some Demo">
         <menu>
+
+            <item
+                android:id="@+id/textview_demo"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="TextView Demo" />
+            <item
+                android:id="@+id/notification_demo"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="Notification Demo" />
+            <item
+                android:id="@+id/animation_demo"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="Animation Demo" />
+            <item
+                android:id="@+id/nav_manage"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Tools" />
+
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"

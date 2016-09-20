@@ -1,19 +1,16 @@
 package DataBase.Database;
 
 import android.content.Context;
-import android.util.Log;
 
-import com.j256.ormlite.dao.Dao;
-
-import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 import DataBase.Bean.BP;
+import DataBase.Bean.BPList;
+import vaycent.ormlitesharp.DbObjectClass;
 import vaycent.ormlitesharp.OrmliteSharp;
-import vaycent.ormlitesharp.OrmliteSharpHelper;
 
 
 /**
@@ -34,121 +31,62 @@ public class DB_BP {
     }
 
 
-    public void testBPFunc(){
-        randomValue();
-        BP bpObj = new BP(sys, dia,hr,recordtime);
-
-//        OrmliteSharpHelper ormliteSharpHelper = ormliteSharp.synchronizedDB();
-
-//        helper.getUserDao().create(u2);
-
-        try{
-            OrmliteSharpHelper ormliteSharpHelper = ormliteSharp.synchronizedDB();
-            Dao testDao=ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class);
-            testDao.create(bpObj);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-    }
 
     public void addBP() {
         randomValue();
-        BP u1 = new BP(sys, dia,hr,recordtime);
+        BP bpObj = new BP(sys, dia, hr, recordtime);
+        ormliteSharp.addToDB(BP.class, bpObj);
 
-        OrmliteSharpHelper ormliteSharpHelper = ormliteSharp.synchronizedDB();
+        randomValue();
+        bpObj = new BP(sys, dia, hr, recordtime);
+        ormliteSharp.addToDB(BP.class, bpObj);
 
-        try
-        {
-            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).create(u1);
-            randomValue();
-            u1 = new BP(sys, dia,hr,recordtime);
-            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).create(u1);
-
-            randomValue();
-            u1 = new BP(sys, dia,hr,recordtime);
-            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).create(u1);
-
-            randomValue();
-            u1 = new BP(sys, dia,hr,recordtime);
-            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).create(u1);
-
-            randomValue();
-            u1 = new BP(sys, dia,hr,recordtime);
-            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).create(u1);
-
-            randomValue();
-            u1 = new BP(sys, dia,hr,recordtime);
-            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).create(u1);
-
-            randomValue();
-            u1 = new BP(sys, dia,hr,recordtime);
-            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).create(u1);
-
-            testList();
-
-
-        } catch (SQLException e)
-        {
-            e.printStackTrace();
-        }
+        randomValue();
+        bpObj = new BP(sys, dia, hr, recordtime);
+        ormliteSharp.addToDB(BP.class, bpObj);
     }
 
-    public void deleteBP() {
-        OrmliteSharpHelper ormliteSharpHelper = ormliteSharp.synchronizedDB();
-        try
-        {
-            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).deleteById(2);
-        } catch (SQLException e)
-        {
-            e.printStackTrace();
-        }
+    public void deleteBPById(int Id) {
+        DbObjectClass myClass=new DbObjectClass();
+        myClass.setClassData(BP.class);
+        ormliteSharp.deleteById(myClass,Id);
     }
 
-    public void deleteAllBP() {
-        OrmliteSharpHelper ormliteSharpHelper = ormliteSharp.synchronizedDB();
-        try
-        {
-            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).deleteById(2);
-        } catch (SQLException e)
-        {
-            e.printStackTrace();
-        }
+    public BP selectBPById(int Id){
+        DbObjectClass myClass=new DbObjectClass();
+        myClass.setClassData(BP.class);
+        BP bpObj=new BP();
+        bpObj= (BP) ormliteSharp.selectBPById(myClass,Id);
+        return bpObj;
     }
 
-    public void updateBP() {
-        OrmliteSharpHelper ormliteSharpHelper = ormliteSharp.synchronizedDB();
-        try
-        {
-            randomValue();
+    public void updateBPById(int Id) {
+        DbObjectClass myClass=new DbObjectClass();
+        myClass.setClassData(BP.class);
 
-            BP u1 = new BP(sys, dia,hr,recordtime);
-            u1.setId(3);
-            ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).update(u1);
+        BP bpObj = new BP("11", "22", "33", "44");
+        bpObj.setId(Id);
 
-        } catch (SQLException e)
-        {
-            e.printStackTrace();
-        }
+        ormliteSharp.updateToDB(myClass,bpObj);
     }
 
-    public void testList() {
-        OrmliteSharpHelper ormliteSharpHelper = ormliteSharp.synchronizedDB();
+    public BPList selectBPAll(){
+        DbObjectClass myClass=new DbObjectClass();
+        myClass.setClassData(BP.class);
+        List list=ormliteSharp.selectAll(myClass);
 
-        try
-        {
-            randomValue();
-
-            BP u1 = new BP(sys, dia,hr,recordtime);
-            u1.setId(2);
-            List<BP> bps = ormliteSharp.getOS_Dao(ormliteSharpHelper,BP.class).queryForAll();
-            Log.e("TAG", bps.toString());
-        } catch (SQLException e)
-        {
-            e.printStackTrace();
+        BPList bpList=new BPList();
+        for(int i=0;i<list.size();i++){
+            bpList.add((BP) list.get(i));
         }
+        return bpList;
     }
 
+    public void deleteBPTable() {
+        DbObjectClass myClass=new DbObjectClass();
+        myClass.setClassData(BP.class);
+        ormliteSharp.deleteTable(myClass);
+    }
 
     private String getRecordtime(){
         Date time = new Date();

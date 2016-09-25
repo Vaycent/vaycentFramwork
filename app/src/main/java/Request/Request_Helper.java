@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import XmlParser.XmlParserHelper;
+import vaycent.magicLog.mlog;
 import vaycent.vaycentproject.ApplicationContext;
 import vaycent.volleysharp.JsonListenerInterface;
 import vaycent.volleysharp.StringListenerInterface;
@@ -31,18 +32,16 @@ public class Request_Helper {
         {
             @Override
             public void responseAction(String response) {
-                System.out.println("response:"+response);
+                mlog.xml(response);
             }
             @Override
             public void errorAction(VolleyError error) {
-                System.out.println("error:"+error.getMessage());
+                mlog.xml(error.getMessage());
             }
         };
 
         String link="https://vaycent.github.io/atom.xml";
         appContext.volleySharp.startGetRequest(link,listenerInterface);
-
-
     }
 
 
@@ -52,7 +51,7 @@ public class Request_Helper {
         {
             @Override
             public void responseAction(String response) {
-                System.out.println("response:"+response);
+                mlog.xml(response);
 //                String respnseStatus=xmlParserHelper.checkXmlParserDom_Status(response);
 //                if(respnseStatus.equalsIgnoreCase("succ")){
 //                    BPList bpList=xmlParserHelper.xmlParserDom_Demo(response);
@@ -61,7 +60,7 @@ public class Request_Helper {
             }
             @Override
             public void errorAction(VolleyError error) {
-//                System.out.println("error:"+error.getMessage());
+                mlog.xml(error.getMessage());
             }
         };
 
@@ -86,11 +85,12 @@ public class Request_Helper {
             @Override
             public void responseAction(String response) {
                 System.out.println("response:"+response);
+                mlog.json(response);
 
             }
             @Override
             public void errorAction(VolleyError error) {
-                System.out.println("error:"+error.getMessage());
+                mlog.json(error.getMessage());
             }
         };
 

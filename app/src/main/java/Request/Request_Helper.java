@@ -36,7 +36,7 @@ public class Request_Helper {
             }
             @Override
             public void errorAction(VolleyError error) {
-                mlog.xml(error.getMessage());
+                mlog.v(error.getMessage());
             }
         };
 
@@ -60,7 +60,7 @@ public class Request_Helper {
             }
             @Override
             public void errorAction(VolleyError error) {
-                mlog.xml(error.getMessage());
+                mlog.v(error.getMessage());
             }
         };
 
@@ -84,13 +84,12 @@ public class Request_Helper {
         {
             @Override
             public void responseAction(String response) {
-                System.out.println("response:"+response);
                 mlog.json(response);
 
             }
             @Override
             public void errorAction(VolleyError error) {
-                mlog.json(error.getMessage());
+                mlog.v(error.getMessage());
             }
         };
 

@@ -27,5 +27,11 @@
             android:layout_height="wrap_content"
             android:text="Start LargeIcon Notification" />
 
+        <Button
+            android:id="@+id/startNoKillNotificationBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start CanNotKill Notification" />
+
     </LinearLayout>
 </RelativeLayout>

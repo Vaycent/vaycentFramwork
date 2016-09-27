@@ -14,6 +14,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/startNotificationBtn"
-        android:text="Start Notification"/>
+        android:id="@+id/startSmallNotificationBtn"
+        android:text="Start SmallIcon Notification"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/startLargeNotificationBtn"
+        android:text="Start LargeIcon Notification"/>
 </RelativeLayout>

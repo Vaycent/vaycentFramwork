@@ -13,35 +13,41 @@
             android:id="@+id/db_add_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add 3 records to Table"/>
+            android:text="Add 3 records to Table"
+            android:textAllCaps="false"/>
         <Button
             android:id="@+id/db_update_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Update Id=3 record"/>
+            android:text="Update Id=3 record"
+            android:textAllCaps="false"/>
         <Button
             android:id="@+id/db_delete_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="delete Id=3 record"/>
+            android:text="delete Id=3 record"
+            android:textAllCaps="false"/>
         <Button
             android:id="@+id/db_select_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="select Id=1 record"/>
+            android:text="select Id=1 record"
+            android:textAllCaps="false"/>
 
         <Button
             android:id="@+id/db_selectall_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="select all in table"/>
+            android:text="select all in table"
+            android:textAllCaps="false"/>
 
 
         <Button
             android:id="@+id/db_deleteall_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="delete all in table"/>
+            android:text="delete all in table"
+            android:textAllCaps="false"/>
 
 
     </LinearLayout>

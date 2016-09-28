@@ -19,19 +19,53 @@
             android:id="@+id/startSmallNotificationBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start SmallIcon Notification" />
+            android:text="Start SmallIcon Notification"
+            android:textAllCaps="false"/>
 
         <Button
             android:id="@+id/startLargeNotificationBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start LargeIcon Notification" />
+            android:text="Start LargeIcon Notification"
+            android:textAllCaps="false"/>
 
         <Button
-            android:id="@+id/startNoKillNotificationBtn"
+            android:id="@+id/remoteViewNotificationBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start CanNotKill Notification" />
+            android:text="Start RemoteView Notification"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/headSupNotificationBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start HeadSup Notification"
+            android:textAllCaps="false"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/startNoKillNotificationBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start NoKill Notification"
+                android:layout_weight="1"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/stopNoKillNotificationBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stop NoKill Notification"
+                android:layout_weight="1"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 </RelativeLayout>

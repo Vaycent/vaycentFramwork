@@ -14,17 +14,20 @@
             android:id="@+id/get_request_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Get Request"/>
+            android:text="Get Request"
+            android:textAllCaps="false"/>
         <Button
             android:id="@+id/post_request_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Post Request"/>
+            android:text="Post Request"
+            android:textAllCaps="false"/>
         <Button
             android:id="@+id/json_request_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Json Request"/>
+            android:text="Json Request"
+            android:textAllCaps="false"/>
 
     </LinearLayout>
 

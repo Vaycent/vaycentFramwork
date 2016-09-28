@@ -21,7 +21,7 @@ import vaycent.volleysharp.VolleySharp;
  */
 public class NotificationDemo extends AppCompatActivity {
     private Button startSmallNotificationBtn,startLargeNotificationBtn,
-            remoteViewNotificationBtn,headSupNotificationBtn,
+            remoteViewNotificationBtn,headSupNotificationBtn,testNotificationLevelBtn,
             startNoKillNotificationBtn,stopNoKillNotificationBtn;
 
     @Override
@@ -34,6 +34,7 @@ public class NotificationDemo extends AppCompatActivity {
 
         remoteViewNotificationBtn=(Button)findViewById(R.id.remoteViewNotificationBtn);
         headSupNotificationBtn=(Button)findViewById(R.id.headSupNotificationBtn);
+        testNotificationLevelBtn=(Button)findViewById(R.id.testNotificationLevelBtn);
 
         startNoKillNotificationBtn=(Button)findViewById(R.id.startNoKillNotificationBtn);
         stopNoKillNotificationBtn=(Button)findViewById(R.id.stopNoKillNotificationBtn);
@@ -63,6 +64,13 @@ public class NotificationDemo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 pushHeadSupNotification();
+            }
+        });
+
+        testNotificationLevelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                testNotificationLevel();
             }
         });
 
@@ -154,6 +162,10 @@ public class NotificationDemo extends AppCompatActivity {
 
         NotificationManager nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         nm.notify("headsupTest",3, builder.build());
+    }
+
+    private void testNotificationLevel(){
+        
     }
 
     private void startNoKillNotificationService(){

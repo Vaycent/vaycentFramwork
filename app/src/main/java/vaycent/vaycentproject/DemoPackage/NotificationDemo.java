@@ -1,5 +1,6 @@
 package vaycent.vaycentproject.DemoPackage;
 
+import android.annotation.TargetApi;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -7,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -164,8 +166,27 @@ public class NotificationDemo extends AppCompatActivity {
         nm.notify("headsupTest",3, builder.build());
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void testNotificationLevel(){
-        
+        /**
+         * VISIBILITY_PUBLIC
+         * VISIBILITY_PRIVATE
+         * VISIBILITY_SECRET
+         * */
+
+        NotificationManager nm=(NotificationManager)this.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        Notification updateNotification = new Notification.Builder(this)
+                .setSmallIcon(R.drawable.ic_face_black_24dp)
+                .setContentTitle("Level Notification title")
+                .setContentText("Level Notification message")
+                .setAutoCancel(true)
+                .setDefaults(Notification.DEFAULT_SOUND)
+                .setVisibility(Notification.VISIBILITY_SECRET)
+                .build();
+
+        nm.notify("levelTest",4,updateNotification);
+
     }
 
     private void startNoKillNotificationService(){

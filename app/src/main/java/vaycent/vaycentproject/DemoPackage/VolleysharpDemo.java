@@ -12,7 +12,7 @@ import vaycent.vaycentproject.R;
 /**
  * Created by Vaycent on 16/9/20.
  */
-public class Volleysharp_demo extends AppCompatActivity {
+public class VolleysharpDemo extends AppCompatActivity {
 
     private ApplicationContext appContext;
     private Request_Helper requestHelper;

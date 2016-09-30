@@ -1,4 +1,4 @@
-package vaycent.vaycentproject.DemoPackage;
+package vaycent.vaycentproject.DemoPackage.NotificationPackage;
 
 import android.annotation.TargetApi;
 import android.app.Notification;

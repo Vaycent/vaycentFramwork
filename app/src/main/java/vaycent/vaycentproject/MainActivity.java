@@ -15,10 +15,11 @@ import android.view.MenuItem;
 import android.view.View;
 
 import vaycent.vaycentproject.DemoPackage.AnimationDemo;
-import vaycent.vaycentproject.DemoPackage.NotificationDemo;
+import vaycent.vaycentproject.DemoPackage.BroadcastReceiverPackage.BroadcastReceiverDemo;
+import vaycent.vaycentproject.DemoPackage.NotificationPackage.NotificationDemo;
 import vaycent.vaycentproject.DemoPackage.OrmliteSharpDemo;
 import vaycent.vaycentproject.DemoPackage.TextViewDemo;
-import vaycent.vaycentproject.DemoPackage.Volleysharp_demo;
+import vaycent.vaycentproject.DemoPackage.VolleysharpDemo;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, OrmliteSharpDemo.class);
             startActivity(intent);
         }else if (id == R.id.volleysharp_demo) {
-            Intent intent = new Intent(this, Volleysharp_demo.class);
+            Intent intent = new Intent(this, VolleysharpDemo.class);
             startActivity(intent);
         } else if (id == R.id.textview_demo) {
             Intent intent = new Intent(this, TextViewDemo.class);
@@ -88,8 +89,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.animation_demo) {
             Intent intent = new Intent(this, AnimationDemo.class);
             startActivity(intent);
-        } else if (id == R.id.nav_manage) {
-
+        } else if (id == R.id.broadcast_receive_demo) {
+            Intent intent = new Intent(this, BroadcastReceiverDemo.class);
+            startActivity(intent);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

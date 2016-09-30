@@ -2,7 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="vaycent.vaycentproject">
 
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REMOVED"/>
+
 
 
     <application
@@ -24,30 +28,56 @@
         </activity>
 
 
+
+
         <!--***************** Activity *****************-->
         <activity
-            android:name=".DemoPackage.Volleysharp_demo"
-            android:label="@string/app_name" />
+            android:name=".DemoPackage.VolleysharpDemo"
+            android:label="Volleysharp Demo" />
 
         <activity
             android:name=".DemoPackage.OrmliteSharpDemo"
-            android:label="@string/app_name" />
+            android:label="OrmliteSharp Demo" />
         <activity
             android:name=".DemoPackage.TextViewDemo"
-            android:label="@string/app_name" />
+            android:label="TextView Demo" />
 
         <activity
-            android:name=".DemoPackage.NotificationDemo"
-            android:label="@string/app_name" />
+            android:name=".DemoPackage.NotificationPackage.NotificationDemo"
+            android:label="Notification Demo" />
 
         <activity
             android:name=".DemoPackage.AnimationDemo"
-            android:label="@string/app_name" />
+            android:label="Animation Demo" />
+        <activity
+            android:name=".DemoPackage.BroadcastReceiverPackage.BroadcastReceiverDemo"
+            android:label="BroadcastReceiver Demo" />
+
 
 
 
         <!--***************** Service *****************-->
-        <service android:name=".DemoPackage.NoKillService"/>
+        <service android:name=".DemoPackage.NotificationPackage.NoKillService"/>
+
+
+
+
+        <!--***************** Broadcast Receiver *****************-->
+        <receiver android:name=".DemoPackage.BroadcastReceiverPackage.GlobalBroadcastReceiverDemo" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BATTERY_CHANGED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+
+            </intent-filter>
+        </receiver>
+
+
+
 
 
     </application>

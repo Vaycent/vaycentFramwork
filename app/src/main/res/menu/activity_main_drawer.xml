@@ -30,9 +30,9 @@
                 android:icon="@drawable/ic_menu_slideshow"
                 android:title="Animation Demo" />
             <item
-                android:id="@+id/nav_manage"
+                android:id="@+id/broadcast_receive_demo"
                 android:icon="@drawable/ic_menu_manage"
-                android:title="Tools" />
+                android:title="BroadcastReceive Demo" />
 
             <item
                 android:id="@+id/nav_share"

@@ -27,4 +27,19 @@
 
     </LinearLayout>
 
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Custom send Broadcast()"
+        android:id="@+id/send_broadcast_btn"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Custom send OrderedBroadcast()"
+        android:id="@+id/send_orderedbroadcast_btn"
+        android:textAllCaps="false"/>
+
 </LinearLayout>

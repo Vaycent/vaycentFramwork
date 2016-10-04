@@ -18,11 +18,13 @@ import android.widget.RemoteViews;
 import vaycent.vaycentproject.R;
 import vaycent.volleysharp.VolleySharp;
 
+
+
 /**
  * Created by Vaycent on 16/9/9.
  */
 public class NotificationDemo extends AppCompatActivity {
-    private Button startSmallNotificationBtn,startLargeNotificationBtn,
+    private Button smallNotificationBtn,largeNotificationBtn,
             remoteViewNotificationBtn,headSupNotificationBtn,testNotificationLevelBtn,
             startNoKillNotificationBtn,stopNoKillNotificationBtn;
 
@@ -31,8 +33,8 @@ public class NotificationDemo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notification_demo);
 
-        startSmallNotificationBtn=(Button)findViewById(R.id.startSmallNotificationBtn);
-        startLargeNotificationBtn=(Button)findViewById(R.id.startLargeNotificationBtn);
+        smallNotificationBtn=(Button)findViewById(R.id.smallNotificationBtn);
+        largeNotificationBtn=(Button)findViewById(R.id.largeNotificationBtn);
 
         remoteViewNotificationBtn=(Button)findViewById(R.id.remoteViewNotificationBtn);
         headSupNotificationBtn=(Button)findViewById(R.id.headSupNotificationBtn);
@@ -41,19 +43,22 @@ public class NotificationDemo extends AppCompatActivity {
         startNoKillNotificationBtn=(Button)findViewById(R.id.startNoKillNotificationBtn);
         stopNoKillNotificationBtn=(Button)findViewById(R.id.stopNoKillNotificationBtn);
 
-        startSmallNotificationBtn.setOnClickListener(new View.OnClickListener() {
+        smallNotificationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 pushSmallLocalNotification();
             }
         });
 
-        startLargeNotificationBtn.setOnClickListener(new View.OnClickListener() {
+        largeNotificationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 pushLargeLocalNotification();
+
             }
         });
+
+
 
         remoteViewNotificationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,6 +129,8 @@ public class NotificationDemo extends AppCompatActivity {
         nm.notify("largeTest",1,updateNotification);
     }
 
+
+
     private void pushRemoteViewNotification(){
 
         Intent mIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://blog.csdn.net/itachi85/"));
@@ -145,7 +152,7 @@ public class NotificationDemo extends AppCompatActivity {
         updateNotification.bigContentView = remoteViews;
         //updateNotification.contentView = remoteViews;
 
-        nm.notify("remoteViewTest",2,updateNotification);
+        nm.notify("remoteViewTest",3,updateNotification);
     }
 
     private void pushHeadSupNotification(){
@@ -163,7 +170,7 @@ public class NotificationDemo extends AppCompatActivity {
                 .setFullScreenIntent(pi, true);
 
         NotificationManager nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        nm.notify("headsupTest",3, builder.build());
+        nm.notify("headsupTest",4, builder.build());
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -185,7 +192,7 @@ public class NotificationDemo extends AppCompatActivity {
                 .setVisibility(Notification.VISIBILITY_SECRET)
                 .build();
 
-        nm.notify("levelTest",4,updateNotification);
+        nm.notify("levelTest",6,updateNotification);
 
     }
 

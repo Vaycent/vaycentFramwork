@@ -16,6 +16,7 @@ import android.view.View;
 
 import vaycent.vaycentproject.DemoPackage.AnimationDemo;
 import vaycent.vaycentproject.DemoPackage.BroadcastReceiverPackage.BroadcastReceiverDemo;
+import vaycent.vaycentproject.DemoPackage.ContentProviderDemo;
 import vaycent.vaycentproject.DemoPackage.NotificationPackage.NotificationDemo;
 import vaycent.vaycentproject.DemoPackage.OrmliteSharpDemo;
 import vaycent.vaycentproject.DemoPackage.TextViewDemo;
@@ -92,8 +93,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.broadcast_receive_demo) {
             Intent intent = new Intent(this, BroadcastReceiverDemo.class);
             startActivity(intent);
-        } else if (id == R.id.nav_share) {
-
+        } else if (id == R.id.content_provider_demo) {
+            Intent intent = new Intent(this, ContentProviderDemo.class);
+            startActivity(intent);
         } else if (id == R.id.nav_send) {
 
         }

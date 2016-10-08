@@ -41,5 +41,13 @@
         android:text="Custom send OrderedBroadcast()"
         android:id="@+id/send_orderedbroadcast_btn"
         android:textAllCaps="false"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Custom send OrderedBroadcast() And Abort"
+        android:id="@+id/sendOrderedBroadcastAbortBtn"
+        android:textAllCaps="false"/>
+
+
 
 </LinearLayout>

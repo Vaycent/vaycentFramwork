@@ -96,6 +96,7 @@ public class ContentProviderDemo extends AppCompatActivity {
         } else{
             requestPermissions(new String[]{permission}, requestCode);
         }
+        //showMessageOKCancel
     }
 
     private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {

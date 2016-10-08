@@ -12,7 +12,6 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -73,10 +72,7 @@ public class ContentProviderDemo extends AppCompatActivity {
                                            @NonNull int[] grantResults) {
         if (requestCode == contactsPermissionRequestCode) {
             if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permission granted , Access contacts here or do whatever you need.
-                Log.e("123456","HERE 123");
                 bindContacts();
-
             }
         }
     }

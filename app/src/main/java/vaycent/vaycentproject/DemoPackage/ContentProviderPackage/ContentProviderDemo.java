@@ -42,7 +42,6 @@ public class ContentProviderDemo extends AppCompatActivity {
 
         checkPermissions(Manifest.permission.READ_CONTACTS,contactsPermissionRequestCode);
 
-        bindContacts();
     }
 
     private void bindContacts(){
@@ -77,8 +76,9 @@ public class ContentProviderDemo extends AppCompatActivity {
         }
     }
 
-    private void checkPermissions(String permission,int requestCode) {
+    private void checkPermissions(String permission, int requestCode) {
         if ( Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            bindContacts();
             return;
         }
 
@@ -88,6 +88,7 @@ public class ContentProviderDemo extends AppCompatActivity {
         boolean shouldShowPermission= ActivityCompat.shouldShowRequestPermissionRationale(this, permission);
         System.out.println("shouldShowPermission:"+shouldShowPermission);
         if (isGranted){
+            bindContacts();
             return;
         } else{
             requestPermissions(new String[]{permission}, requestCode);

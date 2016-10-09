@@ -1,4 +1,4 @@
-package vaycent.vaycentproject.DemoPackage;
+package vaycent.vaycentproject.DemoPackage.ContentProviderPackage;
 
 import android.Manifest;
 import android.app.AlertDialog;

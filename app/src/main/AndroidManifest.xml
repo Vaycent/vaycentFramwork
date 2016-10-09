@@ -54,7 +54,7 @@
             android:name=".DemoPackage.BroadcastReceiverPackage.BroadcastReceiverDemo"
             android:label="BroadcastReceiver Demo" />
         <activity
-            android:name=".DemoPackage.ContentProviderDemo"
+            android:name=".DemoPackage.ContentProviderPackage.ContentProviderDemo"
             android:label="Content Provider Demo" />
 
 

@@ -80,7 +80,12 @@
         </receiver>
 
 
-
+        <!--***************** Content Provider *****************-->
+        <!--android:exported:supported other app to call this content provider-->
+        <provider
+            android:authorities="vaycent.vaycentproject.provider"
+            android:name=".DemoPackage.ContentProviderPackage.MyProvider"
+            android:exported="true"/>
 
 
     </application>

@@ -62,7 +62,7 @@ public class XmlParser_Dom {
     }
 
     /** Returns element value
-     * @param elem element (it is XML tag)
+     * @param str element (it is XML tag)
      * @return Element value otherwise empty String
      */
     public String getValue(Element item, String str) {

@@ -19,6 +19,8 @@ import javax.xml.parsers.ParserConfigurationException;
 /**
  * Created by Vaycent on 16/9/9.
  */
+
+//TODO Do this Dom parser
 public class XmlParser_Dom {
     private static final String TAG="XmlParser_Dom";
 

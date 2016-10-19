@@ -39,9 +39,9 @@
                 android:icon="@drawable/ic_menu_share"
                 android:title="Content Provider Demo" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/fragment_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="Fragment Demo" />
         </menu>
     </item>
 

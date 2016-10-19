@@ -2,13 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="vaycent.vaycentproject">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REMOVED"/>
-
-
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REMOVED" />
 
     <application
         android:name=".ApplicationContext"
@@ -28,25 +25,19 @@
             </intent-filter>
         </activity>
 
-
-
-
-        <!--***************** Activity *****************-->
+        <!-- ***************** Activity ***************** -->
         <activity
             android:name=".DemoPackage.VolleysharpDemo"
             android:label="Volleysharp Demo" />
-
         <activity
             android:name=".DemoPackage.OrmliteSharpDemo"
             android:label="OrmliteSharp Demo" />
         <activity
             android:name=".DemoPackage.TextViewDemo"
             android:label="TextView Demo" />
-
         <activity
             android:name=".DemoPackage.NotificationPackage.NotificationDemo"
             android:label="Notification Demo" />
-
         <activity
             android:name=".DemoPackage.AnimationDemo"
             android:label="Animation Demo" />
@@ -57,37 +48,36 @@
             android:name=".DemoPackage.ContentProviderPackage.ContentProviderDemo"
             android:label="Content Provider Demo" />
 
-
-
-        <!--***************** Service *****************-->
-        <service android:name=".DemoPackage.NotificationPackage.NoKillService"/>
-
+        <activity
+            android:name=".DemoPackage.FragmentPackage.FragmentDemo"
+            android:label="Fragment Demo" />
 
 
 
-        <!--***************** Broadcast Receiver *****************-->
-        <receiver android:name=".DemoPackage.BroadcastReceiverPackage.GlobalBroadcastReceiverDemo" >
+        <!-- ***************** Service ***************** -->
+        <service android:name=".DemoPackage.NotificationPackage.NoKillService" />
+
+        <!-- ***************** Broadcast Receiver ***************** -->
+        <receiver android:name=".DemoPackage.BroadcastReceiverPackage.GlobalBroadcastReceiverDemo">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-                <action android:name="android.intent.action.BATTERY_CHANGED"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.BATTERY_CHANGED" />
 
-                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
-                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
-                <data android:scheme="package"/>
+                <category android:name="android.intent.category.DEFAULT" />
 
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+
+                <data android:scheme="package" />
             </intent-filter>
         </receiver>
 
-
-        <!--***************** Content Provider *****************-->
-        <!--android:exported:supported other app to call this content provider-->
+        <!-- ***************** Content Provider ***************** -->
+        <!-- android:exported:supported other app to call this content provider -->
         <provider
-            android:authorities="vaycent.vaycentproject.provider"
             android:name=".DemoPackage.ContentProviderPackage.MyProvider"
-            android:exported="true"/>
-
-
+            android:authorities="vaycent.vaycentproject.provider"
+            android:exported="true" />
     </application>
 
 </manifest>

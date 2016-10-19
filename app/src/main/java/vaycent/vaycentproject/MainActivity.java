@@ -17,6 +17,7 @@ import android.view.View;
 import vaycent.vaycentproject.DemoPackage.AnimationDemo;
 import vaycent.vaycentproject.DemoPackage.BroadcastReceiverPackage.BroadcastReceiverDemo;
 import vaycent.vaycentproject.DemoPackage.ContentProviderPackage.ContentProviderDemo;
+import vaycent.vaycentproject.DemoPackage.FragmentPackage.FragmentDemo;
 import vaycent.vaycentproject.DemoPackage.NotificationPackage.NotificationDemo;
 import vaycent.vaycentproject.DemoPackage.OrmliteSharpDemo;
 import vaycent.vaycentproject.DemoPackage.TextViewDemo;
@@ -96,8 +97,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.content_provider_demo) {
             Intent intent = new Intent(this, ContentProviderDemo.class);
             startActivity(intent);
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.fragment_demo) {
+            Intent intent = new Intent(this, FragmentDemo.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -128,6 +130,14 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-
+    private void addBlankFragment(){
+//        BlankFragment mWeixin;
+//        mWeixin = new BlankFragment();
+//
+//        FragmentManager fm = getFragmentManager();
+//        FragmentTransaction transaction = fm.beginTransaction();
+//        transaction.add(mWeixin);
+//        transaction.commit();
+    }
 
 }

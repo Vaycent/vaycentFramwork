@@ -5,14 +5,14 @@
 
     <fragment
         android:id="@+id/id_fragment_title"
-        android:name="com.zhy.zhy_fragments.TitleFragment"
+        android:name="vaycent.vaycentproject.DemoPackage.FragmentPackage.TitleFragment"
         android:layout_width="fill_parent"
         android:layout_height="45dp" />
 
     <fragment
         android:layout_below="@id/id_fragment_title"
         android:id="@+id/id_fragment_content"
-        android:name="com.zhy.zhy_fragments.ContentFragment"
+        android:name="vaycent.vaycentproject.DemoPackage.FragmentPackage.ContentFragment"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
 

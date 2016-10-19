@@ -7,7 +7,9 @@ import com.android.volley.VolleyError;
 import java.util.HashMap;
 import java.util.Map;
 
-import XmlParser.XmlParserHelper;
+import Parser.JsonParser;
+import Parser.XmlParserHelper;
+import Parser.XmlParser_Pull;
 import vaycent.magicLog.mlog;
 import vaycent.vaycentproject.ApplicationContext;
 import vaycent.volleysharp.JsonListenerInterface;
@@ -33,6 +35,8 @@ public class Request_Helper {
             @Override
             public void responseAction(String response) {
                 mlog.xml(response);
+
+                XmlParser_Pull pullParser = new XmlParser_Pull(response);
             }
             @Override
             public void errorAction(VolleyError error) {
@@ -86,6 +90,7 @@ public class Request_Helper {
             public void responseAction(String response) {
                 mlog.json(response);
 
+                JsonParser jsonParser = new JsonParser(response);
             }
             @Override
             public void errorAction(VolleyError error) {
@@ -93,7 +98,7 @@ public class Request_Helper {
             }
         };
 
-        String link="http://gc.ditu.aliyun.com/geocoding?a=%E5%B9%BF%E5%B7%9E%E5%B8%82";
+        String link="http://gc.ditu.aliyun.com/geocoding?a=广州市";
         appContext.volleySharp.startJsonRequest(link,listenerInterface);
     }
 }

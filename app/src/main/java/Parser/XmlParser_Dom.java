@@ -1,4 +1,4 @@
-package XmlParser;
+package Parser;
 
 import android.util.Log;
 

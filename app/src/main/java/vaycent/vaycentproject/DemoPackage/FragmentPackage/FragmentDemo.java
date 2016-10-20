@@ -9,6 +9,7 @@ import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import vaycent.magicLog.mlog;
 import vaycent.vaycentproject.R;
 
 /**
@@ -21,6 +22,7 @@ public class FragmentDemo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        mlog.w("Activity onCreate");
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.fragment_demo);
 
@@ -92,6 +94,36 @@ public class FragmentDemo extends AppCompatActivity {
         TextView textView = (TextView)findViewById(R.id.content_fragment_tx);
         String textStr="I have changed this content fragment text";
         textView.setText(textStr);
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        mlog.w("Activity onStart");
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        mlog.w("Activity onResume");
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        mlog.w("Activity onPause");
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        mlog.w("Activity onStop");
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        mlog.w("Activity onDestroy");
     }
 
 }

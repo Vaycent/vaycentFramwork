@@ -43,6 +43,7 @@ public class FragmentDemo extends AppCompatActivity {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction fTransaction = fm.beginTransaction();
                 fTransaction.replace(R.id.frame_layout, messageFragment);
+//                fTransaction.addToBackStack(null);
                 fTransaction.commit();
             }
         });
@@ -54,6 +55,7 @@ public class FragmentDemo extends AppCompatActivity {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction fTransaction = fm.beginTransaction();
                 fTransaction.replace(R.id.frame_layout, contactsFragment);
+//                fTransaction.addToBackStack(null);
                 fTransaction.commit();
             }
         });
@@ -65,6 +67,7 @@ public class FragmentDemo extends AppCompatActivity {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction fTransaction = fm.beginTransaction();
                 fTransaction.replace(R.id.frame_layout, cloudFragment);
+//                fTransaction.addToBackStack(null);
                 fTransaction.commit();
             }
         });
@@ -76,6 +79,7 @@ public class FragmentDemo extends AppCompatActivity {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction fTransaction = fm.beginTransaction();
                 fTransaction.replace(R.id.frame_layout, personFragment);
+//                fTransaction.addToBackStack(null);
                 fTransaction.commit();
             }
         });

@@ -8,8 +8,9 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:gravity="center"
-        android:text="使用Fragment做主面板"
+        android:text="Content Fragment"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="#abc123"/>
 
 </LinearLayout>

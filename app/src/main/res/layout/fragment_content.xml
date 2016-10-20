@@ -5,12 +5,12 @@
     android:orientation="vertical" >
 
     <TextView
+        android:id="@+id/content_fragment_tx"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:gravity="center"
         android:text="Content Fragment"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:background="#abc123"/>
+        android:textStyle="bold" />
 
 </LinearLayout>

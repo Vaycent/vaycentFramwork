@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import vaycent.vaycentproject.R;
 
@@ -30,9 +29,17 @@ public class TitleFragment extends Fragment
             @Override
             public void onClick(View v)
             {
-                Toast.makeText(getActivity(),
-                        "i am an ImageButton in TitleFragment ! ",
-                        Toast.LENGTH_SHORT).show();
+//                ContentFragment cf = (ContentFragment)getFragmentManager().findFragmentById(R.id.id_fragment_content);
+//                FragmentManager fm = getFragmentManager();
+//                FragmentTransaction ft= fm.beginTransaction();
+//                ft.replace(R.id.frame_layout,cf);
+//                ft.addToBackStack(null);
+//                ft.commit();
+                FragmentDemo activity = (FragmentDemo) getActivity();
+                activity.onBackPressed();
+
+//                Content textView = (TextView)getActivity().findViewById(R.id.id_fragment_content) ;
+
             }
         });
         return view;

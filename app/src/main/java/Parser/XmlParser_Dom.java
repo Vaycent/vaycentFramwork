@@ -16,6 +16,8 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import vaycent.magicLog.mlog;
+
 /**
  * Created by Vaycent on 16/9/9.
  */
@@ -23,6 +25,21 @@ import javax.xml.parsers.ParserConfigurationException;
 //TODO Do this Dom parser
 public class XmlParser_Dom {
     private static final String TAG="XmlParser_Dom";
+
+
+    public XmlParser_Dom(String xmlData){
+        Document document = XMLfromString(xmlData);
+
+        NodeList entryList = document.getElementsByTagName("entry");
+        if(entryList!=null&&entryList.getLength()>0){
+            for(int i=0;i<entryList.getLength();i++){
+                Element element = (Element)entryList.item(i);
+                String title=getValue(element, "title");
+                mlog.d("title:"+title);
+            }
+        }
+
+    }
 
     public Document XMLfromString(String xml){
         Document doc = null;

@@ -37,6 +37,7 @@ public class Request_Helper {
                 mlog.xml(response);
 
                 XmlParser_Pull pullParser = new XmlParser_Pull(response);
+//                XmlParser_Dom domParser = new XmlParser_Dom(response);
             }
             @Override
             public void errorAction(VolleyError error) {

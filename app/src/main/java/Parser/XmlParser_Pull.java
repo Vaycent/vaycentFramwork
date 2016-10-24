@@ -12,6 +12,8 @@ import vaycent.magicLog.mlog;
  */
 
 public class XmlParser_Pull {
+    private static final String TAG="XmlParser_Pull";
+
 
     public XmlParser_Pull(String xmlData){
         parseXmlWithPull(xmlData);

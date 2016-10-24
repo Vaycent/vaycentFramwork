@@ -130,14 +130,6 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    private void addBlankFragment(){
-//        BlankFragment mWeixin;
-//        mWeixin = new BlankFragment();
-//
-//        FragmentManager fm = getFragmentManager();
-//        FragmentTransaction transaction = fm.beginTransaction();
-//        transaction.add(mWeixin);
-//        transaction.commit();
-    }
+
 
 }

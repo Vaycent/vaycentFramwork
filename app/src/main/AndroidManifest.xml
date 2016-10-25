@@ -52,7 +52,8 @@
             android:name=".DemoPackage.FragmentPackage.FragmentDemo"
             android:label="Fragment Demo" />
 
-
+        <activity android:name=".DemoPackage.RecycleViewPackage.RecycleViewDemo"
+            android:label="RecycleView Demo"/>
 
         <!-- ***************** Service ***************** -->
         <service android:name=".DemoPackage.NotificationPackage.NoKillService" />

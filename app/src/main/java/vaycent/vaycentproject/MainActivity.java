@@ -20,6 +20,7 @@ import vaycent.vaycentproject.DemoPackage.ContentProviderPackage.ContentProvider
 import vaycent.vaycentproject.DemoPackage.FragmentPackage.FragmentDemo;
 import vaycent.vaycentproject.DemoPackage.NotificationPackage.NotificationDemo;
 import vaycent.vaycentproject.DemoPackage.OrmliteSharpDemo;
+import vaycent.vaycentproject.DemoPackage.RecycleViewPackage.RecycleViewDemo;
 import vaycent.vaycentproject.DemoPackage.TextViewDemo;
 import vaycent.vaycentproject.DemoPackage.VolleysharpDemo;
 
@@ -82,7 +83,10 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.volleysharp_demo) {
             Intent intent = new Intent(this, VolleysharpDemo.class);
             startActivity(intent);
-        } else if (id == R.id.textview_demo) {
+        } else if (id == R.id.recycleview_demo) {
+            Intent intent = new Intent(this, RecycleViewDemo.class);
+            startActivity(intent);
+        }else if (id == R.id.textview_demo) {
             Intent intent = new Intent(this, TextViewDemo.class);
             startActivity(intent);
         } else if (id == R.id.notification_demo) {

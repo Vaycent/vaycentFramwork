@@ -12,6 +12,12 @@
             android:icon="@drawable/ic_menu_manage"
             android:title="VolleySharp Demo" />
 
+        <item
+            android:id="@+id/recycleview_demo"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="RecycleView Demo" />
+
+
     </group>
 
     <item android:title="Some Demo">

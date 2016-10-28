@@ -56,7 +56,7 @@
             android:name=".DemoPackage.RecycleViewPackage.RecycleViewDemo"
             android:label="RecycleView Demo" />
         <activity
-            android:name=".DemoPackage.IPC_Package.IpcDemo"
+            android:name=".DemoPackage.IPC_Package.IPCDemo"
             android:label="IPC Demo" />
         <activity
             android:name=".DemoPackage.TestPackage.TestActivity2"
@@ -64,13 +64,22 @@
         <activity
             android:name=".DemoPackage.TestPackage.TestActivity3"
             android:label="TestActivity3" />
+        <activity
+            android:name=".DemoPackage.IPC_Package.ParcelableTestActivity"
+            android:label="Parcelable Test Activity" />
 
-        <activity android:name=".DemoPackage.IPC_Package.ParcelableTestActivity"
-            android:label="Parcelable Test Activity"/>
+        <activity android:name=".DemoPackage.IPC_Package.SerializableTestActivity"
+            android:label="Serializable Test Activity"/>
 
 
         <!-- ***************** Service ***************** -->
         <service android:name=".DemoPackage.NotificationPackage.NoKillService" />
+
+        <service android:name=".MyService" >
+            <intent-filter>
+                <action android:name="vaycent.vaycentproject.DemoPackage.IPC_Package.IMyService" />
+            </intent-filter>
+        </service>
 
         <!-- ***************** Broadcast Receiver ***************** -->
         <receiver android:name=".DemoPackage.BroadcastReceiverPackage.GlobalBroadcastReceiverDemo">

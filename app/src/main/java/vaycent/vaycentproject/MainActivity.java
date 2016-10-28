@@ -25,7 +25,7 @@ import vaycent.vaycentproject.DemoPackage.AnimationDemo;
 import vaycent.vaycentproject.DemoPackage.BroadcastReceiverPackage.BroadcastReceiverDemo;
 import vaycent.vaycentproject.DemoPackage.ContentProviderPackage.ContentProviderDemo;
 import vaycent.vaycentproject.DemoPackage.FragmentPackage.FragmentDemo;
-import vaycent.vaycentproject.DemoPackage.IPC_Package.IpcDemo;
+import vaycent.vaycentproject.DemoPackage.IPC_Package.IPCDemo;
 import vaycent.vaycentproject.DemoPackage.IPC_Package.Person;
 import vaycent.vaycentproject.DemoPackage.NotificationPackage.NotificationDemo;
 import vaycent.vaycentproject.DemoPackage.OrmliteSharpDemo;
@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, FragmentDemo.class);
             startActivity(intent);
         }else if (id == R.id.ipc_demo) {
-            Intent intent = new Intent(this, IpcDemo.class);
+            Intent intent = new Intent(this, IPCDemo.class);
             startActivity(intent);
         }
 

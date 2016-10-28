@@ -34,6 +34,8 @@ public class TitleFragment extends Fragment
                 FragmentDemo activity = (FragmentDemo) getActivity();
                 activity.onBackPressed();
 
+
+
             }
         });
 

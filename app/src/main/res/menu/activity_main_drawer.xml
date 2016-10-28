@@ -48,6 +48,12 @@
                 android:id="@+id/fragment_demo"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Fragment Demo" />
+
+            <item
+                android:id="@+id/ipc_demo"
+                android:icon="@drawable/ic_menu_send"
+                android:title="IPC Demo" />
+
         </menu>
     </item>
 

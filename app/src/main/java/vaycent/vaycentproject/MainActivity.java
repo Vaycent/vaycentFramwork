@@ -13,11 +13,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
+import android.widget.Button;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
+import vaycent.magicLog.mlog;
 import vaycent.vaycentproject.DemoPackage.AnimationDemo;
 import vaycent.vaycentproject.DemoPackage.BroadcastReceiverPackage.BroadcastReceiverDemo;
 import vaycent.vaycentproject.DemoPackage.ContentProviderPackage.ContentProviderDemo;
 import vaycent.vaycentproject.DemoPackage.FragmentPackage.FragmentDemo;
+import vaycent.vaycentproject.DemoPackage.IPC_Package.IpcDemo;
+import vaycent.vaycentproject.DemoPackage.IPC_Package.Person;
 import vaycent.vaycentproject.DemoPackage.NotificationPackage.NotificationDemo;
 import vaycent.vaycentproject.DemoPackage.OrmliteSharpDemo;
 import vaycent.vaycentproject.DemoPackage.RecycleViewPackage.RecycleViewDemo;
@@ -29,15 +38,54 @@ public class MainActivity extends AppCompatActivity
 
     private ApplicationContext appContext;
 
+    private Button switchToActivity2;
+
+    private WebView mainWebView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mlog.e("onCreate");
         setContentView(R.layout.activity_main);
 
         appContext = ((ApplicationContext) this.getApplication());
         initLayout();
     }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        mlog.e("onStart");
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        mlog.e("onResume");
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        mlog.e("onPause");
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        mlog.e("onStop");
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        mlog.e("onDestroy");
+    }
+
+
+
+
 
     @Override
     public void onBackPressed() {
@@ -104,6 +152,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.fragment_demo) {
             Intent intent = new Intent(this, FragmentDemo.class);
             startActivity(intent);
+        }else if (id == R.id.ipc_demo) {
+            Intent intent = new Intent(this, IpcDemo.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -132,6 +183,42 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+
+        switchToActivity2=(Button)findViewById(R.id.switchToActivity2);
+        switchToActivity2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent intent = new Intent();
+//                intent.setClass(MainActivity.this, TestActivity2.class);
+//                intent.setAction(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+//                startActivity(intent);
+
+                try{
+                    File appPath=new File(getApplicationContext().getFilesDir().getAbsolutePath()+"/cache.txt");
+
+                    ObjectInputStream in = new ObjectInputStream(new FileInputStream(appPath));
+                    Person newPerson = (Person)in.readObject();
+                    in.close();
+
+
+                    mlog.d("newPerson id:"+newPerson.getId());
+                    mlog.d("newPerson name:"+newPerson.getName());
+                    mlog.d("newPerson age:"+newPerson.getAge());
+
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
+
+
+
+//        mainWebView=(WebView) findViewById(R.id.mainWebView);
+//        mainWebView.getSettings().setJavaScriptEnabled(true);
+//        mainWebView.loadUrl("https://wwwtest.smartone.com/SmarToneCARE/page_index.html?sl=co&add=no#!MainPage_m0");
+//        mainWebView.loadUrl("javascript:apk2page('PutDeviceID','" + 123456 + "')");
     }
 
 

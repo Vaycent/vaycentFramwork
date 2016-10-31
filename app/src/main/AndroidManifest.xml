@@ -103,6 +103,12 @@
             android:authorities="vaycent.vaycentproject.provider"
             android:exported="true" />
 
+        <provider
+            android:authorities="vaycent.vaycentproject.book.provider"
+            android:permission="vaycent.vaycentproject.BOOKPRO"
+            android:name=".DemoPackage.ContentProviderPackage.BookProvider"
+            android:process=":bookprovider"/>
+
     </application>
 
 </manifest>

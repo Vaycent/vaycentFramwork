@@ -61,9 +61,6 @@ public class ContentProviderDemo extends AppCompatActivity {
     }
 
 
-
-
-
     private void initLayout(){
         stringListView=(ListView)findViewById(R.id.string_listview);
         stringArrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,stringList);

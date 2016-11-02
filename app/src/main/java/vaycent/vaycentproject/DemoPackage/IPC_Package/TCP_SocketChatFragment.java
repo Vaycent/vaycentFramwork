@@ -1,12 +1,15 @@
 package vaycent.vaycentproject.DemoPackage.IPC_Package;
 
+
 import android.annotation.SuppressLint;
-import android.content.Intent;
+import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,7 +30,7 @@ import java.util.Date;
 
 import vaycent.vaycentproject.R;
 
-public class TCPClientActivity extends AppCompatActivity implements View.OnClickListener {
+public class TCP_SocketChatFragment extends Fragment  implements View.OnClickListener{
 
     private static final int MESSAGE_RECEIVE_NEW_MSG=1;
     private static final int MESSAGE_SOCKET_CONNECTED=2;
@@ -59,29 +62,74 @@ public class TCPClientActivity extends AppCompatActivity implements View.OnClick
         }
     };
 
+    @Override
+    public void onAttach(Context context){
+        super.onAttach(context);
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public void onCreate(Bundle saveIntanceState){
+        super.onCreate(saveIntanceState);
+    }
 
-        mMessageTextView=(TextView)findViewById(R.id.msg_container);
-        mSendButton=(Button)findViewById(R.id.send);
-        mMessageEditText=(EditText)findViewById(R.id.msg);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState){
+        View view = inflater.inflate(R.layout.tcpclient_activity,container,false);
+        return view;
+    }
 
-        Intent service = new Intent(this, TCPServerService.class);
-        startService(service);
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState){
+        super.onViewCreated(view,savedInstanceState);
+
+        mMessageTextView=(TextView)view.findViewById(R.id.msg_container);
+        mSendButton=(Button)view.findViewById(R.id.send);
+        mMessageEditText=(EditText)view.findViewById(R.id.msg);
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState){
+        super.onActivityCreated(savedInstanceState);
+
+
+
 
         new Thread(){
             @Override
             public void run(){
-               connectTCPServer();
+                connectTCPServer();
             }
         }.start();
     }
 
     @Override
-    protected void onDestroy(){
+    public void onStart(){
+        super.onStart();
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+    }
+
+    @Override
+    public void onDestroyView(){
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onDestroy(){
         if(mClientSocket!=null){
             try {
                 mClientSocket.shutdownInput();
@@ -90,14 +138,20 @@ public class TCPClientActivity extends AppCompatActivity implements View.OnClick
                 e.printStackTrace();
             }
         }
+
         super.onDestroy();
+    }
+
+    @Override
+    public void onDetach(){
+        super.onDetach();
     }
 
     @Override
     public void onClick(View v) {
         if(v==mSendButton){
             final String msg = mMessageEditText.getText().toString();
-            if(!msg==null&&mPrintWriter!=null){
+            if(msg!=null&&mPrintWriter!=null){
                 mPrintWriter.println(msg);
                 mMessageEditText.setText("");
                 String time = formatDateTime(System.currentTimeMillis());
@@ -137,7 +191,8 @@ public class TCPClientActivity extends AppCompatActivity implements View.OnClick
                 Reader toClientReader = new BufferedReader(toClientInputStreamReader);
                 BufferedReader br = new BufferedReader(toClientReader);
 
-                while (!TCPClientActivity.this.isFinishing()){
+                IPCDemo ipcDemo = (IPCDemo)getActivity();
+                while (!ipcDemo.isFinishing()){
                     String msg = br.readLine();
                     System.out.println("receive:"+msg);
                     if(msg!=null){
@@ -158,6 +213,5 @@ public class TCPClientActivity extends AppCompatActivity implements View.OnClick
 
         }
     }
-
 
 }

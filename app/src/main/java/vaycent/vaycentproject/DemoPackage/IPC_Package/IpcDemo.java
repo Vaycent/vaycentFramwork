@@ -1,14 +1,12 @@
 package vaycent.vaycentproject.DemoPackage.IPC_Package;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
+import android.widget.Button;
 
 import vaycent.magicLog.mlog;
 import vaycent.vaycentproject.R;
@@ -17,9 +15,10 @@ import vaycent.vaycentproject.R;
  * Created by Vaycent on 2016/10/27.
  */
 
-public class IPCDemo extends AppCompatActivity implements View.OnClickListener{
+public class IPCDemo extends AppCompatActivity{
 
-    private File appPath=new File(Environment.getExternalStorageDirectory().getPath()+"/cache.txt");
+
+    private Button CommonBtn,ChatBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,54 +26,36 @@ public class IPCDemo extends AppCompatActivity implements View.OnClickListener{
         mlog.e("onCreate");
         setContentView(R.layout.ipc_demo);
 
-//        appPath=new File(getApplicationContext().getFilesDir().getAbsolutePath()+"/cache.txt");
         InitLayout();
+
+        Intent service = new Intent(IPCDemo.this, TCPServerService.class);
+        startService(service);
     }
 
     private void InitLayout(){
-        findViewById(R.id.serializable_out).setOnClickListener(this);
-        findViewById(R.id.serializable_in).setOnClickListener(this);
-        findViewById(R.id.parcelable_test).setOnClickListener(this);
-    }
+        CommonBtn=(Button)findViewById(R.id.common_btn);
+        ChatBtn=(Button)findViewById(R.id.chat_btn);
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.serializable_out:
-                SerializeOut();
-                break;
-            case R.id.serializable_in:
-                Intent intent = new Intent();
-                intent.setClass(IPCDemo.this,SerializableTestActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.parcelable_test:
-                ParcelableTest();
-                break;
-        }
-    }
-
-    private void SerializeOut(){
-        new Thread(new Runnable() {
+        CommonBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
-                Person person = new Person(0,"jack",19);
-                try{
-                    ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(appPath));
-                    out.writeObject(person);
-                    out.close();
-                    mlog.d("Finish Serializable output");
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
+            public void onClick(View view) {
+                IPC_CommonFragment commonFragment = new IPC_CommonFragment();
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction fTransaction = fm.beginTransaction();
+                fTransaction.replace(R.id.ipc_frame_layout, commonFragment);
+                fTransaction.commit();
             }
-        }).start();
-    }
+        });
 
-    private void ParcelableTest(){
-        User user = new User(0,"tom",21);
-        Intent intent = new Intent(this, ParcelableTestActivity.class);
-        intent.putExtra("userParcelable", user);
-        startActivity(intent);
+        ChatBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TCP_SocketChatFragment chatFragment = new TCP_SocketChatFragment();
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction fTransaction = fm.beginTransaction();
+                fTransaction.replace(R.id.ipc_frame_layout,chatFragment);
+                fTransaction.commit();
+            }
+        });
     }
 }

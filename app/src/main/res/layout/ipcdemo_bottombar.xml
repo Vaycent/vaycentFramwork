@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/common_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Common IPC"
+        android:textSize="10sp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/chat_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Socket Chat"
+        android:textSize="10sp"
+        android:layout_weight="1"/>
+
+    <ImageButton
+        android:id="@+id/cloud_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_cloud_download_black_24dp"
+        android:layout_weight="1"/>
+
+    <ImageButton
+        android:id="@+id/person_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_person_outline_black_24dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>

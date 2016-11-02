@@ -14,7 +14,6 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -66,15 +65,6 @@ public class ContentProviderDemo extends AppCompatActivity {
         stringListView=(ListView)findViewById(R.id.string_listview);
         stringArrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,stringList);
         stringListView.setAdapter(stringArrayAdapter);
-
-//        LinearLayout layout = new LinearLayout(this);
-//        layout=(LinearLayout)findViewById(R.layout.contentprovider_demo_layout);
-//
-//        stringListView.addHeaderView(layout);
-        stringListView.addHeaderView(LayoutInflater.from(this).inflate(
-                R.layout.bottombar, null));
-        stringListView.addHeaderView(LayoutInflater.from(this).inflate(
-                R.layout.ipcdemo_bottombar, null));
 
 
 

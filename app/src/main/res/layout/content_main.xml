@@ -13,17 +13,11 @@
     tools:showIn="@layout/app_bar_main">
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="switch to num2 Activity"
-        android:id="@+id/switchToActivity2"/>
-
-    <WebView
+    <ListView
+        android:id="@+id/lv_fir"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/mainWebView"/>
-
+        />
 
 
 </RelativeLayout>

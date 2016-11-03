@@ -6,41 +6,48 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView;
-import android.widget.Button;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.List;
 
+import Helper.ViewPageAdapter;
+import ImageLoader.ImageLoaderSharp;
 import vaycent.magicLog.mlog;
 import vaycent.vaycentproject.DemoPackage.AnimationDemo;
 import vaycent.vaycentproject.DemoPackage.BroadcastReceiverPackage.BroadcastReceiverDemo;
 import vaycent.vaycentproject.DemoPackage.ContentProviderPackage.ContentProviderDemo;
 import vaycent.vaycentproject.DemoPackage.FragmentPackage.FragmentDemo;
 import vaycent.vaycentproject.DemoPackage.IPC_Package.IPCDemo;
-import vaycent.vaycentproject.DemoPackage.IPC_Package.Person;
 import vaycent.vaycentproject.DemoPackage.NotificationPackage.NotificationDemo;
 import vaycent.vaycentproject.DemoPackage.OrmliteSharpDemo;
 import vaycent.vaycentproject.DemoPackage.RecycleViewPackage.RecycleViewDemo;
 import vaycent.vaycentproject.DemoPackage.TextViewDemo;
 import vaycent.vaycentproject.DemoPackage.VolleysharpDemo;
 
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ApplicationContext appContext;
 
-    private Button switchToActivity2;
+    ListView listview = null;
 
-    private WebView mainWebView;
+    private final String data[] = { "111","222","111","222","111","222","111","222","111","222","111","222",
+            "111","222","111","222","111","222","111","222","111","222","111","222","111","222","111","222"};
 
 
     @Override
@@ -51,6 +58,49 @@ public class MainActivity extends AppCompatActivity
 
         appContext = ((ApplicationContext) this.getApplication());
         initLayout();
+
+        int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
+        Log.d("TAG", "Max memory is " + maxMemory + "KB");
+
+        initHeadView();
+    }
+
+    private void initHeadView()
+    {
+        listview = (ListView)this.findViewById(R.id.lv_fir);
+
+        View view = LayoutInflater.from(this).inflate(R.layout.head_viewpager, null);
+        ViewPager viewpager = (ViewPager)view.findViewById(R.id.headviewpager);
+        List<ImageView> listtemp = new ArrayList<ImageView>();
+        for(int i = 0;i<4;i++)
+        {
+            ImageView img = new ImageView(this);
+            img.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,100));
+            img.setScaleType(ImageView.ScaleType.FIT_XY);
+
+
+            ImageLoaderSharp imageLoader = new ImageLoaderSharp(this,img,R.drawable.heigh01);
+
+            if(i==0)
+                img.setBackgroundResource(R.drawable.heigh01);
+            if(i==1)
+                img.setBackgroundResource(R.drawable.heigh02);
+            if(i==2)
+                img.setBackgroundResource(R.drawable.heigh03);
+            if(i==3)
+                img.setBackgroundResource(R.drawable.heigh04);
+            listtemp.add(img);
+        }
+
+        ViewPageAdapter viewadapter = new ViewPageAdapter(listtemp);
+
+        listview.addHeaderView(view);
+        listview.addFooterView(view);
+        listview.setAdapter(new ArrayAdapter<String>(this,R.layout.list_item2,data));
+        viewpager.setAdapter(viewadapter);
+//        listview.addHeaderView(LayoutInflater.from(this).inflate(R.layout.headlayout,null));
+
+//		setListViewHeightBasedOnChildren(listview);
     }
 
     @Override
@@ -186,32 +236,9 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        switchToActivity2=(Button)findViewById(R.id.switchToActivity2);
-        switchToActivity2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Intent intent = new Intent();
-//                intent.setClass(MainActivity.this, TestActivity2.class);
-//                intent.setAction(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-//                startActivity(intent);
-
-                try{
-                    File appPath=new File(getApplicationContext().getFilesDir().getAbsolutePath()+"/cache.txt");
-
-                    ObjectInputStream in = new ObjectInputStream(new FileInputStream(appPath));
-                    Person newPerson = (Person)in.readObject();
-                    in.close();
 
 
-                    mlog.d("newPerson id:"+newPerson.getId());
-                    mlog.d("newPerson name:"+newPerson.getName());
-                    mlog.d("newPerson age:"+newPerson.getAge());
 
-                }catch(Exception e){
-                    e.printStackTrace();
-                }
-            }
-        });
 
 
 

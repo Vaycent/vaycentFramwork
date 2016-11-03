@@ -1,6 +1,7 @@
 package vaycent.vaycentproject;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -11,21 +12,25 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
+
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.download.ImageDownloader;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import Helper.NineGridViewAdapter;
 import Helper.ViewPageAdapter;
-import ImageLoader.ImageLoaderSharp;
 import vaycent.magicLog.mlog;
 import vaycent.vaycentproject.DemoPackage.AnimationDemo;
 import vaycent.vaycentproject.DemoPackage.BroadcastReceiverPackage.BroadcastReceiverDemo;
@@ -44,10 +49,7 @@ public class MainActivity extends AppCompatActivity
 
     private ApplicationContext appContext;
 
-    ListView listview = null;
-
-    private final String data[] = { "111","222","111","222","111","222","111","222","111","222","111","222",
-            "111","222","111","222","111","222","111","222","111","222","111","222","111","222","111","222"};
+    private ListView listview;
 
 
     @Override
@@ -57,84 +59,47 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         appContext = ((ApplicationContext) this.getApplication());
-        initLayout();
 
-        int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
-        Log.d("TAG", "Max memory is " + maxMemory + "KB");
+        InitLayout();
 
-        initHeadView();
+        InitListView();
+
+        AddHeadView();
+
+
+
     }
 
-    private void initHeadView()
-    {
-        listview = (ListView)this.findViewById(R.id.lv_fir);
-
-        View view = LayoutInflater.from(this).inflate(R.layout.head_viewpager, null);
-        ViewPager viewpager = (ViewPager)view.findViewById(R.id.headviewpager);
-        List<ImageView> listtemp = new ArrayList<ImageView>();
-        for(int i = 0;i<4;i++)
-        {
-            ImageView img = new ImageView(this);
-            img.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,100));
-            img.setScaleType(ImageView.ScaleType.FIT_XY);
-
-
-            ImageLoaderSharp imageLoader = new ImageLoaderSharp(this,img,R.drawable.heigh01);
-
-            if(i==0)
-                img.setBackgroundResource(R.drawable.heigh01);
-            if(i==1)
-                img.setBackgroundResource(R.drawable.heigh02);
-            if(i==2)
-                img.setBackgroundResource(R.drawable.heigh03);
-            if(i==3)
-                img.setBackgroundResource(R.drawable.heigh04);
-            listtemp.add(img);
-        }
-
-        ViewPageAdapter viewadapter = new ViewPageAdapter(listtemp);
-
-        listview.addHeaderView(view);
-        listview.addFooterView(view);
-        listview.setAdapter(new ArrayAdapter<String>(this,R.layout.list_item2,data));
-        viewpager.setAdapter(viewadapter);
-//        listview.addHeaderView(LayoutInflater.from(this).inflate(R.layout.headlayout,null));
-
-//		setListViewHeightBasedOnChildren(listview);
-    }
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
         mlog.e("onStart");
     }
 
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
         mlog.e("onResume");
     }
 
     @Override
-    protected void onPause(){
+    protected void onPause() {
         super.onPause();
         mlog.e("onPause");
     }
 
     @Override
-    protected void onStop(){
+    protected void onStop() {
         super.onStop();
         mlog.e("onStop");
     }
 
     @Override
-    protected void onDestroy(){
+    protected void onDestroy() {
         super.onDestroy();
         mlog.e("onDestroy");
     }
-
-
-
 
 
     @Override
@@ -178,13 +143,13 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.ormlitesharp_demo) {
             Intent intent = new Intent(this, OrmliteSharpDemo.class);
             startActivity(intent);
-        }else if (id == R.id.volleysharp_demo) {
+        } else if (id == R.id.volleysharp_demo) {
             Intent intent = new Intent(this, VolleysharpDemo.class);
             startActivity(intent);
         } else if (id == R.id.recycleview_demo) {
             Intent intent = new Intent(this, RecycleViewDemo.class);
             startActivity(intent);
-        }else if (id == R.id.textview_demo) {
+        } else if (id == R.id.textview_demo) {
             Intent intent = new Intent(this, TextViewDemo.class);
             startActivity(intent);
         } else if (id == R.id.notification_demo) {
@@ -202,7 +167,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.fragment_demo) {
             Intent intent = new Intent(this, FragmentDemo.class);
             startActivity(intent);
-        }else if (id == R.id.ipc_demo) {
+        } else if (id == R.id.ipc_demo) {
             Intent intent = new Intent(this, IPCDemo.class);
             startActivity(intent);
         }
@@ -212,7 +177,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void initLayout(){
+    private void InitLayout() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -235,19 +200,87 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
+        listview = (ListView) this.findViewById(R.id.main_listview);
 
-
-
-
-
-
-
-//        mainWebView=(WebView) findViewById(R.id.mainWebView);
-//        mainWebView.getSettings().setJavaScriptEnabled(true);
-//        mainWebView.loadUrl("https://wwwtest.smartone.com/SmarToneCARE/page_index.html?sl=co&add=no#!MainPage_m0");
-//        mainWebView.loadUrl("javascript:apk2page('PutDeviceID','" + 123456 + "')");
     }
 
+    private void InitListView(){
+        final String data[] = {"111", "222", "111", "222", "111", "222", "111", "222", "111", "222", "111", "222",
+                "111", "222", "111", "222", "111", "222", "111", "222", "111", "222", "111", "222", "111", "222", "111", "222"};
+
+        listview.setAdapter(new ArrayAdapter<String>(this, R.layout.list_item2, data));
+
+    }
+
+    private void AddHeadView() {
+
+        View view = LayoutInflater.from(this).inflate(R.layout.head_viewpager, null);
+        ViewPager topViewPager = (ViewPager) view.findViewById(R.id.top_view_pager);
+        GridView nineGridView = (GridView) view.findViewById(R.id.nine_grid_view);
+
+        InitTopViewPage(topViewPager);
+        InitNineGridView(nineGridView);
+
+        listview.addHeaderView(view);
+    }
+
+    private void InitTopViewPage(ViewPager topViewPager){
+        final int[] topViewPagerSet = {R.drawable.heigh01, R.drawable.heigh02,
+                R.drawable.heigh03, R.drawable.heigh04, };
+
+        List<ImageView> viewPageList = new ArrayList<ImageView>();
+        for (int i = 0; i < topViewPagerSet.length; i++) {
+            ImageView img = new ImageView(this);
+            img.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 100));
+            img.setScaleType(ImageView.ScaleType.FIT_XY);
+
+            String drawableUrl = ImageDownloader.Scheme.DRAWABLE.wrap(topViewPagerSet[i] + "");
+            ImageLoaderSetPic(drawableUrl, img);
+            viewPageList.add(img);
+        }
+
+        ViewPageAdapter viewadapter = new ViewPageAdapter(viewPageList);
+        topViewPager.setAdapter(viewadapter);
+    }
+
+    private void InitNineGridView( GridView nineGridView ) {
+        final int[] nineGridPicSet = {R.drawable.heigh01, R.drawable.heigh02,
+                R.drawable.heigh03, R.drawable.heigh04, R.drawable.heigh05,
+                R.drawable.heigh06, R.drawable.heigh07, R.drawable.heigh08,
+                R.drawable.heigh09};
+
+        NineGridViewAdapter myAdapter = new NineGridViewAdapter(this,nineGridPicSet);
+        nineGridView.setAdapter(myAdapter);
+        myAdapter.notifyDataSetChanged();
+    }
+
+    private void ImageLoaderSetPic(String imageUrl, ImageView mImageView) {
+        //This picture come from url
+//        imageUrl = "http://lh6.googleusercontent.com/-55osAWw3x0Q/URquUtcFr5I/AAAAAAAAAbs/rWlj1RUKrYI/s1024/A%252520Photographer.jpg";
+
+        //This picture come from Content provider
+//        imageUrl = "content://media/external/audio/albumart/13";
+
+        //This picture come from assets
+//        imageUrl = ImageDownloader.Scheme.ASSETS.wrap("mytest.png");
+
+        //This picture come from resource
+//         imageUrl = ImageDownloader.Scheme.DRAWABLE.wrap(R.drawable.heigh01+"");
+        //This picture come from file
+//         imageUrl = ImageDownloader.Scheme.FILE.wrap(Environment.getExternalStorageDirectory().getPath()+"/heigh11.jpg");
+
+
+        DisplayImageOptions options = new DisplayImageOptions.Builder()
+                .showImageOnLoading(R.drawable.ic_replay_black_24dp)
+                .showImageOnFail(R.drawable.ic_android_black_24dp)
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .bitmapConfig(Bitmap.Config.RGB_565)
+                .build();
+
+        ImageLoader.getInstance().displayImage(imageUrl, mImageView, options);
+
+    }
 
 
 }

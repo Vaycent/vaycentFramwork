@@ -2,11 +2,44 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:orientation="vertical" >
-    
-<android.support.v4.view.ViewPager
-    android:id="@+id/headviewpager"
-    android:layout_width="match_parent"
-    android:layout_height="100dp"
-    />
+    android:orientation="vertical">
+
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/top_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="1234567890abxdefghijklmnopqrstuvwxyz"/>
+
+
+    <GridView
+        android:id="@+id/nine_grid_view"
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:layout_marginBottom="15dp"
+        />
+
+
+    <!--<ImageView-->
+        <!--android:id="@+id/i10"-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="300dp"-->
+        <!--android:layout_gravity="center" />-->
+
 </LinearLayout>

@@ -3,6 +3,8 @@ package vaycent.vaycentproject;
 import android.app.Application;
 
 import com.facebook.stetho.Stetho;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import vaycent.volleysharp.VolleySharp;
 
@@ -20,12 +22,22 @@ public class ApplicationContext extends Application {
         Stetho.initializeWithDefaults(this);
 
         initVolleySharp();
+
+        initImageLoader();
     }
 
-    private void initVolleySharp(){
+    private void initVolleySharp() {
         volleySharp = new VolleySharp(this);
     }
 
+    private void initImageLoader(){
+        ImageLoaderConfiguration configuration = ImageLoaderConfiguration
+                .createDefault(this);
+//        ImageLoaderConfiguration configuration = new ImageLoaderConfiguration.Builder(this)
+//                .writeDebugLogs()
+//                .build();
+        ImageLoader.getInstance().init(configuration);
+    }
 
 
 }

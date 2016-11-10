@@ -1,6 +1,9 @@
 package vaycent.vaycentproject;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -18,7 +21,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -29,12 +31,14 @@ import com.nostra13.universalimageloader.core.download.ImageDownloader;
 import java.util.ArrayList;
 import java.util.List;
 
+import Helper.MainGrid;
 import Helper.NineGridViewAdapter;
 import Helper.ViewPageAdapter;
 import vaycent.magicLog.mlog;
 import vaycent.vaycentproject.DemoPackage.AnimationDemo;
 import vaycent.vaycentproject.DemoPackage.BroadcastReceiverPackage.BroadcastReceiverDemo;
 import vaycent.vaycentproject.DemoPackage.ContentProviderPackage.ContentProviderDemo;
+import vaycent.vaycentproject.DemoPackage.EventPackage.EventDemo;
 import vaycent.vaycentproject.DemoPackage.FragmentPackage.FragmentDemo;
 import vaycent.vaycentproject.DemoPackage.IPC_Package.IPCDemo;
 import vaycent.vaycentproject.DemoPackage.NotificationPackage.NotificationDemo;
@@ -65,6 +69,17 @@ public class MainActivity extends AppCompatActivity
         InitListView();
 
         AddHeadView();
+
+    }
+
+    private String getChannel(Context context) {
+        try {
+            PackageManager pm = context.getPackageManager();
+            ApplicationInfo appInfo = pm.getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
+            return appInfo.metaData.getString("CHANNEL");
+        } catch (PackageManager.NameNotFoundException ignored) {
+        }
+        return "";
 
 
 
@@ -170,6 +185,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.ipc_demo) {
             Intent intent = new Intent(this, IPCDemo.class);
             startActivity(intent);
+        } else if (id == R.id.event_demo) {
+            Intent intent = new Intent(this, EventDemo.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -185,7 +203,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, getChannel(MainActivity.this), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -216,7 +234,7 @@ public class MainActivity extends AppCompatActivity
 
         View view = LayoutInflater.from(this).inflate(R.layout.head_viewpager, null);
         ViewPager topViewPager = (ViewPager) view.findViewById(R.id.top_view_pager);
-        GridView nineGridView = (GridView) view.findViewById(R.id.nine_grid_view);
+        MainGrid nineGridView = (MainGrid) view.findViewById(R.id.nine_grid_view);
 
         InitTopViewPage(topViewPager);
         InitNineGridView(nineGridView);
@@ -243,7 +261,7 @@ public class MainActivity extends AppCompatActivity
         topViewPager.setAdapter(viewadapter);
     }
 
-    private void InitNineGridView( GridView nineGridView ) {
+    private void InitNineGridView( MainGrid nineGridView ) {
         final int[] nineGridPicSet = {R.drawable.heigh01, R.drawable.heigh02,
                 R.drawable.heigh03, R.drawable.heigh04, R.drawable.heigh05,
                 R.drawable.heigh06, R.drawable.heigh07, R.drawable.heigh08,
@@ -251,7 +269,6 @@ public class MainActivity extends AppCompatActivity
 
         NineGridViewAdapter myAdapter = new NineGridViewAdapter(this,nineGridPicSet);
         nineGridView.setAdapter(myAdapter);
-        myAdapter.notifyDataSetChanged();
     }
 
     private void ImageLoaderSetPic(String imageUrl, ImageView mImageView) {
@@ -279,7 +296,6 @@ public class MainActivity extends AppCompatActivity
                 .build();
 
         ImageLoader.getInstance().displayImage(imageUrl, mImageView, options);
-
     }
 
 

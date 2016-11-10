@@ -4,6 +4,21 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.3"
 
+    productFlavors {
+        xiaomi {
+            manifestPlaceholders = [CHANNEL_VALUE: "xiaomi"]
+        }
+        _360 {
+            manifestPlaceholders = [CHANNEL_VALUE: "_360"]
+        }
+        baidu {
+            manifestPlaceholders = [CHANNEL_VALUE: "baidu"]
+        }
+        wandoujia {
+            manifestPlaceholders = [CHANNEL_VALUE: "wandoujia"]
+        }
+    }
+
     defaultConfig {
         applicationId "vaycent.vaycentproject"
         minSdkVersion 16
@@ -16,6 +31,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    lintOptions {
+        abortOnError false
     }
 }
 

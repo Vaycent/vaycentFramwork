@@ -28,8 +28,9 @@ public class IPCDemo extends AppCompatActivity{
 
         InitLayout();
 
-        Intent service = new Intent(IPCDemo.this, TCPServerService.class);
-        startService(service);
+        Intent tcpServer = new Intent(this, TCPServerService.class);
+        startService(tcpServer);
+
     }
 
     private void InitLayout(){

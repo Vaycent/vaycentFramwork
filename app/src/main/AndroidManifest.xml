@@ -66,7 +66,8 @@
             android:label="RecycleView Demo" />
         <activity
             android:name=".DemoPackage.IPC_Package.IPCDemo"
-            android:label="IPC Demo" />
+            android:label="IPC Demo"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".DemoPackage.TestPackage.TestActivity2"
             android:label="TestActivity2" />
@@ -92,6 +93,8 @@
                 <action android:name="vaycent.vaycentproject.DemoPackage.IPC_Package.IMyService" />
             </intent-filter>
         </service>
+
+        <service android:name=".DemoPackage.IPC_Package.TCPServerService"/>
 
         <!-- ***************** Broadcast Receiver ***************** -->
         <receiver android:name=".DemoPackage.BroadcastReceiverPackage.GlobalBroadcastReceiverDemo">

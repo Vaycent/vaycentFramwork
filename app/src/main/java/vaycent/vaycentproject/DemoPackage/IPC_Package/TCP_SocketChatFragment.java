@@ -7,6 +7,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,9 +29,12 @@ import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import vaycent.magicLog.mlog;
 import vaycent.vaycentproject.R;
 
-public class TCP_SocketChatFragment extends Fragment  implements View.OnClickListener{
+
+
+public class TCP_SocketChatFragment extends Fragment{
 
     private static final int MESSAGE_RECEIVE_NEW_MSG=1;
     private static final int MESSAGE_SOCKET_CONNECTED=2;
@@ -86,13 +90,26 @@ public class TCP_SocketChatFragment extends Fragment  implements View.OnClickLis
         mMessageTextView=(TextView)view.findViewById(R.id.msg_container);
         mSendButton=(Button)view.findViewById(R.id.send);
         mMessageEditText=(EditText)view.findViewById(R.id.msg);
+
+        mSendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String msg = mMessageEditText.getText().toString();
+                if(!TextUtils.isEmpty(msg)&&mPrintWriter!=null){
+                    mPrintWriter.println(msg);
+                    mMessageEditText.setText("");
+                    String time = formatDateTime(System.currentTimeMillis());
+                    final String showedMsg = "self "+time+":"+msg+"\n";
+                    mMessageTextView.setText(mMessageTextView.getText() + showedMsg);
+                }
+
+            }
+        });
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
-
-
 
 
         new Thread(){
@@ -147,19 +164,6 @@ public class TCP_SocketChatFragment extends Fragment  implements View.OnClickLis
         super.onDetach();
     }
 
-    @Override
-    public void onClick(View v) {
-        if(v==mSendButton){
-            final String msg = mMessageEditText.getText().toString();
-            if(msg!=null&&mPrintWriter!=null){
-                mPrintWriter.println(msg);
-                mMessageEditText.setText("");
-                String time = formatDateTime(System.currentTimeMillis());
-                final String showedMsg = "self "+time+":"+msg+"\n";
-                mMessageTextView.setText(mMessageTextView.getText() + showedMsg);
-            }
-        }
-    }
 
     @SuppressLint("SimpleDataFormat")
     private String formatDateTime(long time){
@@ -191,7 +195,14 @@ public class TCP_SocketChatFragment extends Fragment  implements View.OnClickLis
                 Reader toClientReader = new BufferedReader(toClientInputStreamReader);
                 BufferedReader br = new BufferedReader(toClientReader);
 
+                String testMsg = br.readLine();
+                mlog.d("testMsg:"+testMsg);
+
+
+
+
                 IPCDemo ipcDemo = (IPCDemo)getActivity();
+                mlog.d("ipcDemo.isFinishing():"+ipcDemo.isFinishing());
                 while (!ipcDemo.isFinishing()){
                     String msg = br.readLine();
                     System.out.println("receive:"+msg);

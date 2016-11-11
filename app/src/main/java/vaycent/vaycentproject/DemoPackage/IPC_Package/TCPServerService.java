@@ -19,6 +19,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Random;
 
+import vaycent.magicLog.mlog;
+
 /**
  * Created by Vaycent on 2016/11/1.
  */
@@ -49,6 +51,7 @@ public class TCPServerService extends Service {
     @Override
     public void onDestroy(){
         mISServiceDestroyed=true;
+        mlog.e("TCPServerService onDestroy");
         super.onDestroy();
     }
 
@@ -62,6 +65,7 @@ public class TCPServerService extends Service {
                 e.printStackTrace();
                 return;
             }
+            System.out.println("TcpServer has started and listen to 8688 port");
 
             while (!mISServiceDestroyed){
                 try {
@@ -97,6 +101,7 @@ public class TCPServerService extends Service {
         Writer toClientWriter = new BufferedWriter(toClientOutputStreamWriter);
         PrintWriter out = new PrintWriter(toClientWriter);
         out.print("Welcome to this chat!");
+        System.out.println("1234567890");
 
         while(!mISServiceDestroyed){
             String str = in.readLine();

@@ -5,6 +5,9 @@ android {
     buildToolsVersion "24.0.3"
 
     productFlavors {
+        development {
+            manifestPlaceholders = [CHANNEL_VALUE: "development"]
+        }
         xiaomi {
             manifestPlaceholders = [CHANNEL_VALUE: "xiaomi"]
         }

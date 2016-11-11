@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    >
 
-    <android.support.v7.widget.RecyclerView
+
+
+    <include
+        android:id="@+id/recycleview_demo_bottombar"
+        layout="@layout/recycle_bottombar"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true" />
+
+
+    <FrameLayout
+        android:id="@+id/recycleview_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/id_recyclerview"
-        android:divider="#ffff0000"
-        android:dividerHeight="10dp"/>
+        android:layout_above="@+id/recycleview_demo_bottombar">
+
+        <fragment
+            android:name="vaycent.vaycentproject.DemoPackage.RecycleViewPackage.ListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </FrameLayout>
 
 
-</LinearLayout>
+
+
+</RelativeLayout>

@@ -59,6 +59,10 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="Event Demo" />
 
+            <item
+                android:id="@+id/view_demo"
+                android:icon="@drawable/ic_menu_send"
+                android:title="View Demo" />
 
 
         </menu>

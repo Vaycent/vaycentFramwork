@@ -45,6 +45,7 @@ import vaycent.vaycentproject.DemoPackage.NotificationPackage.NotificationDemo;
 import vaycent.vaycentproject.DemoPackage.OrmliteSharpDemo;
 import vaycent.vaycentproject.DemoPackage.RecycleViewPackage.RecycleViewDemo;
 import vaycent.vaycentproject.DemoPackage.TextViewDemo;
+import vaycent.vaycentproject.DemoPackage.ViewDemo;
 import vaycent.vaycentproject.DemoPackage.VolleysharpDemo;
 
 
@@ -187,6 +188,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         } else if (id == R.id.event_demo) {
             Intent intent = new Intent(this, EventDemo.class);
+            startActivity(intent);
+        }else if (id == R.id.view_demo) {
+            Intent intent = new Intent(this, ViewDemo.class);
             startActivity(intent);
         }
 

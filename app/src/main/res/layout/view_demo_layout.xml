@@ -4,17 +4,8 @@
     android:layout_height="match_parent">
 
 
-
-    <ImageView
-        android:id="@+id/test_img"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="70dp"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="#f12"/>
-
-
     <LinearLayout
+        android:id="@+id/viewdemo_bottombar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
@@ -37,6 +28,25 @@
             android:textAllCaps="false"/>
 
     </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_above="@+id/viewdemo_bottombar"
+        android:id="@+id/img_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/test_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#f12"/>
+    </RelativeLayout>
+
+
+
+
+
 
 
 </RelativeLayout>

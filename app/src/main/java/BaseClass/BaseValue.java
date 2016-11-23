@@ -30,8 +30,7 @@ public class BaseValue {
      ＊************************************************** */
 
     public final static int PRINT_LOG_LEVEL=-10;
-
-    public final static File LOG_FILE_PATH=new File(Environment.getExternalStorageDirectory().getPath() + "/Log");
+    public final static File LOG_FILE_PATH=new File(Environment.getExternalStorageDirectory().getPath() + "/vaycentLog");
     public final static String LOGFILE_FILTER_PRIORITY="v"; //v,d,i,w,e,s
     public final static String LOGFILE_FILTER_TAG=""; // ""for do not filter the tag
 

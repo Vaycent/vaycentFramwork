@@ -86,6 +86,9 @@
 
         <activity android:name=".DemoPackage.ViewDemo"
             android:label="View Demo"/>
+        
+        <activity android:name=".DemoPackage.SmsPackage.SmsDemo"
+            android:label="SMS Demo"/>
 
         <!-- ***************** Service ***************** -->
         <service android:name=".DemoPackage.NotificationPackage.NoKillService" />

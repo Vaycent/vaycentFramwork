@@ -6,6 +6,8 @@ import com.facebook.stetho.Stetho;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
+import BaseClass.BaseValue;
+import vaycent.magicLog.mlog;
 import vaycent.volleysharp.VolleySharp;
 
 /**
@@ -21,17 +23,19 @@ public class ApplicationContext extends Application {
         super.onCreate();
         Stetho.initializeWithDefaults(this);
 
-        initVolleySharp();
+        InitVolleySharp();
 
-        initImageLoader();
+        InitImageLoader();
+
+        InitMagicLog();
 
     }
 
-    private void initVolleySharp() {
+    private void InitVolleySharp() {
         volleySharp = new VolleySharp(this);
     }
 
-    private void initImageLoader(){
+    private void InitImageLoader(){
         ImageLoaderConfiguration configuration = ImageLoaderConfiguration
                 .createDefault(this);
 //        ImageLoaderConfiguration configuration = new ImageLoaderConfiguration.Builder(this)
@@ -40,5 +44,7 @@ public class ApplicationContext extends Application {
         ImageLoader.getInstance().init(configuration);
     }
 
-
+    private void InitMagicLog(){
+        mlog.setLogFilePath(BaseValue.LOG_FILE_PATH);
+    }
 }

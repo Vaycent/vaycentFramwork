@@ -44,6 +44,7 @@ import vaycent.vaycentproject.DemoPackage.IPC_Package.IPCDemo;
 import vaycent.vaycentproject.DemoPackage.NotificationPackage.NotificationDemo;
 import vaycent.vaycentproject.DemoPackage.OrmliteSharpDemo;
 import vaycent.vaycentproject.DemoPackage.RecycleViewPackage.RecycleViewDemo;
+import vaycent.vaycentproject.DemoPackage.SmsPackage.SmsDemo;
 import vaycent.vaycentproject.DemoPackage.TextViewDemo;
 import vaycent.vaycentproject.DemoPackage.ViewDemo;
 import vaycent.vaycentproject.DemoPackage.VolleysharpDemo;
@@ -70,6 +71,8 @@ public class MainActivity extends AppCompatActivity
         InitListView();
 
         AddHeadView();
+
+        mlog.StartWriteLog(this);
 
     }
 
@@ -115,6 +118,8 @@ public class MainActivity extends AppCompatActivity
     protected void onDestroy() {
         super.onDestroy();
         mlog.e("onDestroy");
+
+        mlog.StopWriteLog(this);
     }
 
 
@@ -191,6 +196,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }else if (id == R.id.view_demo) {
             Intent intent = new Intent(this, ViewDemo.class);
+            startActivity(intent);
+        }else if (id == R.id.sms_demo) {
+            Intent intent = new Intent(this, SmsDemo.class);
             startActivity(intent);
         }
 

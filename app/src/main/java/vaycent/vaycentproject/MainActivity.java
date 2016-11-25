@@ -46,7 +46,7 @@ import vaycent.vaycentproject.DemoPackage.OrmliteSharpDemo;
 import vaycent.vaycentproject.DemoPackage.RecycleViewPackage.RecycleViewDemo;
 import vaycent.vaycentproject.DemoPackage.SmsPackage.SmsDemo;
 import vaycent.vaycentproject.DemoPackage.TextViewDemo;
-import vaycent.vaycentproject.DemoPackage.ViewDemo;
+import vaycent.vaycentproject.DemoPackage.ViewPackage.ViewDemo;
 import vaycent.vaycentproject.DemoPackage.VolleysharpDemo;
 
 

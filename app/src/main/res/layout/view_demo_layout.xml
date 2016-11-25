@@ -7,9 +7,9 @@
     <LinearLayout
         android:id="@+id/viewdemo_bottombar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true">
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/print_scale_btn"
@@ -17,7 +17,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Print Scale"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
+
 
         <Button
             android:id="@+id/scroll_to_btn"
@@ -25,28 +26,52 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Scroll To"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/scroll_by_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Scroll By"
+            android:textAllCaps="false" />
+
+
+
+        <Button
+            android:id="@+id/to_objectanimation_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Object Animation"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/to_margin_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Margin Layout"
+            android:textAllCaps="false" />
+
+
+
 
     </LinearLayout>
 
 
     <RelativeLayout
-        android:layout_above="@+id/viewdemo_bottombar"
-        android:id="@+id/img_layout"
+        android:id="@+id/fragment_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/viewdemo_bottombar">
 
-        <ImageView
-            android:id="@+id/test_img"
+        <fragment
+            android:name="vaycent.vaycentproject.DemoPackage.ViewPackage.ScrollFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#f12"/>
+            android:layout_height="match_parent" />
+
     </RelativeLayout>
-
-
-
-
-
 
 
 </RelativeLayout>

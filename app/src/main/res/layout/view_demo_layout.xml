@@ -7,18 +7,9 @@
     <LinearLayout
         android:id="@+id/viewdemo_bottombar"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/print_scale_btn"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Print Scale"
-            android:textAllCaps="false" />
-
 
         <Button
             android:id="@+id/scroll_to_btn"
@@ -59,19 +50,46 @@
 
     </LinearLayout>
 
-
-    <RelativeLayout
-        android:id="@+id/fragment_layout"
+    <LinearLayout
+        android:id="@+id/viewdemo_bottombar_sec"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/viewdemo_bottombar">
+        android:layout_height="50dp"
+        android:layout_above="@+id/viewdemo_bottombar"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/print_scale_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Print Scale"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/to_actionmove_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Action Move"
+            android:textAllCaps="false" />
+
+
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:id="@+id/fragment_layout"
+        android:layout_above="@+id/viewdemo_bottombar_sec"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <fragment
             android:name="vaycent.vaycentproject.DemoPackage.ViewPackage.ScrollFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-    </RelativeLayout>
+    </FrameLayout>
 
 
 </RelativeLayout>

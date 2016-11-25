@@ -1,13 +1,15 @@
 package vaycent.vaycentproject.DemoPackage.ViewPackage;
 
 import android.animation.ObjectAnimator;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.RelativeLayout;
+import android.widget.FrameLayout;
 import android.widget.Scroller;
 
 import vaycent.magicLog.mlog;
@@ -20,8 +22,9 @@ import vaycent.vaycentproject.R;
 public class ViewDemo extends AppCompatActivity implements View.OnClickListener{
 
     private Button printScaleBtn,srollToBtn,scrollByBtn;
-    private Button toObjectAnimationFragment,toMarginFragment;
-    private RelativeLayout fragmentLayout;
+    private Button toObjectAnimation,toMargin;
+    private Button toActionMoveFragment;
+    private FrameLayout fragmentLayout;
     private float density;
 
     @Override
@@ -34,6 +37,14 @@ public class ViewDemo extends AppCompatActivity implements View.OnClickListener{
         GetScreenSize();
     }
 
+    private void GetScreenSize(){
+        DisplayMetrics dm = this.getApplication().getResources().getDisplayMetrics();
+        density = dm.density;
+        int widthPixels = dm.widthPixels;
+        int heightPixels = dm.heightPixels;
+        mlog.d("density:"+density+",widthPixels:"+widthPixels+",heightPixels:"+heightPixels);
+    }
+
     private void InitLayout(){
         srollToBtn=(Button)findViewById(R.id.scroll_to_btn);
         scrollByBtn=(Button)findViewById(R.id.scroll_by_btn);
@@ -42,12 +53,15 @@ public class ViewDemo extends AppCompatActivity implements View.OnClickListener{
         scrollByBtn.setOnClickListener(this);
         printScaleBtn.setOnClickListener(this);
 
-        toObjectAnimationFragment = (Button)findViewById(R.id.to_objectanimation_fragment);
-        toMarginFragment = (Button)findViewById(R.id.to_margin_fragment);
-        toObjectAnimationFragment.setOnClickListener(this);
-        toMarginFragment.setOnClickListener(this);
+        toObjectAnimation = (Button)findViewById(R.id.to_objectanimation_fragment);
+        toMargin = (Button)findViewById(R.id.to_margin_fragment);
+        toObjectAnimation.setOnClickListener(this);
+        toMargin.setOnClickListener(this);
 
-        fragmentLayout = (RelativeLayout)findViewById(R.id.fragment_layout);
+        toActionMoveFragment = (Button)findViewById(R.id.to_actionmove_fragment);
+        toActionMoveFragment.setOnClickListener(this);
+
+        fragmentLayout = (FrameLayout)findViewById(R.id.fragment_layout);
     }
 
     @Override
@@ -70,25 +84,16 @@ public class ViewDemo extends AppCompatActivity implements View.OnClickListener{
                 params.leftMargin+=300;
                 fragmentLayout.setLayoutParams(params);
                 break;
+            case R.id.to_actionmove_fragment:
+                ActionMoveFragment fragment = new ActionMoveFragment();
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.fragment_layout,fragment);
+                ft.commit();
+                break;
             default:
                 break;
         }
-    }
-
-    public void ScrollToFunction(){
-        fragmentLayout.scrollTo(20,100);
-    }
-
-    public void ScrollByFunction(){
-        fragmentLayout.scrollBy(20,100);
-    }
-
-    private void GetScreenSize(){
-        DisplayMetrics dm = this.getApplication().getResources().getDisplayMetrics();
-        density = dm.density;
-        int widthPixels = dm.widthPixels;
-        int heightPixels = dm.heightPixels;
-        mlog.d("density:"+density+",widthPixels:"+widthPixels+",heightPixels:"+heightPixels);
     }
 
     public void PrintScale(){
@@ -107,6 +112,18 @@ public class ViewDemo extends AppCompatActivity implements View.OnClickListener{
         mlog.d("X:"+X+",Y:"+Y+",translationX:"+translationX+",translationY:"+translationY);
     }
 
+    public void ScrollToFunction(){
+        fragmentLayout.scrollTo(20,100);
+    }
+
+    public void ScrollByFunction(){
+        fragmentLayout.scrollBy(20,100);
+    }
+
+    private void ObjectAnimationTest(){
+        ObjectAnimator.ofFloat(fragmentLayout,"translationX",0,1000,500,1000,0).setDuration(4000).start();
+    }
+
     private void smoothScrollTo(int destX, int destY){
         Scroller mScroller = new Scroller(this);
 
@@ -115,8 +132,4 @@ public class ViewDemo extends AppCompatActivity implements View.OnClickListener{
         mScroller.startScroll(scrollX,0,delta,0,2000);
     }
 
-    private void ObjectAnimationTest(){
-        smoothScrollTo(1000,1000);
-        ObjectAnimator.ofFloat(fragmentLayout,"translationX",0,1000,500,1000,0).setDuration(4000).start();
-    }
 }

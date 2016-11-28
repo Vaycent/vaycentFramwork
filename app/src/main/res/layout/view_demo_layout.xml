@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <LinearLayout
         android:id="@+id/viewdemo_bottombar"
         android:layout_width="match_parent"
@@ -66,17 +65,24 @@
             android:textAllCaps="false" />
 
         <Button
-            android:id="@+id/to_actionmove_fragment"
+            android:id="@+id/to_actionmove_activity"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Action Move"
             android:textAllCaps="false" />
 
+        <Button
+            android:id="@+id/to_scrollerview_activity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Scroller View"
+            android:textAllCaps="false" />
+
 
 
     </LinearLayout>
-
 
     <FrameLayout
         android:id="@+id/fragment_layout"
@@ -90,6 +96,5 @@
             android:layout_height="match_parent" />
 
     </FrameLayout>
-
 
 </RelativeLayout>

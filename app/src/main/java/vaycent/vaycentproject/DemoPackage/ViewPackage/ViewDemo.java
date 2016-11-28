@@ -1,8 +1,7 @@
 package vaycent.vaycentproject.DemoPackage.ViewPackage;
 
 import android.animation.ObjectAnimator;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.Scroller;
 
 import vaycent.magicLog.mlog;
 import vaycent.vaycentproject.R;
@@ -23,7 +21,7 @@ public class ViewDemo extends AppCompatActivity implements View.OnClickListener{
 
     private Button printScaleBtn,srollToBtn,scrollByBtn;
     private Button toObjectAnimation,toMargin;
-    private Button toActionMoveFragment;
+    private Button toActionMoveActivity,toScrollerViewActivity;
     private FrameLayout fragmentLayout;
     private float density;
 
@@ -58,8 +56,10 @@ public class ViewDemo extends AppCompatActivity implements View.OnClickListener{
         toObjectAnimation.setOnClickListener(this);
         toMargin.setOnClickListener(this);
 
-        toActionMoveFragment = (Button)findViewById(R.id.to_actionmove_fragment);
-        toActionMoveFragment.setOnClickListener(this);
+        toActionMoveActivity = (Button)findViewById(R.id.to_actionmove_activity);
+        toScrollerViewActivity = (Button)findViewById(R.id.to_scrollerview_activity);
+        toActionMoveActivity.setOnClickListener(this);
+        toScrollerViewActivity.setOnClickListener(this);
 
         fragmentLayout = (FrameLayout)findViewById(R.id.fragment_layout);
     }
@@ -84,12 +84,15 @@ public class ViewDemo extends AppCompatActivity implements View.OnClickListener{
                 params.leftMargin+=300;
                 fragmentLayout.setLayoutParams(params);
                 break;
-            case R.id.to_actionmove_fragment:
-                ActionMoveFragment fragment = new ActionMoveFragment();
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.fragment_layout,fragment);
-                ft.commit();
+            case R.id.to_actionmove_activity:
+                Intent intentActionMove = new Intent();
+                intentActionMove.setClass(ViewDemo.this,ActionMoveActivity.class);
+                startActivity(intentActionMove);
+                break;
+            case R.id.to_scrollerview_activity:
+                Intent intentScrollerView = new Intent();
+                intentScrollerView.setClass(ViewDemo.this,ScrollerViewActivity.class);
+                startActivity(intentScrollerView);
                 break;
             default:
                 break;
@@ -124,12 +127,9 @@ public class ViewDemo extends AppCompatActivity implements View.OnClickListener{
         ObjectAnimator.ofFloat(fragmentLayout,"translationX",0,1000,500,1000,0).setDuration(4000).start();
     }
 
-    private void smoothScrollTo(int destX, int destY){
-        Scroller mScroller = new Scroller(this);
 
-        int scrollX = fragmentLayout.getScrollX();
-        int delta = destX - scrollX;
-        mScroller.startScroll(scrollX,0,delta,0,2000);
-    }
+
+
+
 
 }

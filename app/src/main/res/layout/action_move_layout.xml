@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-   >
+    android:layout_height="match_parent">
 
-    <ImageView
+    <vaycent.vaycentproject.DemoPackage.ViewPackage.MoveView
         android:id="@+id/img_view"
         android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="#f12"/>
+        android:layout_height="100dp" />
 
 </FrameLayout>

@@ -101,6 +101,8 @@
         <activity android:name=".DemoPackage.ViewPackage.ScrollerViewActivity"
             android:label="Scroller View Activity"/>
 
+        <activity android:name=".DemoPackage.MessagePackage.AndroidMessageDemo"
+            android:label="Android Message Activity"/>
 
 
         <!-- ***************** Service ***************** -->

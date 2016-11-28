@@ -69,6 +69,11 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="SMS Demo" />
 
+            <item
+                android:id="@+id/androidmessage_demo"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Android Message Demo" />
+
 
         </menu>
     </item>

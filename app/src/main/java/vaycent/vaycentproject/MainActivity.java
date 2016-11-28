@@ -41,6 +41,7 @@ import vaycent.vaycentproject.DemoPackage.ContentProviderPackage.ContentProvider
 import vaycent.vaycentproject.DemoPackage.EventPackage.EventDemo;
 import vaycent.vaycentproject.DemoPackage.FragmentPackage.FragmentDemo;
 import vaycent.vaycentproject.DemoPackage.IPC_Package.IPCDemo;
+import vaycent.vaycentproject.DemoPackage.MessagePackage.AndroidMessageDemo;
 import vaycent.vaycentproject.DemoPackage.NotificationPackage.NotificationDemo;
 import vaycent.vaycentproject.DemoPackage.OrmliteSharpDemo;
 import vaycent.vaycentproject.DemoPackage.RecycleViewPackage.RecycleViewDemo;
@@ -56,6 +57,8 @@ public class MainActivity extends AppCompatActivity
     private ApplicationContext appContext;
 
     private ListView listview;
+
+    private ThreadLocal<Boolean> mBooleanThreadLocal = new ThreadLocal<Boolean>();
 
 
     @Override
@@ -73,6 +76,24 @@ public class MainActivity extends AppCompatActivity
         AddHeadView();
 
         mlog.StartWriteLog(this);
+
+//        ****************** Test Thread *******************
+        mBooleanThreadLocal.set(true);
+        mlog.d("Thread#main,mBooleanThreadLocal="+mBooleanThreadLocal.get());
+        new Thread("Thread#1"){
+            @Override
+            public void run(){
+                mBooleanThreadLocal.set(false);
+                mlog.d("Thread#1,mBooleanThreadLocal="+mBooleanThreadLocal.get());
+            }
+        }.start();
+        new Thread("Thread#2"){
+            @Override
+            public void run(){
+                mlog.d("Thread#2,mBooleanThreadLocal="+mBooleanThreadLocal.get());
+
+            }
+        }.start();
 
     }
 
@@ -199,6 +220,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }else if (id == R.id.sms_demo) {
             Intent intent = new Intent(this, SmsDemo.class);
+            startActivity(intent);
+        }else if (id == R.id.androidmessage_demo) {
+            Intent intent = new Intent(this, AndroidMessageDemo.class);
             startActivity(intent);
         }
 

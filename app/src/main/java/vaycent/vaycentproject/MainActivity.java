@@ -77,23 +77,6 @@ public class MainActivity extends AppCompatActivity
 
         mlog.StartWriteLog(this);
 
-//        ****************** Test Thread *******************
-        mBooleanThreadLocal.set(true);
-        mlog.d("Thread#main,mBooleanThreadLocal="+mBooleanThreadLocal.get());
-        new Thread("Thread#1"){
-            @Override
-            public void run(){
-                mBooleanThreadLocal.set(false);
-                mlog.d("Thread#1,mBooleanThreadLocal="+mBooleanThreadLocal.get());
-            }
-        }.start();
-        new Thread("Thread#2"){
-            @Override
-            public void run(){
-                mlog.d("Thread#2,mBooleanThreadLocal="+mBooleanThreadLocal.get());
-
-            }
-        }.start();
 
     }
 

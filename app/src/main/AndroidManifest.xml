@@ -116,6 +116,9 @@
 
         <service android:name=".DemoPackage.IPC_Package.TCPServerService"/>
 
+        <service android:name=".DemoPackage.MessagePackage.UploadImgService" />
+
+
         <!-- ***************** Broadcast Receiver ***************** -->
         <receiver android:name=".DemoPackage.BroadcastReceiverPackage.GlobalBroadcastReceiverDemo">
             <intent-filter>

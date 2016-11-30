@@ -7,6 +7,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import BaseClass.BaseValue;
+import HelpFulClass.CrashHandler;
 import vaycent.magicLog.mlog;
 import vaycent.volleysharp.VolleySharp;
 
@@ -16,7 +17,6 @@ import vaycent.volleysharp.VolleySharp;
 public class ApplicationContext extends Application {
 
     public VolleySharp volleySharp;
-
 
     @Override
     public void onCreate() {
@@ -28,6 +28,9 @@ public class ApplicationContext extends Application {
         InitImageLoader();
 
         InitMagicLog();
+
+        CrashHandler crashHandler = CrashHandler.getsInstance();
+        crashHandler.init(this);
 
     }
 

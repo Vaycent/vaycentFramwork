@@ -41,7 +41,6 @@ import vaycent.vaycentproject.DemoPackage.ContentProviderPackage.ContentProvider
 import vaycent.vaycentproject.DemoPackage.EventPackage.EventDemo;
 import vaycent.vaycentproject.DemoPackage.FragmentPackage.FragmentDemo;
 import vaycent.vaycentproject.DemoPackage.IPC_Package.IPCDemo;
-import vaycent.vaycentproject.DemoPackage.MessagePackage.AndroidMessageDemo;
 import vaycent.vaycentproject.DemoPackage.NotificationPackage.NotificationDemo;
 import vaycent.vaycentproject.DemoPackage.OrmliteSharpDemo;
 import vaycent.vaycentproject.DemoPackage.RecycleViewPackage.RecycleViewDemo;
@@ -205,8 +204,9 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, SmsDemo.class);
             startActivity(intent);
         }else if (id == R.id.androidmessage_demo) {
-            Intent intent = new Intent(this, AndroidMessageDemo.class);
-            startActivity(intent);
+//            Intent intent = new Intent(this, AndroidMessageDemo.class);
+//            startActivity(intent);
+            throw new RuntimeException("自定义异常，抛出异常");
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -1,6 +1,7 @@
 package vaycent.vaycentproject.DemoPackage.ViewPackage;
 
 import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +25,7 @@ public class ViewDemo extends AppCompatActivity implements View.OnClickListener{
     private Button toActionMoveActivity,toScrollerViewActivity;
     private FrameLayout fragmentLayout;
     private float density;
+    private ObjectAnimator animator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,17 @@ public class ViewDemo extends AppCompatActivity implements View.OnClickListener{
         InitLayout();
 
         GetScreenSize();
+
+        animator = ObjectAnimator.ofFloat(toObjectAnimation,"rotation",0,360).setDuration(1000);
+        animator.setRepeatCount(ValueAnimator.INFINITE);
+        animator.start();
+
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        animator.cancel();
     }
 
     private void GetScreenSize(){
@@ -62,7 +75,9 @@ public class ViewDemo extends AppCompatActivity implements View.OnClickListener{
         toScrollerViewActivity.setOnClickListener(this);
 
         fragmentLayout = (FrameLayout)findViewById(R.id.fragment_layout);
+
     }
+
 
     @Override
     public void onClick(View v) {
@@ -125,6 +140,7 @@ public class ViewDemo extends AppCompatActivity implements View.OnClickListener{
 
     private void ObjectAnimationTest(){
         ObjectAnimator.ofFloat(fragmentLayout,"translationX",0,1000,500,1000,0).setDuration(4000).start();
+
     }
 
 

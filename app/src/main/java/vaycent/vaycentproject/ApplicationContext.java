@@ -1,10 +1,13 @@
 package vaycent.vaycentproject;
 
 import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.facebook.stetho.Stetho;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.squareup.leakcanary.LeakCanary;
 
 import BaseClass.BaseValue;
 import HelpFulClass.CrashHandler;
@@ -32,6 +35,14 @@ public class ApplicationContext extends Application {
         CrashHandler crashHandler = CrashHandler.getsInstance();
         crashHandler.init(this);
 
+        InitLeakCanary();
+
+    }
+
+    @Override
+    protected void attachBaseContext(Context base){
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 
     private void InitVolleySharp() {
@@ -49,5 +60,15 @@ public class ApplicationContext extends Application {
 
     private void InitMagicLog(){
         mlog.setLogFilePath(BaseValue.LOG_FILE_PATH);
+    }
+
+    private void InitLeakCanary(){
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        LeakCanary.install(this);
+        // Normal app init code...
     }
 }

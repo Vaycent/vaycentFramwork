@@ -39,6 +39,7 @@ public class SmsDemo extends AppCompatActivity implements View.OnClickListener{
 
     private Handler dialogHandler = new Handler();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

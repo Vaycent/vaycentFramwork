@@ -74,6 +74,12 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="Android Message Demo" />
 
+            <item
+                android:id="@+id/optimization_demo"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Optimization Demo" />
+
+
 
         </menu>
     </item>

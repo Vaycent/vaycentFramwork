@@ -79,6 +79,11 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="Optimization Demo" />
 
+            <item
+                android:id="@+id/webview_demo"
+                android:icon="@drawable/ic_menu_send"
+                android:title="WebView Demo" />
+
 
 
         </menu>

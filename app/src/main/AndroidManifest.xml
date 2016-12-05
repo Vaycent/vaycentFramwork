@@ -108,6 +108,11 @@
             android:label="Optimization Activity"
             android:screenOrientation="portrait"/>
 
+        <activity android:name=".DemoPackage.OptimizationPackage.AnrDemo"
+            android:label="ANR Demo Activity" />
+
+        <activity android:name=".DemoPackage.WebPackage.WebViewDemo"
+            android:label="WebView Demo Activity" />
 
         <!-- ***************** Service ***************** -->
         <service android:name=".DemoPackage.NotificationPackage.NoKillService" />

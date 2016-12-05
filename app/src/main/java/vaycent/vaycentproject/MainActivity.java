@@ -50,6 +50,7 @@ import vaycent.vaycentproject.DemoPackage.SmsPackage.SmsDemo;
 import vaycent.vaycentproject.DemoPackage.TextViewDemo;
 import vaycent.vaycentproject.DemoPackage.ViewPackage.ViewDemo;
 import vaycent.vaycentproject.DemoPackage.VolleysharpDemo;
+import vaycent.vaycentproject.DemoPackage.WebPackage.WebViewDemo;
 
 
 public class MainActivity extends AppCompatActivity
@@ -212,7 +213,12 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.optimization_demo) {
             Intent intent = new Intent(this, OptimizationDemo.class);
             startActivity(intent);
+        }else if (id == R.id.webview_demo) {
+            Intent intent = new Intent(this, WebViewDemo.class);
+            startActivity(intent);
         }
+
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

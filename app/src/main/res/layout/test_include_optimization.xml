@@ -2,24 +2,43 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
 
     <Button
-        android:id="@+id/show_viewstub_btn"
+        android:layout_marginTop="10dp"
+        android:id="@+id/visible_viewstub_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show ViewStub"/>
+        android:text="Visible ViewStub"
+        android:textAllCaps="false"/>
 
     <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/gone_viewstub_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="two"/>
+        android:text="Gone ViewStub"
+        android:textAllCaps="false"/>
 
     <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/wrong_memory_leak_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="three"/>
+        android:text="Wrong Way To Get Instance And Test Memory Leak"
+        android:textAllCaps="false"/>
 
     <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/right_memory_leak_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="four"/>
+        android:text="Right WayTo Get Instance And Test Memory Leak"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/anr_demo_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test ANR"
+        android:textAllCaps="false"/>
 
 </merge>

@@ -112,7 +112,8 @@
             android:label="ANR Demo Activity" />
 
         <activity android:name=".DemoPackage.WebPackage.WebViewDemo"
-            android:label="WebView Demo Activity" />
+            android:label="WebView Demo Activity"
+            android:screenOrientation="landscape"/>
 
         <!-- ***************** Service ***************** -->
         <service android:name=".DemoPackage.NotificationPackage.NoKillService" />

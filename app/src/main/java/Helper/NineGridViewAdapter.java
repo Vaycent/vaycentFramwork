@@ -1,17 +1,15 @@
 package Helper;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.download.ImageDownloader;
+import com.bumptech.glide.Glide;
 
+import HelpFulClass.CircleTransform;
 import vaycent.vaycentproject.R;
 
 /**
@@ -60,23 +58,12 @@ public class NineGridViewAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
+        Glide.with(mInflater.getContext()).load(nineGridPicSet[position]).crossFade(R.anim.test_ani2, 5000)
+                .transform(new CircleTransform(mInflater.getContext())).into(holder.imgShow);
 
-        String drawableUrl = ImageDownloader.Scheme.DRAWABLE.wrap(nineGridPicSet[position] + "");
-        AdapterImageLoaderSet(drawableUrl,holder.imgShow);
+
 
         return convertView;
-    }
-
-    private void AdapterImageLoaderSet(String imageUrl, ImageView mImageView) {
-
-        DisplayImageOptions options = new DisplayImageOptions.Builder()
-                .showImageOnLoading(R.drawable.ic_replay_black_24dp)
-                .showImageOnFail(R.drawable.ic_android_black_24dp)
-                .cacheInMemory(true)
-                .cacheOnDisk(true)
-                .bitmapConfig(Bitmap.Config.RGB_565)
-                .build();
-        ImageLoader.getInstance().displayImage(imageUrl, mImageView, options);
     }
 }
 

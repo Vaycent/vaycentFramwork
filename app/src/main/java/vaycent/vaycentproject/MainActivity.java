@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -24,9 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.download.ImageDownloader;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,9 +73,17 @@ public class MainActivity extends AppCompatActivity
         InitListView();
 
         AddHeadView();
-
+//
         mlog.StartWriteLog(this);
 
+
+//        getWindow().setGravity(Gravity.LEFT|Gravity.TOP);
+//        WindowManager.LayoutParams params = getWindow().getAttributes();
+//        params.x=0;
+//        params.y=0;
+//        params.height=1;
+//        params.width=1;
+//        getWindow().setAttributes(params);
 
 
     }
@@ -218,9 +223,6 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }
 
-
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -266,9 +268,11 @@ public class MainActivity extends AppCompatActivity
         View view = LayoutInflater.from(this).inflate(R.layout.head_viewpager, null);
         ViewPager topViewPager = (ViewPager) view.findViewById(R.id.top_view_pager);
         MainGrid nineGridView = (MainGrid) view.findViewById(R.id.nine_grid_view);
+        ImageView bigImg = (ImageView) view.findViewById(R.id.big_img);
 
         InitTopViewPage(topViewPager);
         InitNineGridView(nineGridView);
+        InitBigImage(bigImg);
 
         listview.addHeaderView(view);
     }
@@ -280,12 +284,12 @@ public class MainActivity extends AppCompatActivity
         List<ImageView> viewPageList = new ArrayList<ImageView>();
         for (int i = 0; i < topViewPagerSet.length; i++) {
             ImageView img = new ImageView(this);
-            img.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 100));
+            img.setLayoutParams(new ViewGroup.LayoutParams(200,200));//ViewGroup.LayoutParams.WRAP_CONTENT
             img.setScaleType(ImageView.ScaleType.FIT_XY);
 
-            String drawableUrl = ImageDownloader.Scheme.DRAWABLE.wrap(topViewPagerSet[i] + "");
-            ImageLoaderSetPic(drawableUrl, img);
+            Glide.with(this).load(topViewPagerSet[i]).crossFade(R.anim.test_ani2, 5000).into(img);//.sizeMultiplier(0.1f)
             viewPageList.add(img);
+
         }
 
         ViewPageAdapter viewadapter = new ViewPageAdapter(viewPageList);
@@ -302,32 +306,12 @@ public class MainActivity extends AppCompatActivity
         nineGridView.setAdapter(myAdapter);
     }
 
-    private void ImageLoaderSetPic(String imageUrl, ImageView mImageView) {
-        //This picture come from url
-//        imageUrl = "http://lh6.googleusercontent.com/-55osAWw3x0Q/URquUtcFr5I/AAAAAAAAAbs/rWlj1RUKrYI/s1024/A%252520Photographer.jpg";
+    private void InitBigImage(ImageView bigImg) {
+//        String gifLink = "http://www.dogame.com.cn/bbs/attachments/20100402_d78786dafb1b470dcd6ctUVU4OaCMkyA.gif";
+//        Glide.with(this).load(gifLink).asGif().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(bigImg);
 
-        //This picture come from Content provider
-//        imageUrl = "content://media/external/audio/albumart/13";
-
-        //This picture come from assets
-//        imageUrl = ImageDownloader.Scheme.ASSETS.wrap("mytest.png");
-
-        //This picture come from resource
-//         imageUrl = ImageDownloader.Scheme.DRAWABLE.wrap(R.drawable.heigh01+"");
-        //This picture come from file
-//         imageUrl = ImageDownloader.Scheme.FILE.wrap(Environment.getExternalStorageDirectory().getPath()+"/heigh11.jpg");
-
-
-        DisplayImageOptions options = new DisplayImageOptions.Builder()
-                .showImageOnLoading(R.drawable.ic_replay_black_24dp)
-                .showImageOnFail(R.drawable.ic_android_black_24dp)
-                .cacheInMemory(true)
-                .cacheOnDisk(true)
-                .bitmapConfig(Bitmap.Config.RGB_565)
-                .build();
-
-        ImageLoader.getInstance().displayImage(imageUrl, mImageView, options);
+//        Glide.with(this).load(R.drawable.heigh01).thumbnail(0.001f).into(bigImg);
+//        Glide.with(this).load("http://inthecheesefactory.com/uploads/source/glidepicasso/cover.jpg").into(bigImg);
     }
-
 
 }

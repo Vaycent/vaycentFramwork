@@ -5,8 +5,6 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 
 import com.facebook.stetho.Stetho;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.squareup.leakcanary.LeakCanary;
 
 import BaseClass.BaseValue;
@@ -28,8 +26,6 @@ public class ApplicationContext extends Application {
 
         InitVolleySharp();
 
-        InitImageLoader();
-
         InitMagicLog();
 
         CrashHandler crashHandler = CrashHandler.getsInstance();
@@ -47,15 +43,6 @@ public class ApplicationContext extends Application {
 
     private void InitVolleySharp() {
         volleySharp = new VolleySharp(this);
-    }
-
-    private void InitImageLoader(){
-        ImageLoaderConfiguration configuration = ImageLoaderConfiguration
-                .createDefault(this);
-//        ImageLoaderConfiguration configuration = new ImageLoaderConfiguration.Builder(this)
-//                .writeDebugLogs()
-//                .build();
-        ImageLoader.getInstance().init(configuration);
     }
 
     private void InitMagicLog(){

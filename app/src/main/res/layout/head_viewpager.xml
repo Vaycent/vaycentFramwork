@@ -8,7 +8,9 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/top_view_pager"
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="200dp"
+
+         />
 
     <TextView
         android:id="@+id/textView1"
@@ -34,10 +36,10 @@
         android:stretchMode="columnWidth" />
 
 
-    <!--<ImageView-->
-    <!--android:id="@+id/i10"-->
-    <!--android:layout_width="300dp"-->
-    <!--android:layout_height="300dp"-->
-    <!--android:layout_gravity="center" />-->
+    <ImageView
+    android:id="@+id/big_img"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" />
 
 </LinearLayout>

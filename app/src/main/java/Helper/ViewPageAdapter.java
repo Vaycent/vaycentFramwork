@@ -42,5 +42,5 @@ public class ViewPageAdapter extends PagerAdapter
 			// TODO Auto-generated method stub
 			return (arg0 == arg1);
 		}
-		
+
 }

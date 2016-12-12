@@ -28,6 +28,7 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
+import HelpFulClass.RoundTransform;
 import Helper.MainGrid;
 import Helper.NineGridViewAdapter;
 import Helper.ViewPageAdapter;
@@ -287,8 +288,11 @@ public class MainActivity extends AppCompatActivity
             img.setLayoutParams(new ViewGroup.LayoutParams(200,200));//ViewGroup.LayoutParams.WRAP_CONTENT
             img.setScaleType(ImageView.ScaleType.FIT_XY);
 
-            Glide.with(this).load(topViewPagerSet[i]).crossFade(R.anim.test_ani2, 5000).into(img);//.sizeMultiplier(0.1f)
+            Glide.with(this).load(topViewPagerSet[i])
+            .transform(new RoundTransform(this,1)).into(img);//.sizeMultiplier(0.1f)
             viewPageList.add(img);
+
+
 
         }
 
@@ -312,6 +316,7 @@ public class MainActivity extends AppCompatActivity
 
 //        Glide.with(this).load(R.drawable.heigh01).thumbnail(0.001f).into(bigImg);
 //        Glide.with(this).load("http://inthecheesefactory.com/uploads/source/glidepicasso/cover.jpg").into(bigImg);
+
     }
 
 }

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import Request.Request_Helper;
 import vaycent.vaycentproject.ApplicationContext;
@@ -29,6 +30,8 @@ public class VolleysharpDemo extends AppCompatActivity {
 
         initLayout();
 
+        if(getIntent().getAction().equals("ShortCut To VolleysharpDemo"))
+            Toast.makeText(this,"This is ShortCut To VolleysharpDemo",Toast.LENGTH_SHORT);
     }
 
     private void initLayout(){

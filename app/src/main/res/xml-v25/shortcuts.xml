@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shortcut
+        android:shortcutId="id_shortcut1"
+        android:enabled="true"
+        android:icon="@drawable/ic_face_black_24dp"
+        android:shortcutShortLabel="@string/shortcut_shortto_volleysharp"
+        android:shortcutLongLabel="@string/shortcut_longto_volleysharp"
+        android:shortcutDisabledMessage="@string/shortcun_disabled">
+        <intent
+            android:action="ShortCut To VolleysharpDemo"
+            android:targetClass="vaycent.vaycentproject.DemoPackage.VolleysharpDemo"
+            android:targetPackage="vaycent.vaycentproject"  />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="id_shortcut2"
+        android:enabled="true"
+        android:icon="@drawable/ic_android_black_24dp"
+        android:shortcutShortLabel="@string/shortcut_shortto_ormliteSharp"
+        android:shortcutLongLabel="@string/shortcut_longto_ormliteSharp"
+        android:shortcutDisabledMessage="@string/shortcun_disabled"
+        >
+        <intent
+            android:action="ShortCut To OrmliteSharpDemo"
+            android:targetClass="vaycent.vaycentproject.DemoPackage.OrmliteSharpDemo"
+            android:targetPackage="vaycent.vaycentproject" />
+    </shortcut>
+</shortcuts>

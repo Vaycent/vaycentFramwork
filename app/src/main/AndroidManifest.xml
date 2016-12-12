@@ -28,6 +28,7 @@
             android:name="CHANNEL"
             android:value="${CHANNEL_VALUE}" />
 
+
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation"
@@ -38,6 +39,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <!--*** shortuts ***-->
+            <meta-data android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
         </activity>
 
         <!-- ***************** Activity ***************** -->

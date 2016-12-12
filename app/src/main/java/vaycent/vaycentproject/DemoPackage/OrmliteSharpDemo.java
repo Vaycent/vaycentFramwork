@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import DataBase.Bean.BP;
 import DataBase.Bean.BPList;
@@ -32,6 +33,9 @@ public class OrmliteSharpDemo extends AppCompatActivity {
         dbHelper = new DB_Helper(this, appContext);
 
         initLayout();
+
+        if(getIntent().getAction().equals("ShortCut To OrmliteSharpDemo"))
+            Toast.makeText(this,"This is ShortCut To OrmliteSharpDemo",Toast.LENGTH_SHORT);
 
     }
 

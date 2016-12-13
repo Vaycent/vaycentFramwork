@@ -84,6 +84,11 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="WebView Demo" />
 
+            <item
+                android:id="@+id/shortcut_demo"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Shortcut Demo" />
+
 
 
         </menu>

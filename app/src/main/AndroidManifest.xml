@@ -120,6 +120,10 @@
             android:label="WebView Demo Activity"
             android:screenOrientation="landscape"/>
 
+        <activity android:name=".DemoPackage.ShortcutsPackage.ShortcutsDemo"
+            android:label="Shortcuts Demo Activity" />
+
+
         <!-- ***************** Service ***************** -->
         <service android:name=".DemoPackage.NotificationPackage.NoKillService" />
 

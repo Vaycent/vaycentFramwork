@@ -44,6 +44,7 @@ import vaycent.vaycentproject.DemoPackage.NotificationPackage.NotificationDemo;
 import vaycent.vaycentproject.DemoPackage.OptimizationPackage.OptimizationDemo;
 import vaycent.vaycentproject.DemoPackage.OrmliteSharpDemo;
 import vaycent.vaycentproject.DemoPackage.RecycleViewPackage.RecycleViewDemo;
+import vaycent.vaycentproject.DemoPackage.ShortcutsPackage.ShortcutsDemo;
 import vaycent.vaycentproject.DemoPackage.SmsPackage.SmsDemo;
 import vaycent.vaycentproject.DemoPackage.TextViewDemo;
 import vaycent.vaycentproject.DemoPackage.ViewPackage.ViewDemo;
@@ -221,6 +222,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }else if (id == R.id.webview_demo) {
             Intent intent = new Intent(this, WebViewDemo.class);
+            startActivity(intent);
+        }else if (id == R.id.shortcut_demo) {
+            Intent intent = new Intent(this, ShortcutsDemo.class);
             startActivity(intent);
         }
 

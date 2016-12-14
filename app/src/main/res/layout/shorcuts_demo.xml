@@ -11,4 +11,25 @@
         android:text="Add Shortcut"
         android:textAllCaps="false"/>
 
+    <Button
+        android:id="@+id/update_shortcut_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Shortcut"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/remove_id1_shortcut_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove Id1 Shortcut"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/remove_all_shortcut_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove All Shortcut"
+        android:textAllCaps="false"/>
+
 </LinearLayout>

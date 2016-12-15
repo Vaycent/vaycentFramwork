@@ -37,6 +37,15 @@ public class ShortcutsDemo extends AppCompatActivity implements View.OnClickList
         updateShortcutBtn.setOnClickListener(this);
         removeId1ShortcutBtn.setOnClickListener(this);
         removeAllShortcutBtn.setOnClickListener(this);
+
+
+
+        ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
+        List<ShortcutInfo> infos=shortcutManager.getManifestShortcuts();
+        for(ShortcutInfo info : infos){
+            mlog.d("Get info:"+info.getId());
+            mlog.d("Get info:"+info.getLongLabel());
+        }
     }
 
     @Override
@@ -96,6 +105,8 @@ public class ShortcutsDemo extends AppCompatActivity implements View.OnClickList
                 .build();
 
         shortcutManager.updateShortcuts(Arrays.asList(shortcut));
+
+
     }
 
     private void RemoveId1ShortcutEvent(){

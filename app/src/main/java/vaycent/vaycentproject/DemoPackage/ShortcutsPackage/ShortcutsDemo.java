@@ -41,8 +41,14 @@ public class ShortcutsDemo extends AppCompatActivity implements View.OnClickList
 
 
         ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
-        List<ShortcutInfo> infos=shortcutManager.getManifestShortcuts();
-        for(ShortcutInfo info : infos){
+        List<ShortcutInfo> staticInfos=shortcutManager.getManifestShortcuts();
+        List<ShortcutInfo> dynamicInfos=shortcutManager.getDynamicShortcuts();
+
+        for(ShortcutInfo info : staticInfos){
+            mlog.d("Get info:"+info.getId());
+            mlog.d("Get info:"+info.getLongLabel());
+        }
+        for(ShortcutInfo info : dynamicInfos){
             mlog.d("Get info:"+info.getId());
             mlog.d("Get info:"+info.getLongLabel());
         }
@@ -86,7 +92,6 @@ public class ShortcutsDemo extends AppCompatActivity implements View.OnClickList
                         new Intent[]{
                                 new Intent(Intent.ACTION_MAIN, Uri.EMPTY, this, ShortcutsDemo.class)
                                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-//                                , new Intent(ShortcutsDemo.ACTION_OPEN_DYNAMIC)
                         })
                 .build();
         shortcutManager.setDynamicShortcuts(Arrays.asList(shortcut,dynamicShortcut2));
@@ -105,8 +110,6 @@ public class ShortcutsDemo extends AppCompatActivity implements View.OnClickList
                 .build();
 
         shortcutManager.updateShortcuts(Arrays.asList(shortcut));
-
-
     }
 
     private void RemoveId1ShortcutEvent(){

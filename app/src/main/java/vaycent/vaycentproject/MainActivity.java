@@ -35,6 +35,7 @@ import Helper.ViewPageAdapter;
 import vaycent.magicLog.mlog;
 import vaycent.vaycentproject.DemoPackage.AnimationDemo;
 import vaycent.vaycentproject.DemoPackage.BroadcastReceiverPackage.BroadcastReceiverDemo;
+import vaycent.vaycentproject.DemoPackage.ButterKnifePackage.ButterKnifeDemo;
 import vaycent.vaycentproject.DemoPackage.ContentProviderPackage.ContentProviderDemo;
 import vaycent.vaycentproject.DemoPackage.EventPackage.EventDemo;
 import vaycent.vaycentproject.DemoPackage.FragmentPackage.FragmentDemo;
@@ -225,6 +226,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }else if (id == R.id.shortcut_demo) {
             Intent intent = new Intent(this, ShortcutsDemo.class);
+            startActivity(intent);
+        }else if (id == R.id.butterknife_demo) {
+            Intent intent = new Intent(this, ButterKnifeDemo.class);
             startActivity(intent);
         }
 

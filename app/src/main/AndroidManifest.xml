@@ -123,6 +123,9 @@
         <activity android:name=".DemoPackage.ShortcutsPackage.ShortcutsDemo"
             android:label="Shortcuts Demo Activity" />
 
+        <activity android:name=".DemoPackage.ButterKnifePackage.ButterKnifeDemo"
+                  android:label="ButterKnife Demo Activity" />
+
 
         <!-- ***************** Service ***************** -->
         <service android:name=".DemoPackage.NotificationPackage.NoKillService" />

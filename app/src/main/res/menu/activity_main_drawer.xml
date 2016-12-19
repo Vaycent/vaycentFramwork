@@ -89,6 +89,10 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="Shortcut Demo" />
 
+            <item
+                android:id="@+id/butterknife_demo"
+                android:icon="@drawable/ic_menu_send"
+                android:title="ButterKnife Demo" />
 
 
         </menu>

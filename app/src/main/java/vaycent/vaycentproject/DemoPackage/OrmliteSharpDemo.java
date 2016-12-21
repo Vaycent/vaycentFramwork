@@ -34,7 +34,7 @@ public class OrmliteSharpDemo extends AppCompatActivity {
 
         initLayout();
 
-        if(getIntent().getAction().equals("ShortCut To OrmliteSharpDemo"))
+        if(getIntent().getAction()!=null&&getIntent().getAction().equals("ShortCut To OrmliteSharpDemo"))
             Toast.makeText(this,"This is ShortCut To OrmliteSharpDemo",Toast.LENGTH_SHORT);
 
     }

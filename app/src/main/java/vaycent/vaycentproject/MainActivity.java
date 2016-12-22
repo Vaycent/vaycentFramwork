@@ -3,6 +3,7 @@ package vaycent.vaycentproject;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity
     private ThreadLocal<Boolean> mBooleanThreadLocal = new ThreadLocal<Boolean>();
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,20 +90,34 @@ public class MainActivity extends AppCompatActivity
 //        params.width=1;
 //        getWindow().setAttributes(params);
 
+//        String directory = MainActivity.this.getFilesDir().getAbsolutePath();
+//        String url = "http://www.sohu.com/";
+//        JniExec.Reguninstall(directory,url);
 
+    }
+
+
+    private String getSoftwareVersion(){
+        PackageInfo pi;
+        try {
+            pi = getPackageManager().getPackageInfo(getPackageName(), 0);
+
+            return this.getPackageName()+"_"+pi.versionName;
+        } catch (final PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return "na";
+        }
     }
 
     private String getChannel(Context context) {
         try {
             PackageManager pm = context.getPackageManager();
+
             ApplicationInfo appInfo = pm.getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
             return appInfo.metaData.getString("CHANNEL");
         } catch (PackageManager.NameNotFoundException ignored) {
         }
         return "";
-
-
-
     }
 
 
@@ -245,7 +261,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, getChannel(MainActivity.this), Snackbar.LENGTH_LONG)
+                Snackbar.make(view, getSoftwareVersion()+"_"+getChannel(MainActivity.this), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });

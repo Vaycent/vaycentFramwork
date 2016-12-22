@@ -58,4 +58,18 @@
         <item name="android:backgroundDimAmount">0.6</item>
     </style>
 
+
+
+
+
+
+
+    <style name="AppTheme.Detail">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">false</item>
+        <item name="android:windowEnterTransition">@transition/detail_enter</item>
+    </style>
+
 </resources>

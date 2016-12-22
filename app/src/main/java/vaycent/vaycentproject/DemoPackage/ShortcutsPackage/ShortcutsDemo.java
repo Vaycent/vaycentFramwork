@@ -1,10 +1,12 @@
 package vaycent.vaycentproject.DemoPackage.ShortcutsPackage;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -38,24 +40,14 @@ public class ShortcutsDemo extends AppCompatActivity implements View.OnClickList
         removeId1ShortcutBtn.setOnClickListener(this);
         removeAllShortcutBtn.setOnClickListener(this);
 
-
-
-        ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
-        List<ShortcutInfo> staticInfos=shortcutManager.getManifestShortcuts();
-        List<ShortcutInfo> dynamicInfos=shortcutManager.getDynamicShortcuts();
-
-        for(ShortcutInfo info : staticInfos){
-            mlog.d("Get info:"+info.getId());
-            mlog.d("Get info:"+info.getLongLabel());
-        }
-        for(ShortcutInfo info : dynamicInfos){
-            mlog.d("Get info:"+info.getId());
-            mlog.d("Get info:"+info.getLongLabel());
-        }
+        getShortcutsInfos();
     }
 
     @Override
     public void onClick(View view) {
+        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.N_MR1)
+            return;
+
         switch (view.getId()){
             case R.id.add_shortcut_btn:
                 AddShortcutEvent();
@@ -72,6 +64,7 @@ public class ShortcutsDemo extends AppCompatActivity implements View.OnClickList
         }
     }
 
+    @TargetApi(25)
     private void AddShortcutEvent(){
         ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
 
@@ -98,6 +91,7 @@ public class ShortcutsDemo extends AppCompatActivity implements View.OnClickList
 
     }
 
+    @TargetApi(25)
     private void UpdateShortcutEvent(){
         ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
 
@@ -112,6 +106,7 @@ public class ShortcutsDemo extends AppCompatActivity implements View.OnClickList
         shortcutManager.updateShortcuts(Arrays.asList(shortcut));
     }
 
+    @TargetApi(25)
     private void RemoveId1ShortcutEvent(){
         ShortcutManager mShortcutManager = getSystemService(ShortcutManager.class);
         List<ShortcutInfo> infos = mShortcutManager.getPinnedShortcuts();
@@ -125,9 +120,29 @@ public class ShortcutsDemo extends AppCompatActivity implements View.OnClickList
         mShortcutManager.removeDynamicShortcuts(Arrays.asList("id" + 1));
     }
 
+    @TargetApi(25)
     private void RemoveAllShortcutEvent(){
         ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
         shortcutManager.removeAllDynamicShortcuts();
+    }
+
+    @TargetApi(25)
+    private void getShortcutsInfos(){
+        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.N_MR1)
+            return;
+
+        ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
+        List<ShortcutInfo> staticInfos=shortcutManager.getManifestShortcuts();
+        List<ShortcutInfo> dynamicInfos=shortcutManager.getDynamicShortcuts();
+
+        for(ShortcutInfo info : staticInfos){
+            mlog.d("Get info:"+info.getId());
+            mlog.d("Get info:"+info.getLongLabel());
+        }
+        for(ShortcutInfo info : dynamicInfos){
+            mlog.d("Get info:"+info.getId());
+            mlog.d("Get info:"+info.getLongLabel());
+        }
     }
 
 }

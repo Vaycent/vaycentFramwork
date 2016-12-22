@@ -57,9 +57,7 @@ public class NotificationDemo extends AppCompatActivity {
 
             }
         });
-
-
-
+        
         remoteViewNotificationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

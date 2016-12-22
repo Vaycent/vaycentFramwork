@@ -6,9 +6,9 @@ import android.support.multidex.MultiDex;
 
 import com.facebook.stetho.Stetho;
 import com.squareup.leakcanary.LeakCanary;
+import com.zxy.recovery.core.Recovery;
 
 import BaseClass.BaseValue;
-import HelpFulClass.CrashHandler;
 import vaycent.magicLog.mlog;
 import vaycent.volleysharp.VolleySharp;
 
@@ -28,10 +28,12 @@ public class ApplicationContext extends Application {
 
         InitMagicLog();
 
-        CrashHandler crashHandler = CrashHandler.getsInstance();
-        crashHandler.init(this);
+//        CrashHandler crashHandler = CrashHandler.getsInstance();
+//        crashHandler.init(this);
 
         InitLeakCanary();
+
+        InitRecovery();
 
     }
 
@@ -57,5 +59,21 @@ public class ApplicationContext extends Application {
         }
         LeakCanary.install(this);
         // Normal app init code...
+    }
+
+    private void InitRecovery(){
+//        Recovery.getInstance()
+//                .debug(true)
+//                .recoverInBackground(false)
+//                .recoverStack(true)
+//                .mainPage(MainActivity.class)
+//                .callback(new MyCrashCallback())
+//                .init(this);
+
+        Recovery.getInstance()
+                .debug(true)
+                .recoverInBackground(false)
+                .silent(false, Recovery.SilentMode.RECOVER_ACTIVITY_STACK)
+                .init(this);
     }
 }

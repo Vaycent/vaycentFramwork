@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import vaycent.vaycentproject.R;
@@ -18,15 +18,16 @@ import vaycent.vaycentproject.R;
 
 public class ButterKnifeDemo extends AppCompatActivity {
 
-    @Bind(R.id.rotateButton)
+
+    @BindView(R.id.rotateButton)
     Button mRotateButton;
-    @Bind(R.id.scaleButton)
+    @BindView(R.id.scaleButton)
     Button mScaleButton;
-    @Bind(R.id.alphaButton)
+    @BindView(R.id.alphaButton)
     Button mAlphaButton;
-    @Bind(R.id.translateButton)
+    @BindView(R.id.translateButton)
     Button mTranslateButton;
-    @Bind(R.id.image)
+    @BindView(R.id.image)
     ImageView mImage;
 
     @Override
@@ -45,7 +46,6 @@ public class ButterKnifeDemo extends AppCompatActivity {
                 break;
             case R.id.scaleButton:
                 Toast.makeText(this,"Scale",Toast.LENGTH_SHORT).show();
-
                 break;
             case R.id.alphaButton:
                 Toast.makeText(this,"Alph",Toast.LENGTH_SHORT).show();
@@ -55,4 +55,5 @@ public class ButterKnifeDemo extends AppCompatActivity {
                 break;
         }
     }
+
 }

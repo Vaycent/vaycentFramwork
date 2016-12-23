@@ -99,6 +99,11 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="Test Special Demo" />
 
+            <item
+                android:id="@+id/background_control_demo"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Background Control Demo" />
+
 
 
         </menu>

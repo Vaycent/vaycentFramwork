@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import vaycent.vaycentproject.R;
@@ -15,9 +15,11 @@ import vaycent.vaycentproject.R;
 // */
 
 public class TestSpecialDemo extends AppCompatActivity {
-    @Bind(R.id.testBtn)
+
+
+    @BindView(R.id.testBtn)
     Button mTestBtn;
-    @Bind(R.id.backgroundPage)
+    @BindView(R.id.backgroundPage)
     LinearLayout mBackgroundPage;
 
     @Override
@@ -28,6 +30,7 @@ public class TestSpecialDemo extends AppCompatActivity {
 
 
     }
+
 
     @OnClick(R.id.testBtn)
     public void onClick() {

@@ -16,5 +16,6 @@
     <string name="shortcut_longto_ormliteSharp">To OrmliteSharp</string>
     <string name="shortcut_shortto_ormliteSharp">OS</string>
     <string name="shortcun_disabled">This ShortCut Has Been Disabled</string>
+    <string name="title_activity_background_control_demo">BackgroundControlDemo</string>
 
 </resources>

@@ -35,6 +35,7 @@ import Helper.NineGridViewAdapter;
 import Helper.ViewPageAdapter;
 import vaycent.magicLog.mlog;
 import vaycent.vaycentproject.DemoPackage.AnimationDemo;
+import vaycent.vaycentproject.DemoPackage.BackgroundControlPackage.BackgroundControlDemo;
 import vaycent.vaycentproject.DemoPackage.BroadcastReceiverPackage.BroadcastReceiverDemo;
 import vaycent.vaycentproject.DemoPackage.ButterKnifePackage.ButterKnifeDemo;
 import vaycent.vaycentproject.DemoPackage.ContentProviderPackage.ContentProviderDemo;
@@ -249,6 +250,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         } else if (id == R.id.test_special_demo) {
             Intent intent = new Intent(this, TestSpecialDemo.class);
+            startActivity(intent);
+        }else if (id == R.id.background_control_demo) {
+            Intent intent = new Intent(this, BackgroundControlDemo.class);
             startActivity(intent);
         }
 

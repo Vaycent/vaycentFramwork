@@ -9,6 +9,7 @@ import com.squareup.leakcanary.LeakCanary;
 import com.zxy.recovery.core.Recovery;
 
 import BaseClass.BaseValue;
+import HelpFulClass.CrashHandler;
 import vaycent.magicLog.mlog;
 import vaycent.volleysharp.VolleySharp;
 
@@ -28,12 +29,12 @@ public class ApplicationContext extends Application {
 
         InitMagicLog();
 
-//        CrashHandler crashHandler = CrashHandler.getsInstance();
-//        crashHandler.init(this);
+        CrashHandler crashHandler = CrashHandler.getsInstance();
+        crashHandler.init(this);
 
         InitLeakCanary();
 
-        InitRecovery();
+//        InitRecovery();
 
     }
 

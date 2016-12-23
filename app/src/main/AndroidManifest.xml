@@ -126,6 +126,8 @@
         <activity android:name=".DemoPackage.ButterKnifePackage.ButterKnifeDemo"
                   android:label="ButterKnife Demo Activity" />
 
+        <activity android:name=".DemoPackage.TestSpecialPackage.TestSpecialDemo"
+                  android:label="Test Special Demo"/>
 
         <!-- ***************** Service ***************** -->
         <service android:name=".DemoPackage.NotificationPackage.NoKillService" />

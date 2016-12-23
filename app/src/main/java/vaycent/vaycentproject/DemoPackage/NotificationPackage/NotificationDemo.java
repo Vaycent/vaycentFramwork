@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RemoteViews;
 
+import vaycent.magicLog.mlog;
 import vaycent.vaycentproject.R;
 import vaycent.volleysharp.VolleySharp;
 
@@ -57,7 +58,7 @@ public class NotificationDemo extends AppCompatActivity {
 
             }
         });
-        
+
         remoteViewNotificationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,10 +94,20 @@ public class NotificationDemo extends AppCompatActivity {
                 stopNoKillNotificationService();
             }
         });
+
+
+        if(getIntent().getExtras()!=null&&getIntent().getStringExtra("title")!=null)
+            mlog.d("notification title:"+getIntent().getStringExtra("title"));
     }
 
 
     private void pushSmallLocalNotification(){
+
+        Intent intent = new Intent(this,NotificationDemo.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("title","small");
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
         NotificationManager nm=(NotificationManager)this.getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -106,12 +117,26 @@ public class NotificationDemo extends AppCompatActivity {
                 .setContentText("SmallIcon Notification message")
                 .setAutoCancel(true)
                 .setDefaults(Notification.DEFAULT_SOUND)
+                .setContentIntent(pendingIntent)
                 .build();
 
         nm.notify("smallTest",0,updateNotification);
+
+
+//        Intent openintent= new Intent(this, NotificationDemo.class);
+//        PendingIntent contentIntent = PendingIntent.getActivity(tradeRoom
+//                        .getApplicationContext(), 0, openintent, 0);
+//        notification.setLatestEventInfo(tradeRoom.getApplicationContext(),
+//                title, info, contentIntent);
     }
 
     private void pushLargeLocalNotification(){
+        Intent intent = new Intent(this,NotificationDemo.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("title","large");
+
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
         NotificationManager nm=(NotificationManager)this.getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -121,6 +146,7 @@ public class NotificationDemo extends AppCompatActivity {
                 .setContentTitle("LargeIcon Notification Title")
                 .setContentText("LargeIcon Notification Message")
                 .setAutoCancel(true)
+                .setContentIntent(pendingIntent)
                 .setDefaults(Notification.DEFAULT_SOUND)
                 .build();
 

@@ -94,6 +94,12 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="ButterKnife Demo" />
 
+            <item
+                android:id="@+id/test_special_demo"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Test Special Demo" />
+
+
 
         </menu>
     </item>

@@ -48,6 +48,7 @@ import vaycent.vaycentproject.DemoPackage.OrmliteSharpDemo;
 import vaycent.vaycentproject.DemoPackage.RecycleViewPackage.RecycleViewDemo;
 import vaycent.vaycentproject.DemoPackage.ShortcutsPackage.ShortcutsDemo;
 import vaycent.vaycentproject.DemoPackage.SmsPackage.SmsDemo;
+import vaycent.vaycentproject.DemoPackage.TestSpecialPackage.TestSpecialDemo;
 import vaycent.vaycentproject.DemoPackage.TextViewDemo;
 import vaycent.vaycentproject.DemoPackage.ViewPackage.ViewDemo;
 import vaycent.vaycentproject.DemoPackage.VolleysharpDemo;
@@ -245,6 +246,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }else if (id == R.id.butterknife_demo) {
             Intent intent = new Intent(this, ButterKnifeDemo.class);
+            startActivity(intent);
+        } else if (id == R.id.test_special_demo) {
+            Intent intent = new Intent(this, TestSpecialDemo.class);
             startActivity(intent);
         }
 

@@ -104,6 +104,11 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="Background Control Demo" />
 
+            <item
+                android:id="@+id/download_manager_demo"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Download Manager Demo" />
+
 
 
         </menu>

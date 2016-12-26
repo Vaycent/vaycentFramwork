@@ -2,16 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="vaycent.vaycentproject">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REMOVED"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REMOVED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.SEND_SMS"/>
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
     <uses-permission android:name="android.permission.READ_SMS"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>
+
 
     <application
         android:name=".ApplicationContext"
@@ -20,9 +24,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <meta-data
             android:name="CHANNEL"
-            android:value="${CHANNEL_VALUE}"/>
+            android:value="${CHANNEL_VALUE}" />
+
 
         <activity
             android:name=".MainActivity"
@@ -30,104 +36,155 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <!-- *** shortuts *** -->
-            <meta-data
-                android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts"/>
+            <!--*** shortuts ***-->
+            <meta-data android:name="android.app.shortcuts"
+                       android:resource="@xml/shortcuts" />
         </activity>
 
         <!-- ***************** Activity ***************** -->
         <activity
             android:name=".DemoPackage.VolleysharpDemo"
-            android:label="Volleysharp Demo"/>
+            android:label="Volleysharp Demo" />
         <activity
             android:name=".DemoPackage.OrmliteSharpDemo"
-            android:label="OrmliteSharp Demo"/>
+            android:label="OrmliteSharp Demo" />
         <activity
             android:name=".DemoPackage.TextViewDemo"
-            android:label="TextView Demo"/>
+            android:label="TextView Demo" />
         <activity
             android:name=".DemoPackage.NotificationPackage.NotificationDemo"
-            android:label="Notification Demo"/>
+            android:label="Notification Demo" />
         <activity
             android:name=".DemoPackage.AnimationDemo"
-            android:label="Animation Demo"/>
+            android:label="Animation Demo" />
         <activity
             android:name=".DemoPackage.BroadcastReceiverPackage.BroadcastReceiverDemo"
-            android:label="BroadcastReceiver Demo"/>
+            android:label="BroadcastReceiver Demo" />
         <activity
             android:name=".DemoPackage.ContentProviderPackage.ContentProviderDemo"
-            android:label="Content Provider Demo"/>
+            android:label="Content Provider Demo" />
         <activity
             android:name=".DemoPackage.FragmentPackage.FragmentDemo"
-            android:label="Fragment Demo"/>
+            android:label="Fragment Demo" />
         <activity
             android:name=".DemoPackage.RecycleViewPackage.RecycleViewDemo"
-            android:label="RecycleView Demo"/>
+            android:label="RecycleView Demo" />
         <activity
             android:name=".DemoPackage.IPC_Package.IPCDemo"
             android:label="IPC Demo"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".DemoPackage.TestPackage.TestActivity2"
-            android:label="TestActivity2"/>
+            android:label="TestActivity2" />
         <activity
             android:name=".DemoPackage.TestPackage.TestActivity3"
-            android:label="TestActivity3"/>
+            android:label="TestActivity3" />
         <activity
             android:name=".DemoPackage.IPC_Package.ParcelableTestActivity"
-            android:label="Parcelable Test Activity"/>
-        <activity
-            android:name=".DemoPackage.IPC_Package.SerializableTestActivity"
-            android:label="Serializable Test Activity"/>
-        <activity
-            android:name=".DemoPackage.EventPackage.EventDemo"
-            android:label="Event Demo"/>
-        <activity
-            android:name=".DemoPackage.ViewPackage.ViewDemo"
-            android:label="View Demo"/>
-        <activity
-            android:name=".DemoPackage.SmsPackage.SmsDemo"
-            android:label="SMS Demo"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".DemoPackage.ViewPackage.ActionMoveActivity"
-            android:label="Action Move Activity"/>
-        <activity
-            android:name=".DemoPackage.ViewPackage.ScrollerViewActivity"
-            android:label="Scroller View Activity"/>
-        <activity
-            android:name=".DemoPackage.MessagePackage.AndroidMessageDemo"
-            android:label="Android Message Activity"/>
-        <activity
-            android:name=".DemoPackage.OptimizationPackage.OptimizationDemo"
-            android:label="Optimization Activity"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".DemoPackage.OptimizationPackage.AnrDemo"
-            android:label="ANR Demo Activity"/>
-        <activity
-            android:name=".DemoPackage.WebPackage.WebViewDemo"
-            android:label="WebView Demo Activity"
-            android:screenOrientation="landscape"/>
-        <activity
-            android:name=".DemoPackage.ShortcutsPackage.ShortcutsDemo"
-            android:label="Shortcuts Demo Activity"/>
-        <activity
-            android:name=".DemoPackage.ButterKnifePackage.ButterKnifeDemo"
-            android:label="ButterKnife Demo Activity"/>
-        <activity
-            android:name=".DemoPackage.TestSpecialPackage.TestSpecialDemo"
-            android:label="Test Special Demo"/>
-        <activity
-            android:name=".DemoPackage.BackgroundControlPackage.BackgroundControlDemo"
-            android:label="Background Control Demo"/>
-        <activity android:name=".DemoPackage.DownloadManagerPackage.DownloadManagerDemo">
-        </activity>
+            android:label="Parcelable Test Activity" />
+
+        <activity android:name=".DemoPackage.IPC_Package.SerializableTestActivity"
+                  android:label="Serializable Test Activity"/>
+
+        <activity android:name=".DemoPackage.EventPackage.EventDemo"
+                  android:label="Event Demo"/>
+
+        <activity android:name=".DemoPackage.ViewPackage.ViewDemo"
+                  android:label="View Demo" />
+
+        <activity android:name=".DemoPackage.SmsPackage.SmsDemo"
+                  android:label="SMS Demo"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".DemoPackage.ViewPackage.ActionMoveActivity"
+                  android:label="Action Move Activity"/>
+
+        <activity android:name=".DemoPackage.ViewPackage.ScrollerViewActivity"
+                  android:label="Scroller View Activity"
+            />
+
+        <activity android:name=".DemoPackage.MessagePackage.AndroidMessageDemo"
+                  android:label="Android Message Activity"/>
+
+        <activity android:name=".DemoPackage.OptimizationPackage.OptimizationDemo"
+                  android:label="Optimization Activity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".DemoPackage.OptimizationPackage.AnrDemo"
+                  android:label="ANR Demo Activity" />
+
+        <activity android:name=".DemoPackage.WebPackage.WebViewDemo"
+                  android:label="WebView Demo Activity"
+                  android:screenOrientation="landscape"/>
+
+        <activity android:name=".DemoPackage.DownloadManagerPackage.DownloadManagerDemo"
+                  android:label="DownloadManager Demo Activity"/>
+
+        <activity android:name=".DemoPackage.BackgroundControlPackage.BackgroundControlDemo"
+                    android:label="Background Control Demo"/>
+
+        <activity android:name=".DemoPackage.TestSpecialPackage.TestSpecialDemo"
+                  android:label="Test Special Demo"/>
+
+        <activity android:name=".DemoPackage.ButterKnifePackage.ButterKnifeDemo"
+            android:label="Butter Knife Demo"/>
+
+        <activity android:name=".DemoPackage.ShortcutsPackage.ShortcutsDemo"
+            android:label="Shortcuts Demo"/>
+
+        <!-- ***************** Service ***************** -->
+        <service android:name=".DemoPackage.NotificationPackage.NoKillService" />
+
+        <service android:name=".MyService" >
+            <intent-filter>
+                <action android:name="vaycent.vaycentproject.DemoPackage.IPC_Package.IMyService" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".DemoPackage.IPC_Package.TCPServerService"/>
+
+        <service android:name=".DemoPackage.MessagePackage.UploadImgService" />
+
+        <service android:name=".DemoPackage.DownloadManagerPackage.DownLoadManagerIntentService"/>
+
+        <!-- ***************** Broadcast Receiver ***************** -->
+        <receiver android:name=".DemoPackage.BroadcastReceiverPackage.GlobalBroadcastReceiverDemo">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.BATTERY_CHANGED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".DemoPackage.DownloadManagerPackage.DownloadManagerReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- ***************** Content Provider ***************** -->
+        <!-- android:exported:supported other app to call this content provider -->
+        <provider
+            android:name=".DemoPackage.ContentProviderPackage.MyProvider"
+            android:authorities="vaycent.vaycentproject.provider"
+            android:exported="true" />
+
+        <provider
+            android:authorities="vaycent.vaycentproject.book.provider"
+            android:permission="vaycent.vaycentproject.BOOKPRO"
+            android:name=".DemoPackage.ContentProviderPackage.BookProvider"
+            android:process=":bookprovider"/>
+
     </application>
 
 </manifest>

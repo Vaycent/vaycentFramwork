@@ -25,6 +25,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -343,6 +344,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void InitBigImage(ImageView bigImg) {
+          Glide.with(this).load(R.drawable.codebrain).asGif().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(bigImg);
+
 //        String gifLink = "http://www.dogame.com.cn/bbs/attachments/20100402_d78786dafb1b470dcd6ctUVU4OaCMkyA.gif";
 //        Glide.with(this).load(gifLink).asGif().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(bigImg);
 

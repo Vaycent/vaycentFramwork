@@ -124,8 +124,13 @@
             android:name=".DemoPackage.TestSpecialPackage.TestSpecialDemo"
             android:label="Test Special Demo"/>
         <activity android:name=".DemoPackage.BackgroundControlPackage.BackgroundControlDemo"
-                  android:label="Background Control Demo">
-        </activity>
+                  android:label="Background Control Demo"/>
+
+
+
+
+
+
     </application>
 
 </manifest>

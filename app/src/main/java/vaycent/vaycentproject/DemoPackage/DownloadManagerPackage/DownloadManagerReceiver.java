@@ -9,6 +9,8 @@ import android.net.Uri;
 
 import java.io.File;
 
+import vaycent.magicLog.mlog;
+
 /**
  * Created by Vaycent on 2016/12/26.
  */
@@ -22,9 +24,14 @@ public class DownloadManagerReceiver extends BroadcastReceiver {
         mContext = context;
         DownloadManager dm = (DownloadManager) mContext
                 .getSystemService(mContext.DOWNLOAD_SERVICE);
+
+        mlog.w("intent.getAction():"+intent.getAction());
+
         if (intent.getAction().equals(DownloadManager.ACTION_DOWNLOAD_COMPLETE)) {
             long downId = intent.getLongExtra(
                     DownloadManager.EXTRA_DOWNLOAD_ID, -1);
+            mlog.w("downId:"+downId);
+
             Cursor c = dm.query(new DownloadManager.Query().setFilterById(downId));
             if (c.moveToFirst()) {
                 int status = c.getInt(c.getColumnIndex(DownloadManager.COLUMN_STATUS));

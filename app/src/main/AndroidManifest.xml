@@ -14,7 +14,6 @@
     <uses-permission android:name="android.permission.READ_SMS"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
-    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>
 
 
     <application
@@ -169,6 +168,7 @@
         <receiver android:name=".DemoPackage.DownloadManagerPackage.DownloadManagerReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED"/>
             </intent-filter>
         </receiver>
 

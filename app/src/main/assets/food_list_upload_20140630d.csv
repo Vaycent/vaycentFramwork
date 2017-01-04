@@ -1,0 +1,202 @@
+﻿Ref code,Name (English),Name (Chinese),Quantity (English),Quantity (Chinese),Type,Calories,Image name
+11,Shrimp Dumpling,蝦餃,1 pc,1粒,Breakfast,41,Shrimp_Dumpling.png
+12,Steamed minced beef ball with beancurd,山竹牛肉,1 pc,1粒,Breakfast,76,Steamed_minced_beef_ball_with_beancurd.png
+13,Pork Shao Mai,燒賣,1 pc,1粒,Breakfast,62,Pork_Shao_Mai.png
+14,Steamed rice-roll with barbecued pork,叉燒腸粉,1 pc,1條,Breakfast,77,Steamed_riceroll_with_barbecued_pork.png
+15,Steamed chicken feet with black bean sauce,鳳爪,1 small dish,1小碟,Breakfast,192,Steamed_chicken_feet_with_black_bean_sauce.png
+16,Steamed BBQ Pork Bun,叉燒包,1 pc,1個,Breakfast,117,Steamed_BBQ_Pork_Bun.png
+17,Sticky rice with chicken wrapped in lotus leaf,糯米雞,1 pc,1個,Breakfast,280,Sticky_rice_with_chicken_wrapped_in_lotus_leaf.png
+18,Hamburger,漢堡包,1 pc,1個,Breakfast,250,Hamburger.png
+19,Fish filet burger,魚柳包,1 pc,1個,Breakfast,380,Fish_filet_burger.png
+20,Hash brown,薯餅,1 pc,1件,Breakfast,152,Hash_Brown.png
+21,Pineapple bun,菠蘿包,1 pc,1個,Breakfast,315,Pineapple_bun.png
+22,Sausage roll,腸仔包,1 pc,1個,Breakfast,232,Sausage_roll.png
+23,Ham & egg sandwich,火腿蛋三文治,1 serving,1份,Breakfast,360,Ham_Egg_Sandwich.png
+24,Instant noodle with satay beef,沙爹牛肉麵,1 bowl,1碗,Breakfast,668,Instant_noodles_with_Satay_beef.png
+25,Ham marcaroni in soup,火腿通粉,1 bowl,1碗,Breakfast,400,Ham_marcaroni.png
+26,Instant noodle,公仔麵,1 pack,1包,Breakfast,473,Instant_Noodles.png
+27,Congee with fermented egg and lean pork,皮蛋瘦肉粥,1 bowl,1碗,Breakfast,280,Congee_with_fermented_egg_and_lean_pork.png
+28,Oatmeal with milk,牛奶麥皮,1 bowl,1碗,Breakfast,166,Oatmeal_with_milk.png
+29,Plain congee,白粥,1 bowl,1碗,Breakfast,32,Plain_Congee.png
+30,Long rice noodles,米粉,1 bowl,1碗,Breakfast,168,Long_Rice_Noodles_cooked.png
+31,Scrambled egg,炒蛋,1 serving,1客,Breakfast,199,Egg_whole_scrambled.png
+32,Boiled egg,烚蛋,1pc,1隻,Breakfast,78,Egg_whole_boiled.png
+33,Omelette,奄列,1 serving,1客,Breakfast,305,omelette.png
+4,Orange,橙,1 pc,1個,Breakfast,69,Orange.png
+5,Apple,蘋果,1 pc,1個,Breakfast,89,Apple.png
+6,Banana,香蕉,1 pc,1條,Breakfast,110,Banana.png
+7,Mango,芒果,1pc,1個,Breakfast,130,Mango.png
+8,Strawberry,士多啤梨,1pc,1粒,Breakfast,7.5,Strawberry.png
+9,Water melon,西瓜,1slice,1片,Breakfast,32,Water_melon.png
+10,Pineapple,菠蘿,1 small bowl,1小碗,Breakfast,82,Pineapple.png
+1,Coffee/ milk tea (No sugar),港式咖啡/奶茶 (無糖),1 cup,1杯,Breakfast,77,Coffee.png
+2,Sugar cube,方糖,1 pc,1粒,Breakfast,17,Sugar_cube.png
+3,Orange juice,橙汁,1 glass,1杯,Breakfast,100,Orange_juice.png
+52,Cream of mushroom soup,蘑菇湯,1 bowl,1碗,Lunch,220,Salted_pork_stomach_soup.png
+53,Cream of corn soup,粟米湯,1 bowl,1碗,Lunch,86,Cream_corn_soup.png
+45,Shrimp Dumpling,蝦餃,1 pc,1粒,Lunch,41,Shrimp_Dumpling.png
+46,Steamed minced beef ball with beancurd,山竹牛肉,1 pc,1粒,Lunch,76,Steamed_minced_beef_ball_with_beancurd.png
+47,Pork Shao Mai,燒賣,1 pc,1粒,Lunch,62,Pork_Shao_Mai.png
+48,Steamed rice-roll with barbecued pork,叉燒腸粉,1 pc,1條,Lunch,77,Steamed_riceroll_with_barbecued_pork.png
+49,Steamed chicken feet with black bean sauce,鳳爪,1 small dish,1小碟,Lunch,192,Steamed_chicken_feet_with_black_bean_sauce.png
+50,Steamed BBQ Pork Bun,叉燒包,1 pc,1個,Lunch,117,Steamed_BBQ_Pork_Bun.png
+51,Sticky rice with chicken wrapped in lotus leaf,糯米雞,1 pc,1個,Lunch,280,Sticky_rice_with_chicken_wrapped_in_lotus_leaf.png
+54,Hamburger,漢堡包,1 pc,1個,Lunch,250,Hamburger.png
+55,Fish filet burger,魚柳包,1 pc,1個,Lunch,380,Fish_filet_burger.png
+56,Deep-fried chicken wings,炸雞翼,1 pc,1隻,Lunch,55,Deep_fried_chicken_wings.png
+57,Fries (Medium),薯條(中),1 serving,1份,Lunch,349,Fries.png
+58,Wonton noodle,雲吞湯麵,1 bowl,1碗,Lunch,488,Wonton_noodle.png
+59,Honey roasted BBQ pork rice,蜜汁叉燒飯,1 dish,1碟,Lunch,1046,Honey_Roasted_BBQ_Pork_Rice.png
+60,Baked pork chop rice,焗豬排飯,1 serving,1客,Lunch,1396,Baked_Pork_Chop_Rice.png
+61,Beef brisket curry rice,咖哩牛腩飯,1 dish,1碟,Lunch,1082,Beef_brisket_curry_rice.png
+62,Fried rice (Yangzhou style),揚州炒飯,1 dish,1碟,Lunch,870,Fried_rice_Yangzhou_style.png
+63,Spachetti bolognese,肉醬意粉,1 serving,1客,Lunch,1042,Spachetti_Bolognese.png
+64,Rice with fried fish fillet in cream of corn sauce,粟米班腩飯,1 serving,1客,Lunch,765,Rice_with_Fried_Fish_Filet_and_Corn_Sauce.png
+65,Fried beef noodle,乾炒牛河,1 dish,1碟,Lunch,887,Fried_beef_noodle.png
+66,Porcine cartilage ramen,豬軟骨拉麵,1 bowl,1碗,Lunch,628,Porcine_cartilage_ramen.png
+67,Tobiki sushi,蟹籽壽司,1 pc,1件,Lunch,46,Tobiki_sushi.png
+68,Salmon sushi,三文魚壽司,1 pc,1件,Lunch,54,Salmon_sushi.png
+69,Shrimp nigiri sushi,甜蝦壽司,1 pc,1件,Lunch,38,Shrimp_Nigiri_Sushi.png
+70,California roll,加州卷,1 pc,1件,Lunch,55,California_Roll.png
+71,Grilled sea eel with rice,鰻魚飯,1 bowl,1碗,Lunch,899,Grilled_sea_eel_with_rice.png
+72,Pan-fried beef steak,煎牛扒,1 serving,1客,Lunch,645,Beef_SteakSirln_Strip_Choice.png
+73,Pan-fried pork chop,煎豬扒,1 serving,1客,Lunch,579,Fresh_Pork_Chop_Center_Rib.png
+74,Pan-fried chicken thigh,煎雞扒,1 serving,1客,Lunch,520,Pan_fried_chicken_thigh_meat_with_skin.png
+75,Steamed amaranth with preserved and salty eggs,金銀蛋莧菜,1 serving,1客,Lunch,585,Steamed_amaranth_with_preserved_and_salty_eggs.png
+76,Boiled vegetable,白灼油菜,1 dish,1碟,Lunch,140,Boiled_rape.png
+77,Boiled choy sum,白灼菜心,1 dish,1碟,Lunch,40,Poached_Choy_Sum.png
+78,Stir-fried choy sum,炒菜心,1 dish,1碟,Lunch,175,Stir_fried_Choy_Sum.png
+79,Stir-fried water spinach with shrimp,蝦醬通菜,1 dish,1碟,Lunch,220,Stir_fried_water_spinach_with_shrimp.png
+80,Blueberry muffin,藍莓鬆餅,1pc,1件,Lunch,360,Blueberry_muffin.png
+81,English Muffin,英式鬆餅,1pc,1件,Lunch,130,Bread_English_Muffin.png
+38,Orange,橙,1 pc,1個,Lunch,69,Orange.png
+39,Apple,蘋果,1 pc,1個,Lunch,89,Apple.png
+40,Banana,香蕉,1 pc,1條,Lunch,110.4,Banana.png
+41,Mango,芒果,1pc,1個,Lunch,130,Mango.png
+42,Water melon,西瓜,1slice,1片,Lunch,32,Water_melon.png
+43,Pineapple,菠蘿,1 small bowl,1小碗,Lunch,82,Pineapple.png
+44,Strawberry,士多啤梨,1pc,1粒,Lunch,7.5,Strawberry.png
+34,Coffee/ milk tea (No sugar),港式咖啡/奶茶 (無糖),1 cup,1杯,Lunch,77,Coffee.png
+35,Sugar cube,方糖,1 pc,1粒,Lunch,17,Sugar_cube.png
+36,Orange juice,橙汁,1 glass,1杯,Lunch,100,Orange_juice.png
+37,Coke,可樂,1 glass,1杯,Lunch,139,Coke.png
+93,Green salad,雜菜沙律,1 serving,1客,Afternoon tea/ Snack,22,Green_salad.png
+94,Green salad with chicken,雞肉雜菜沙律,1 serving,1客,Afternoon tea/ Snack,105,Green_salad_with_chicken.png
+95,Green salad with shrimp,蝦雜菜沙律,1 serving,1客,Afternoon tea/ Snack,71,Green_salad_with_shrimp.png
+96,Deep-fried chicken leg,炸雞髀,1 pc,1隻,Afternoon tea/ Snack,275,Deep_fried_chicken_broiler.png
+97,Potato chips (Classic),原味薯片,1 bag (small),1包(小),Afternoon tea/ Snack,150,Potato_Chips_Classic.png
+98,Shrimp chips (Indonesia),印尼蝦片,1 bowl,1碗,Afternoon tea/ Snack,198,Shrimp_Chips_Indonesia.png
+99,Ice-cream,雪糕,1 cup,1杯,Afternoon tea/ Snack,169,Icecream.png
+100,Popsicles,雪條,1 pc,1條,Afternoon tea/ Snack,63,Ice_Pops_Popsicles_Single_Stick.png
+101,Egg tart,蛋撻,1 pc,1個,Afternoon tea/ Snack,147,Egg_Tart.png
+102,Cheesecake,芝士蛋糕,1 pc,1件,Afternoon tea/ Snack,257,Cheesecake.png
+103,Hotdog,熱狗,1 pc,1 個,Afternoon tea/ Snack,129,Hotdog.png
+104,Croissant,牛角酥,1 pc,1個,Afternoon tea/ Snack,231,Bread_Croissants_Butter.png
+105,Fish ball,魚蛋,1 pc,1粒,Afternoon tea/ Snack,49,Fish_Ball.png
+106,Hamburger,漢堡包,1 pc,1個,Afternoon tea/ Snack,250,Hamburger.png
+107,Fish filet burger,魚柳包,1 pc,1個,Afternoon tea/ Snack,380,Fish_filet_burger.png
+108,Pineapple bun,菠蘿包,1 pc,1個,Afternoon tea/ Snack,315,Pineapple_bun.png
+109,Ham & egg sandwich,火腿蛋三文治,1 serving,1份,Afternoon tea/ Snack,360,Ham_Egg_Sandwich.png
+110,Blueberry muffin,藍莓鬆餅,1pc,1件,Afternoon tea/ Snack,360,Blueberry_muffin.png
+111,English muffin,英式鬆餅,1pc,1件,Afternoon tea/ Snack,130,Bread_English_Muffin.png
+112,Apple pie,蘋果批,1pc,1件,Afternoon tea/ Snack,201,Apple_pie.png
+113,Fish fillet battered and fried,炸魚柳,1 pc,1塊,Afternoon tea/ Snack,360,Fish_fillet_battered_and_fried.png
+114,Deep-fried chicken wing,炸雞翼,1 pc,1隻,Afternoon tea/ Snack,55,Deep_fried_chicken_wings.png
+115,Fries (Medium),薯條(中),1 serving,1份,Afternoon tea/ Snack,349,Fries.png
+86,Orange,橙,1 pc,1個,Afternoon tea/ Snack,69,Orange.png
+87,Apple,蘋果,1 pc,1個,Afternoon tea/ Snack,89,Apple.png
+88,Banana,香蕉,1 pc,1條,Afternoon tea/ Snack,110,Banana.png
+89,Pineapple,菠蘿,1 small bowl,1小碗,Afternoon tea/ Snack,82,Pineapple.png
+90,Mango,芒果,1pc,1個,Afternoon tea/ Snack,130,Mango.png
+91,Strawberry,士多啤梨,1pc,1粒,Afternoon tea/ Snack,7.5,Strawberry.png
+92,Water melon,西瓜,1slice,1片,Afternoon tea/ Snack,32,Water_melon.png
+82,Coffee/ milk tea (No sugar),港式咖啡/奶茶 (無糖),1 cup,1杯,Afternoon tea/ Snack,77,Coffee.png
+83,Sugar cube,方糖,1 pc,1粒,Afternoon tea/ Snack,17,Sugar_cube.png
+84,Orange juice,橙汁,1 glass,1杯,Afternoon tea/ Snack,100,Orange_juice.png
+85,Coke,可樂,1 glass,1杯,Afternoon tea/ Snack,139,Coke.png
+130,White rice,白飯,1 bowl,1碗,Dinner,260,White_rice.png
+131,Plain congee,白粥,1 bowl,1碗,Dinner,32,Plain_Congee.png
+132,Long rice noodle,米粉,1 bowl,1碗,Dinner,168,Long_Rice_Noodles_cooked.png
+133,Stir-fried water spinach with shrimp,蝦醬通菜,1 dish,1碟,Dinner,220,Stir_fried_water_spinach_with_shrimp.png
+134,Ma Po bean curd,麻婆豆腐,1 small bowl,1小碗,Dinner,217,Ma_Po_bean_curd.png
+135,Sweet and sour pork,咕嚕肉,1 small bowl,1小碗,Dinner,185,Sweet_and_sour_pork.png
+136,Spicy Kung Pao Shrimp,宮保蝦仁,1 small bowl,1小碗,Dinner,268,Spicy_Kung_Pao_Shrimp.png
+137,Stir-fried broccoli with scallop,西蘭花炒帶子,1 small bowl,1小碗,Dinner,101,Stir_fried_broccoli_with_scall.png
+138,Roasted pigeon,燒乳鴿,1 pc,1隻,Dinner,338,Roasted_pigeon.png
+139,Mayonnaise pork rib,沙拉骨,1 small dish,1小碟,Dinner,189,Mayonnaise_pork_rib.png
+140,Fried sprout with shredded beef,銀芽牛柳絲,1 small bowl,1小碗,Dinner,87,Fried_Sprout_with_shredded_beef.png
+141,Salted pork stomach soup,蘑菇湯,1 bowl,1碗,Dinner,220,Salted_pork_stomach_soup.png
+142,Cream of corn soup,粟米湯,1 bowl,1碗,Dinner,86,Cream_corn_soup.png
+143,Plain chicken,白切雞,1/4 pc,1/4 隻,Dinner,368,Plain_Chicken.png
+144,Honey roasted BBQ pork rice,蜜汁叉燒飯,1 dish,1碟,Dinner,1046,Honey_Roasted_BBQ_Pork_Rice.png
+145,Baked pork chop rice,焗豬排飯,1 serving,1客,Dinner,1396,Baked_Pork_Chop_Rice.png
+146,Beef brisket curry rice,咖哩牛腩飯,1 dish,1碟,Dinner,1082,Beef_brisket_curry_rice.png
+147,Fried rice (Yangzhou style),揚州炒飯,1 dish,1碟,Dinner,870,Fried_rice_Yangzhou_style.png
+148,Spachetti bolognese,肉醬意粉,1 serving,1客,Dinner,1042,Spachetti_Bolognese.png
+149,Fried beef noodle,乾炒牛河,1 dish,1碟,Dinner,887,Fried_beef_noodle.png
+150,Super supreme pizza ,超級至尊芝心批(大批),1 pc,1件,Dinner,352,Super_supreme_pizza.png
+151,Rice with fried fish fillet in cream of corn sauce,粟米班腩飯,1 serving,1客,Dinner,765,Rice_with_Fried_Fish_Filet_and_Corn_Sauce.png
+152,Pan-fried beef steak,煎牛扒,1 serving,1客,Dinner,645,Beef_SteakSirln_Strip_Choice.png
+153,Pan-fried pork chop,煎豬扒,1 serving,1客,Dinner,579,Fresh_Pork_Chop_Center_Rib.png
+154,Pan-fried chicken thigh,煎雞扒,1 serving,1客,Dinner,520,Pan_fried_chicken_thigh_meat_with_skin.png
+155,Steamed amaranth with preserved and salty eggs,金銀蛋莧菜,1 serving,1客,Dinner,585,Steamed_amaranth_with_preserved_and_salty_eggs.png
+156,Boiled vegetable,白灼油菜,1 dish,1碟,Dinner,140,Boiled_rape.png
+157,Boiled Choy Sum,白灼菜心,1 dish,1碟,Dinner,40,Poached_Choy_Sum.png
+158,Stir-fried Choy Sum,炒菜心,1 dish,1碟,Dinner,175,Stir_fried_Choy_Sum.png
+159,Deep-fried stuffed eggplant,煎釀三寶,1pc,1件,Dinner,34,Deep_fried_stuffed_eggplant.png
+160,Tobiki sushi,蟹籽壽司,1 pc,1件,Dinner,46,Tobiki_sushi.png
+161,Salmon sushi,三文魚壽司,1 pc,1件,Dinner,54,Salmon_sushi.png
+162,Shrimp nigiri sushi,甜蝦壽司,1 pc,1件,Dinner,38,Shrimp_Nigiri_Sushi.png
+163,California roll,加州卷,1 pc,1件,Dinner,55,California_Roll.png
+164,Grilled sea eel with rice,鰻魚飯,1 bowl,1碗,Dinner,899,Grilled_sea_eel_with_rice.png
+123,Orange,橙,1 pc,1個,Dinner,69,Orange.png
+124,Apple,蘋果,1 pc,1個,Dinner,89,Apple.png
+125,Banana,香蕉,1 pc,1條,Dinner,110.4,Banana.png
+126,Pineapple,菠蘿,1 small bowl,1小碗,Dinner,82,Pineapple.png
+127,Mango,芒果,1pc,1個,Dinner,130,Mango.png
+128,Strawberry,士多啤梨,1pc,1粒,Dinner,7.5,Strawberry.png
+129,Water melon,西瓜,1slice,1片,Dinner,32,Water_melon.png
+116,Coffee/ milk tea (No sugar),港式咖啡/奶茶 (無糖),1 cup,1杯,Dinner,77,Coffee.png
+117,Sugar cube,方糖,1 pc,1粒,Dinner,17,Sugar_cube.png
+118,Orange juice,橙汁,1 glass,1杯,Dinner,100,Orange_juice.png
+119,Coke,可樂,1 glass,1杯,Dinner,139,Coke.png
+120,Beer,啤酒,1 glass,1杯,Dinner,142,Beer.png
+121,Red Wine,紅酒,1 cup,1杯,Dinner,111,Red_Wine.png
+122,White grape wine,白酒,1 cup,1杯,Dinner,99,White_grape_wine.png
+179,Green bean dessert soup,綠豆糖水,1 bowl,1碗,Seasonal,146,Green_bean_dessert_soup.png
+180,Red bean dessert soup,紅豆糖水,1 bowl,1碗,Seasonal,148,Red_bean_dessert_soup.png
+178,Tomato soup,番茄湯,1 bowl,1碗,Seasonal,80,Tomato_soup.png
+181,Stir-fried water spinach with shrimp,蝦醬通菜,1 dish,1碟,Seasonal,219.8,Stir_fried_water_spinach_with_shrimp.png
+182,Steamed amaranth with preserved and salty eggs,金銀蛋莧菜,1 serving,1客,Seasonal,585,Steamed_amaranth_with_preserved_and_salty_eggs.png
+183,Smoked Salmon and fruit salad,煙三文魚什果沙律,1 serving,1客,Seasonal,720,Smoked_Salmon_and_fruit_salad.png
+184,Baked potato and Grilled chicken,雞沙律焗薯,1 serving,1客,Seasonal,536,Baked_potato_and_Grilled_chicken.png
+185,Green salad with chicken,雞肉雜菜沙律,1 serving,1客,Seasonal,105,Green_salad_with_chicken.png
+186,Tom Yum chicken chop with vermicelli,冬蔭功雞扒粉絲,1 serving,1客,Seasonal,469,Tom_Yum_chicken_chop_with_vermicelli.png
+187,Roasted Chicken Wing,燒雞中翼,1 pc,1 件,Seasonal,61,Roasted_Chicken_Wing.png
+188,Steamed fish head,豉汁蒸魚雲,1 small dish,1小碟,Seasonal,107,Steamed_fish_head.png
+189,Rice with shrimp and egg,滑蛋蝦仁飯,1 dish,1碟,Seasonal,783,Rice_with_shrimp_and_egg.png
+190,Tobiko sushi,蟹籽壽司,1 pc,1件,Seasonal,46.15,Tobiki_sushi.png
+191,Salmon sushi,三文魚壽司,1 pc,1件,Seasonal,54.35,Salmon_sushi.png
+192,Shrimp Nigiri Sushi,甜蝦壽司,1 pc,1件,Seasonal,38,Shrimp_Nigiri_Sushi.png
+193,California roll,加州卷,1 pc,1件,Seasonal,54.5,California_Roll.png
+194,Ice-cream,雪糕,1 cup,1杯,Seasonal,168.84,Icecream.png
+195,Popsicles,雪條,1 pc,1條,Seasonal,63.36,Ice_Pops_Popsicles_Single_Stick.png
+196,Gai Gwai Cho,雞骨草,1 glass,1杯,Seasonal,50,Gai_Gwai_Cho.png
+197,Fried four-season bean,炒四季豆,1 dish,1碟,Seasonal,18,Fried_four-season_bean.png
+198,Cold shredded chicken,涼拌手撕雞,1 dish,1碟,Seasonal,280,Cold_shredded_chicken.png
+199,Rice in winter melon soup with pork,冬瓜肉粒湯飯,1 bowl,1碗,Seasonal,627,Rice_in_winter_melon_soup_with_pork.png
+200,Sweetened herbal turtle jelly,龜苓膏,1 serving,1客,Seasonal,280,Herbal_turtle_jelly_sweetened.png
+201,Fried noodles with bitter melon and sliced pork,涼瓜肉片炒麵,1 dish,1碟,Seasonal,935,Fried_noodles_with_bitter_melon_and_sliced_pork.png
+170,Durian,榴槤,1 pc,1件,Seasonal,147,Durian.png
+171,Longans,龍眼,1 pc,1粒,Seasonal,2,Longans.png
+172,Lychee,荔枝,1 pc,1粒,Seasonal,7,Lychee.png
+173,Pear,梨,1 pc,1個,Seasonal,52,Pear.png
+174,Water melon,西瓜,1 slice,1片,Seasonal,32,Water_melon.png
+175,Peach,水蜜桃 ,1 slice,1片,Seasonal,62.35,Peach.png
+176,Mango,芒果,1 pc,1個,Seasonal,130,Mango.png
+177,Strawberry,士多啤梨,1 pc,1粒,Seasonal,7.5,Strawberry.png
+165,Chrysanthemum Tea,菊花/清涼茶,1 glass,1杯,Seasonal,73,Chrysanthemum_Tea.png
+166,Five flower tea,五花茶,1 glass,1杯,Seasonal,63,Five_flower_tea.png
+167,Sugar cane juice,甘蔗汁,1 glass,1杯,Seasonal,160,Sugar_cane_juice.png
+168,Celery juice,芹菜汁,1 dish,1碟,Seasonal,17,Celery_juice.png
+169,Iced lemon tea,凍檸檬茶,1 glass,1杯,Seasonal,173,Iced_lemon_tea.png

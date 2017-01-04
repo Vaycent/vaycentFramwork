@@ -98,6 +98,8 @@ public class MainActivity extends AppCompatActivity
 //        String url = "http://www.sohu.com/";
 //        JniExec.Reguninstall(directory,url);
 
+
+
     }
 
 

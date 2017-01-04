@@ -41,8 +41,6 @@ public class DownLoadManagerIntentService extends IntentService {
     public int onStartCommand(Intent intent, int flags, int startId){
         mlog.e("DownLoadManagerIntentService onStartCommand");
         downloadUrl = intent.getStringExtra("downloadurl");
-        mlog.d("downloadUrl:"+downloadUrl);
-
         return super.onStartCommand(intent,flags,startId);
     }
 
@@ -68,9 +66,8 @@ public class DownLoadManagerIntentService extends IntentService {
         DownloadManager.Request request = new DownloadManager.Request(
                 Uri.parse(apkUrl));
         request.setDestinationInExternalPublicDir("download", name + ".apk");
-        request.allowScanningByMediaScanner();// 表示允许MediaScanner扫描到这个文件，默认不允许。
-        request.setTitle("应用下载");// 设置下载中通知栏提示的标题
-        request.setDescription("\"" + name + "\"正在下载");// 设置下载中通知栏提示的介绍
+        request.setTitle("App download");
+        request.setDescription("\"" + name + "\"now is downloading");
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         try {
             long downloadId = downloadManager.enqueue(request);

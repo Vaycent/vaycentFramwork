@@ -17,10 +17,7 @@ public class DownloadManagerDemo extends AppCompatActivity {
 
     @BindView(R.id.testDownloadManagerBtn)
     Button mTestDownloadManagerBtn;
-
-
     private String name="vaycentAPK.apk";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

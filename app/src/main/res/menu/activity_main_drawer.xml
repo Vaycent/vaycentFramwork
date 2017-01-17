@@ -114,6 +114,11 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="Download Manager Demo" />
 
+            <item
+                android:id="@+id/databingding_demo"
+                android:icon="@drawable/ic_menu_send"
+                android:title="DataBinding Demo" />
+
 
 
         </menu>

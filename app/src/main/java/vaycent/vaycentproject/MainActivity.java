@@ -40,6 +40,7 @@ import vaycent.vaycentproject.DemoPackage.BackgroundControlPackage.BackgroundCon
 import vaycent.vaycentproject.DemoPackage.BroadcastReceiverPackage.BroadcastReceiverDemo;
 import vaycent.vaycentproject.DemoPackage.ButterKnifePackage.ButterKnifeDemo;
 import vaycent.vaycentproject.DemoPackage.ContentProviderPackage.ContentProviderDemo;
+import vaycent.vaycentproject.DemoPackage.DataBindingPackage.DataBindingDemo;
 import vaycent.vaycentproject.DemoPackage.DownloadManagerPackage.DownloadManagerDemo;
 import vaycent.vaycentproject.DemoPackage.EventPackage.EventDemo;
 import vaycent.vaycentproject.DemoPackage.FragmentPackage.FragmentDemo;
@@ -266,7 +267,13 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.download_manager_demo) {
             Intent intent = new Intent(this, DownloadManagerDemo.class);
             startActivity(intent);
+        }else if (id == R.id.databingding_demo) {
+            Intent intent = new Intent(this, DataBindingDemo.class);
+            startActivity(intent);
         }
+
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

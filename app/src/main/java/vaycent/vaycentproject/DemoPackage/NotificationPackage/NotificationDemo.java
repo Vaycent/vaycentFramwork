@@ -181,7 +181,7 @@ public class NotificationDemo extends AppCompatActivity {
 
     private void pushHeadSupNotification(){
         Notification.Builder builder = new Notification.Builder(this)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.ic_hamberger)
                 .setPriority(Notification.PRIORITY_DEFAULT)
                 .setContentTitle("悬挂式通知")
                 .setContentText("这是一个悬挂式通知");

@@ -115,6 +115,34 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp" />
 
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Input your name"
+                    android:textColor="#00234e"
+                    android:textSize="16dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/activity_checkin_login_til_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/activity_checkin_login_et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Your password"
+                    android:inputType="numberPassword"
+                    android:textColor="#00234e"
+                    android:textSize="16dp" />
+            </android.support.design.widget.TextInputLayout>
+
+
         </LinearLayout>
     </ScrollView>
 

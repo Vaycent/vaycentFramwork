@@ -54,6 +54,7 @@ import vaycent.vaycentproject.DemoPackage.SmsPackage.SmsDemo;
 import vaycent.vaycentproject.DemoPackage.TestSpecialPackage.TestSpecialDemo;
 import vaycent.vaycentproject.DemoPackage.TextViewDemo;
 import vaycent.vaycentproject.DemoPackage.ViewPackage.ViewDemo;
+import vaycent.vaycentproject.DemoPackage.ViewPackage.ViewDemo2;
 import vaycent.vaycentproject.DemoPackage.VolleysharpDemo;
 import vaycent.vaycentproject.DemoPackage.WebPackage.WebViewDemo;
 
@@ -233,6 +234,10 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }else if (id == R.id.view_demo) {
             Intent intent = new Intent(this, ViewDemo.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.view_demo2) {
+            Intent intent = new Intent(this, ViewDemo2.class);
             startActivity(intent);
         }else if (id == R.id.sms_demo) {
             Intent intent = new Intent(this, SmsDemo.class);

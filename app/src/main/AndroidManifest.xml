@@ -95,6 +95,9 @@
 
         <activity android:name=".DemoPackage.ViewPackage.ViewDemo"
                   android:label="View Demo" />
+        <activity android:name=".DemoPackage.ViewPackage.view_demo2"
+                  android:label="View Demo 2" />
+
 
         <activity android:name=".DemoPackage.SmsPackage.SmsDemo"
                   android:label="SMS Demo"
@@ -120,6 +123,7 @@
         <activity android:name=".DemoPackage.WebPackage.WebViewDemo"
                   android:label="WebView Demo Activity"
                   android:screenOrientation="landscape"/>
+
 
         <activity android:name=".DemoPackage.DownloadManagerPackage.DownloadManagerDemo"
                   android:label="DownloadManager Demo Activity"/>

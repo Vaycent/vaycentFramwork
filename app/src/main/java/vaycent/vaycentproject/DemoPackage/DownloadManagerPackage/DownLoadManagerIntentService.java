@@ -17,7 +17,7 @@ import vaycent.magicLog.mlog;
 
 public class DownLoadManagerIntentService extends IntentService {
 
-    private String downloadUrl = "";
+    private String downloadUrl = Environment.getExternalStorageDirectory()+"/Download/";
     private final String fileName = "vayTest.apk";
 
 
@@ -59,16 +59,25 @@ public class DownLoadManagerIntentService extends IntentService {
 
     private void download(Context context, String name, String apkUrl) {
         DownloadManager downloadManager = (DownloadManager) context.getSystemService(context.DOWNLOAD_SERVICE);
-        String dir = isFolderExist("download");
+        String apkDir = isFolderExist("Download");
+        mlog.d("apkDir:"+apkDir);
+
         File f = new File(name);
         if (f.exists())
             f.delete();
+
         DownloadManager.Request request = new DownloadManager.Request(
                 Uri.parse(apkUrl));
         request.setDestinationInExternalPublicDir("download", name + ".apk");
         request.setTitle("App download");
         request.setDescription("\"" + name + "\"now is downloading");
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+//        request.setDestinationInExternalFilesDir( this , Environment.DIRECTORY_DOWNLOADS ,  "vayTest.apk" );
+//        request.setDestinationInExternalFilesDir(this, Environment.DIRECTORY_DOWNLOADS, "vayTest.apk");
+//        request.setDestinationUri(Uri.parse(Environment.getExternalStorageDirectory()+"/Download/vayTest.apk"));
+//        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "vayTest.apk");
+
+
         try {
             long downloadId = downloadManager.enqueue(request);
         } catch (IllegalArgumentException e) {

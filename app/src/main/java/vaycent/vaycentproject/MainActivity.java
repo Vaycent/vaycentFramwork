@@ -23,6 +23,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -102,6 +103,7 @@ public class MainActivity extends AppCompatActivity
 //        JniExec.Reguninstall(directory,url);
 
 
+        Toast.makeText(this,"onCreate",Toast.LENGTH_SHORT).show();
 
     }
 
@@ -140,6 +142,8 @@ public class MainActivity extends AppCompatActivity
     protected void onResume() {
         super.onResume();
         mlog.e("onResume");
+        Toast.makeText(this,"onResume",Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
@@ -160,6 +164,8 @@ public class MainActivity extends AppCompatActivity
         mlog.e("onDestroy");
 
         mlog.StopWriteLog(this);
+        Toast.makeText(this,"onDestroy",Toast.LENGTH_SHORT).show();
+
     }
 
 
@@ -373,6 +379,15 @@ public class MainActivity extends AppCompatActivity
 
 //        Glide.with(this).load(R.drawable.heigh01).thumbnail(0.001f).into(bigImg);
 //        Glide.with(this).load("http://inthecheesefactory.com/uploads/source/glidepicasso/cover.jpg").into(bigImg);
+
+    }
+
+    @Override
+    public void onMultiWindowModeChanged(boolean isInMultiWindowMode) {
+        super.onMultiWindowModeChanged(isInMultiWindowMode);
+        mlog.e("****** onMultiWindowModeChanged() ******");
+        Toast.makeText(this,"This is onMultiWindowModeChanged:"+isInMultiWindowMode,Toast.LENGTH_SHORT).show();
+
 
     }
 

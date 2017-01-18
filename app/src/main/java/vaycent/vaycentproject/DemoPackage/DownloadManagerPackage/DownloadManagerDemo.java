@@ -27,11 +27,7 @@ public class DownloadManagerDemo extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @Override
-    public void onMultiWindowModeChanged(boolean isInMultiWindowMode) {
-        super.onMultiWindowModeChanged(isInMultiWindowMode);
-        Log.i("DownloadManagerDemo", "****** onMultiWindowModeChanged() ******");
-    }
+
 
 
     @OnClick(R.id.testDownloadManagerBtn)

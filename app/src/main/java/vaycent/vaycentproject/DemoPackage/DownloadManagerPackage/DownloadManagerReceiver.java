@@ -33,6 +33,8 @@ public class DownloadManagerReceiver extends BroadcastReceiver {
             if (c.moveToFirst()) {
                 int status = c.getInt(c.getColumnIndex(DownloadManager.COLUMN_STATUS));
                 if (status == DownloadManager.STATUS_SUCCESSFUL) {
+
+//                    DownloadManager.Request.setDestinationInExternalFilesDir();
                     install(context);
 //                    downCompleted(c.getString(c.getColumnIndex(DownloadManager.COLUMN_LOCAL_FILENAME))) ;
                 } else {

@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Environment;
+import android.support.v4.content.FileProvider;
 import android.widget.Toast;
 
 import java.io.File;
@@ -31,7 +33,8 @@ public class DownloadManagerReceiver extends BroadcastReceiver {
             if (c.moveToFirst()) {
                 int status = c.getInt(c.getColumnIndex(DownloadManager.COLUMN_STATUS));
                 if (status == DownloadManager.STATUS_SUCCESSFUL) {
-                    downCompleted(c.getString(c.getColumnIndex(DownloadManager.COLUMN_LOCAL_FILENAME))) ;
+                    install(context);
+//                    downCompleted(c.getString(c.getColumnIndex(DownloadManager.COLUMN_LOCAL_FILENAME))) ;
                 } else {
                     int reason = c.getInt(c.getColumnIndex(DownloadManager.COLUMN_REASON));
                 }
@@ -52,5 +55,22 @@ public class DownloadManagerReceiver extends BroadcastReceiver {
         Uri abc = Uri.fromFile(_file);
         intent.setDataAndType(abc, "application/vnd.android.package-archive");
         mContext.startActivity(intent);
+    }
+
+    public static void install(Context context) {
+        File file= new File(
+                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+                , "vaycentAPK.apk");
+        //参数1 上下文, 参数2 Provider主机地址 和配置文件中保持一致   参数3  共享的文件
+        Uri apkUri =
+                FileProvider.getUriForFile(context, "vaycent.fileprovider", file);
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        // 由于没有在Activity环境下启动Activity,设置下面的标签
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //添加这一句表示对目标应用临时授权该Uri所代表的文件
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        intent.setDataAndType(apkUri, "application/vnd.android.package-archive");
+        context.startActivity(intent);
     }
 }

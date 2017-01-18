@@ -28,7 +28,8 @@
             android:name=".MainActivity"
             android:configChanges="orientation"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:resizeableActivity="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -180,6 +181,16 @@
             android:authorities="vaycent.vaycentproject.book.provider"
             android:permission="vaycent.vaycentproject.BOOKPRO"
             android:process=":bookprovider"/>
+
+        <!--<provider-->
+            <!--android:name="android.support.v4.content.FileProvider"-->
+            <!--android:authorities="vaycent.fileprovider"-->
+            <!--android:grantUriPermissions="true"-->
+            <!--android:exported="false">-->
+            <!--<meta-data-->
+                <!--android:name="android.support.v4.content.FileProvider"-->
+                <!--android:resource="@xml/file_paths" />-->
+        <!--</provider>-->
 
     </application>
 

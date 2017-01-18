@@ -34,13 +34,14 @@ import HelpFulClass.RoundTransform;
 import Helper.MainGrid;
 import Helper.NineGridViewAdapter;
 import Helper.ViewPageAdapter;
+import vaycent.base.router.XRouter;
+import vaycent.base.router.XRules;
 import vaycent.magicLog.mlog;
 import vaycent.vaycentproject.DemoPackage.AnimationDemo;
 import vaycent.vaycentproject.DemoPackage.BackgroundControlPackage.BackgroundControlDemo;
 import vaycent.vaycentproject.DemoPackage.BroadcastReceiverPackage.BroadcastReceiverDemo;
 import vaycent.vaycentproject.DemoPackage.ButterKnifePackage.ButterKnifeDemo;
 import vaycent.vaycentproject.DemoPackage.ContentProviderPackage.ContentProviderDemo;
-import vaycent.vaycentproject.DemoPackage.DataBindingPackage.DataBindingDemo;
 import vaycent.vaycentproject.DemoPackage.DownloadManagerPackage.DownloadManagerDemo;
 import vaycent.vaycentproject.DemoPackage.EventPackage.EventDemo;
 import vaycent.vaycentproject.DemoPackage.FragmentPackage.FragmentDemo;
@@ -266,10 +267,13 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }else if (id == R.id.download_manager_demo) {
             Intent intent = new Intent(this, DownloadManagerDemo.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_LAUNCH_ADJACENT);
             startActivity(intent);
         }else if (id == R.id.databingding_demo) {
-            Intent intent = new Intent(this, DataBindingDemo.class);
-            startActivity(intent);
+//            Intent intent = new Intent(this, DataBindingDemo.class);
+//            startActivity(intent);
+            XRouter.getRaw(XRules.VaycentDataBindingDemo.class, this).start();
+
         }
 
 

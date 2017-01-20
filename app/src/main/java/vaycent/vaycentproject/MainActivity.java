@@ -103,7 +103,6 @@ public class MainActivity extends AppCompatActivity
 //        JniExec.Reguninstall(directory,url);
 
 
-        Toast.makeText(this,"onCreate",Toast.LENGTH_SHORT).show();
 
     }
 
@@ -142,7 +141,6 @@ public class MainActivity extends AppCompatActivity
     protected void onResume() {
         super.onResume();
         mlog.e("onResume");
-        Toast.makeText(this,"onResume",Toast.LENGTH_SHORT).show();
 
     }
 
@@ -164,7 +162,6 @@ public class MainActivity extends AppCompatActivity
         mlog.e("onDestroy");
 
         mlog.StopWriteLog(this);
-        Toast.makeText(this,"onDestroy",Toast.LENGTH_SHORT).show();
 
     }
 

@@ -57,6 +57,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
         }
     }
 
@@ -90,4 +91,5 @@ dependencies {
 
     compile 'com.zxy.android:recovery:0.0.8'
     compile project(':base')
+    compile 'com.taobao.android:alisdk-hotfix:1.4.0'
 }

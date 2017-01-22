@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity
 //        JniExec.Reguninstall(directory,url);
 
 
-
+//        HotFixManager.getInstance().queryNewHotPatch();
     }
 
 
@@ -297,6 +297,8 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Snackbar.make(view, getSoftwareVersion()+"_"+getChannel(MainActivity.this), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+//                Snackbar.make(view, "hello new version", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
             }
         });
 

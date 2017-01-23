@@ -91,5 +91,7 @@ dependencies {
 
     compile 'com.zxy.android:recovery:0.0.8'
     compile project(':base')
-    compile 'com.taobao.android:alisdk-hotfix:1.4.0'
+    compile ('com.taobao.android:alisdk-hotfix:1.4.0'){
+        transitive = false
+    }
 }

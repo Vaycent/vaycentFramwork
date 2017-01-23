@@ -119,6 +119,11 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="DataBinding Demo" />
 
+            <item
+                android:id="@+id/cardio_demo"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Card Io Demo" />
+
 
 
         </menu>

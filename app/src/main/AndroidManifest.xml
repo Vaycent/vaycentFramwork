@@ -14,13 +14,28 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
 
-    <!-- Hot Fix Config -->
+    <!-- *************************Hot Fix Config************************* -->
     <!-- 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!-- 外部存储读权限 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!-- ******************************************************************* -->
+
+
+    <!--************************* card.io *************************-->
+    <!-- Permission to vibrate - recommended, allows vibration feedback on scan -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Permission to use camera - required -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Camera features - recommended -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+    <!-- ******************************************************************* -->
 
     <application
         android:name=".ApplicationContext"
@@ -152,6 +167,14 @@
 
         <activity android:name=".DemoPackage.DataBindingPackage.DataBindingDemo"
             android:label="DataBinding Demo"/>
+
+        <activity android:name=".DemoPackage.CardIoPackage.CardIoDemo"
+                  android:label="Card Io Demo"
+                  android:configChanges="keyboardHidden|orientation"/>
+
+
+        <activity android:name="io.card.payment.CardIOActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="io.card.payment.DataEntryActivity" />
 
 
         <!-- ***************** Service ***************** -->

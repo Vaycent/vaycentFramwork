@@ -42,6 +42,7 @@ import vaycent.vaycentproject.DemoPackage.AnimationDemo;
 import vaycent.vaycentproject.DemoPackage.BackgroundControlPackage.BackgroundControlDemo;
 import vaycent.vaycentproject.DemoPackage.BroadcastReceiverPackage.BroadcastReceiverDemo;
 import vaycent.vaycentproject.DemoPackage.ButterKnifePackage.ButterKnifeDemo;
+import vaycent.vaycentproject.DemoPackage.CardIoPackage.CardIoDemo;
 import vaycent.vaycentproject.DemoPackage.ContentProviderPackage.ContentProviderDemo;
 import vaycent.vaycentproject.DemoPackage.DownloadManagerPackage.DownloadManagerDemo;
 import vaycent.vaycentproject.DemoPackage.EventPackage.EventDemo;
@@ -276,7 +277,9 @@ public class MainActivity extends AppCompatActivity
 //            Intent intent = new Intent(this, DataBindingDemo.class);
 //            startActivity(intent);
             XRouter.getRaw(XRules.VaycentDataBindingDemo.class, this).start();
-
+        }else if (id == R.id.cardio_demo) {
+            Intent intent = new Intent(this, CardIoDemo.class);
+            startActivity(intent);
         }
 
 

@@ -22,6 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -30,8 +31,11 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
 
+import DataBase.Bean.ItemArticle;
 import HelpFulClass.RoundTransform;
+import Helper.HeaderAdapter;
 import Helper.MainGrid;
 import Helper.NineGridViewAdapter;
 import Helper.ViewPageAdapter;
@@ -71,6 +75,23 @@ public class MainActivity extends AppCompatActivity
     private ListView listview;
 
     private ThreadLocal<Boolean> mBooleanThreadLocal = new ThreadLocal<Boolean>();
+
+    private Timer timer = new Timer(); //为了方便取消定时轮播，将 Timer 设为全局
+
+//    private Handler mHandler = new Handler() {
+//        public void handleMessage(Message msg) {
+//            switch (msg.what) {
+//                case UPTATE_VIEWPAGER:
+//                    if (msg.arg1 != 0) {
+//                        vpHottest.setCurrentItem(msg.arg1);
+//                    } else {
+//                        //false 当从末页调到首页是，不显示翻页动画效果，
+//                        vpHottest.setCurrentItem(msg.arg1, false);
+//                    }
+//                    break;
+//            }
+//        }
+//    };
 
 
 
@@ -328,24 +349,49 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void AddHeadView() {
-
         View view = LayoutInflater.from(this).inflate(R.layout.head_viewpager, null);
+
+        LinearLayout mAdvertisementLayout = (LinearLayout)view.findViewById(R.id.mAdvertisementLayout);
         ViewPager topViewPager = (ViewPager) view.findViewById(R.id.top_view_pager);
         MainGrid nineGridView = (MainGrid) view.findViewById(R.id.nine_grid_view);
         ImageView bigImg = (ImageView) view.findViewById(R.id.big_img);
 
+        InitAdvertisement(mAdvertisementLayout);
         InitTopViewPage(topViewPager);
         InitNineGridView(nineGridView);
-        InitBigImage(bigImg);
+//        InitBigImage(bigImg);
 
         listview.addHeaderView(view);
+    }
+
+    private void InitAdvertisement(LinearLayout mAdvertisementLayout){
+        final String[] advertisementUrlSet = {
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1485833130&di=57490863d39176b328c284a5e06ee170&imgtype=jpg&er=1&src=http%3A%2F%2Fpic2.cxtuku.com%2F00%2F10%2F25%2Fb911fd1d4696.jpg",
+                "http://pic2.ooopic.com/10/63/42/04b1OOOPICa3.jpg",
+                "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3357223773,229167668&fm=23&gp=0.jpg",
+                "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2176610467,2174515257&fm=23&gp=0.jpg" };
+
+//        final int[] advertisementPicSet = {R.drawable.heigh01, R.drawable.heigh02,
+//                R.drawable.heigh03, R.drawable.heigh04, };
+
+
+        List<ItemArticle> mListItemArticle = new ArrayList<ItemArticle>();
+        for (int i = 0; i < advertisementUrlSet.length; i++) {
+            ItemArticle mItemArticle = new ItemArticle(i,advertisementUrlSet[i]);
+            mListItemArticle.add(mItemArticle);
+        }
+
+        ViewPager advertisementViewPager = (ViewPager)mAdvertisementLayout.findViewById(R.id.vp_hottest);
+        HeaderAdapter viewadapter = new HeaderAdapter(this,mListItemArticle);
+        advertisementViewPager.setAdapter(viewadapter);
+
     }
 
     private void InitTopViewPage(ViewPager topViewPager){
         final int[] topViewPagerSet = {R.drawable.heigh01, R.drawable.heigh02,
                 R.drawable.heigh03, R.drawable.heigh04, };
 
-        List<ImageView> viewPageList = new ArrayList<ImageView>();
+        ArrayList<ImageView> viewPageList = new ArrayList<ImageView>();
         for (int i = 0; i < topViewPagerSet.length; i++) {
             ImageView img = new ImageView(this);
             img.setLayoutParams(new ViewGroup.LayoutParams(200,200));//ViewGroup.LayoutParams.WRAP_CONTENT
@@ -354,9 +400,6 @@ public class MainActivity extends AppCompatActivity
             Glide.with(this).load(topViewPagerSet[i])
             .transform(new RoundTransform(this,1)).into(img);//.sizeMultiplier(0.1f)
             viewPageList.add(img);
-
-
-
         }
 
         ViewPageAdapter viewadapter = new ViewPageAdapter(viewPageList);
@@ -383,6 +426,23 @@ public class MainActivity extends AppCompatActivity
 //        Glide.with(this).load("http://inthecheesefactory.com/uploads/source/glidepicasso/cover.jpg").into(bigImg);
 
     }
+
+//    private void AdvertisementAutoPlay(){
+//        TimerTask timer.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                Message message = new Message();
+//                message.what = UPTATE_VIEWPAGER;
+//                if (autoCurrIndex == headerArticles.size() - 1) {
+//                    autoCurrIndex = -1;
+//                }
+//                message.arg1 = autoCurrIndex + 1;
+//                mHandler.sendMessage(message);
+//            }
+//        }, 5000, 5000);
+//
+//    }
+
 
     @Override
     public void onMultiWindowModeChanged(boolean isInMultiWindowMode) {

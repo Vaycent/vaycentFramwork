@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+              android:layout_height="wrap_content"
+             >
 
-    <!--ViewPager 热门文章图片展示-->
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        >
-        <!--android:background="@color/gray_light"-->
-        <android.support.v4.view.ViewPager
-            android:id="@+id/vp_hottest"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorPrimary"/>
+        android:layout_height="120dp">
 
-  
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"/>
 
         <LinearLayout
-            android:id="@+id/ll_hottest_indicator"
+            android:id="@+id/pointgroup"
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_gravity="bottom|right"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp"
-            android:gravity="center"
-            android:orientation="horizontal"/>
-    </FrameLayout>
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="3dp"
+            android:orientation="horizontal">
+        </LinearLayout>
 
-</LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

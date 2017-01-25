@@ -6,6 +6,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -15,6 +16,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,7 +24,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -30,12 +31,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Timer;
 
-import DataBase.Bean.ItemArticle;
 import HelpFulClass.RoundTransform;
-import Helper.HeaderAdapter;
 import Helper.MainGrid;
 import Helper.NineGridViewAdapter;
 import Helper.ViewPageAdapter;
@@ -70,30 +67,7 @@ import vaycent.vaycentproject.DemoPackage.WebPackage.WebViewDemo;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private ApplicationContext appContext;
-
     private ListView listview;
-
-    private ThreadLocal<Boolean> mBooleanThreadLocal = new ThreadLocal<Boolean>();
-
-    private Timer timer = new Timer(); //为了方便取消定时轮播，将 Timer 设为全局
-
-//    private Handler mHandler = new Handler() {
-//        public void handleMessage(Message msg) {
-//            switch (msg.what) {
-//                case UPTATE_VIEWPAGER:
-//                    if (msg.arg1 != 0) {
-//                        vpHottest.setCurrentItem(msg.arg1);
-//                    } else {
-//                        //false 当从末页调到首页是，不显示翻页动画效果，
-//                        vpHottest.setCurrentItem(msg.arg1, false);
-//                    }
-//                    break;
-//            }
-//        }
-//    };
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,33 +75,18 @@ public class MainActivity extends AppCompatActivity
         mlog.e("onCreate");
         setContentView(R.layout.activity_main);
 
-        appContext = ((ApplicationContext) this.getApplication());
+        GetDeviceScreenWidth();
 
         InitLayout();
 
         InitListView();
 
         AddHeadView();
-//
+
         mlog.StartWriteLog(this);
 
 
-//        getWindow().setGravity(Gravity.LEFT|Gravity.TOP);
-//        WindowManager.LayoutParams params = getWindow().getAttributes();
-//        params.x=0;
-//        params.y=0;
-//        params.height=1;
-//        params.width=1;
-//        getWindow().setAttributes(params);
-
-//        String directory = MainActivity.this.getFilesDir().getAbsolutePath();
-//        String url = "http://www.sohu.com/";
-//        JniExec.Reguninstall(directory,url);
-
-
-//        HotFixManager.getInstance().queryNewHotPatch();
     }
-
 
     private String getSoftwareVersion(){
         PackageInfo pi;
@@ -321,8 +280,6 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Snackbar.make(view, getSoftwareVersion()+"_"+getChannel(MainActivity.this), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-//                Snackbar.make(view, "hello new version", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
             }
         });
 
@@ -351,45 +308,20 @@ public class MainActivity extends AppCompatActivity
     private void AddHeadView() {
         View view = LayoutInflater.from(this).inflate(R.layout.head_viewpager, null);
 
-        LinearLayout mAdvertisementLayout = (LinearLayout)view.findViewById(R.id.mAdvertisementLayout);
         ViewPager topViewPager = (ViewPager) view.findViewById(R.id.top_view_pager);
         MainGrid nineGridView = (MainGrid) view.findViewById(R.id.nine_grid_view);
         ImageView bigImg = (ImageView) view.findViewById(R.id.big_img);
 
-        InitAdvertisement(mAdvertisementLayout);
         InitTopViewPage(topViewPager);
         InitNineGridView(nineGridView);
-//        InitBigImage(bigImg);
+        InitBigImage(bigImg);
 
         listview.addHeaderView(view);
     }
 
-    private void InitAdvertisement(LinearLayout mAdvertisementLayout){
-        final String[] advertisementUrlSet = {
-                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1485833130&di=57490863d39176b328c284a5e06ee170&imgtype=jpg&er=1&src=http%3A%2F%2Fpic2.cxtuku.com%2F00%2F10%2F25%2Fb911fd1d4696.jpg",
-                "http://pic2.ooopic.com/10/63/42/04b1OOOPICa3.jpg",
-                "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3357223773,229167668&fm=23&gp=0.jpg",
-                "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2176610467,2174515257&fm=23&gp=0.jpg" };
-
-//        final int[] advertisementPicSet = {R.drawable.heigh01, R.drawable.heigh02,
-//                R.drawable.heigh03, R.drawable.heigh04, };
-
-
-        List<ItemArticle> mListItemArticle = new ArrayList<ItemArticle>();
-        for (int i = 0; i < advertisementUrlSet.length; i++) {
-            ItemArticle mItemArticle = new ItemArticle(i,advertisementUrlSet[i]);
-            mListItemArticle.add(mItemArticle);
-        }
-
-        ViewPager advertisementViewPager = (ViewPager)mAdvertisementLayout.findViewById(R.id.vp_hottest);
-        HeaderAdapter viewadapter = new HeaderAdapter(this,mListItemArticle);
-        advertisementViewPager.setAdapter(viewadapter);
-
-    }
-
-    private void InitTopViewPage(ViewPager topViewPager){
-        final int[] topViewPagerSet = {R.drawable.heigh01, R.drawable.heigh02,
-                R.drawable.heigh03, R.drawable.heigh04, };
+    private void InitTopViewPage(final ViewPager topViewPager){
+        final int[] topViewPagerSet = {R.mipmap.banner1, R.mipmap.banner2,
+                R.mipmap.banner3, R.mipmap.banner4, };
 
         ArrayList<ImageView> viewPageList = new ArrayList<ImageView>();
         for (int i = 0; i < topViewPagerSet.length; i++) {
@@ -404,6 +336,20 @@ public class MainActivity extends AppCompatActivity
 
         ViewPageAdapter viewadapter = new ViewPageAdapter(viewPageList);
         topViewPager.setAdapter(viewadapter);
+
+        final Handler mHandler = new Handler();
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                int currentPosition = topViewPager.getCurrentItem();
+                if(currentPosition == topViewPager.getAdapter().getCount() - 1){
+                    topViewPager.setCurrentItem(0);
+                }else{
+                    topViewPager.setCurrentItem(currentPosition + 1);
+                }
+                mHandler.postDelayed(this,3000);
+            }
+        },3000);
     }
 
     private void InitNineGridView( MainGrid nineGridView ) {
@@ -427,23 +373,6 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-//    private void AdvertisementAutoPlay(){
-//        TimerTask timer.schedule(new TimerTask() {
-//            @Override
-//            public void run() {
-//                Message message = new Message();
-//                message.what = UPTATE_VIEWPAGER;
-//                if (autoCurrIndex == headerArticles.size() - 1) {
-//                    autoCurrIndex = -1;
-//                }
-//                message.arg1 = autoCurrIndex + 1;
-//                mHandler.sendMessage(message);
-//            }
-//        }, 5000, 5000);
-//
-//    }
-
-
     @Override
     public void onMultiWindowModeChanged(boolean isInMultiWindowMode) {
         super.onMultiWindowModeChanged(isInMultiWindowMode);
@@ -453,4 +382,12 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    private void GetDeviceScreenWidth(){
+        DisplayMetrics dm = this.getApplication().getResources().getDisplayMetrics();
+        float density = dm.density;
+        int widthPixels = dm.widthPixels;
+        int heightPixels = dm.heightPixels;
+        mlog.d("density:"+density+",widthPixels:"+widthPixels+",heightPixels:"+heightPixels);
+        mlog.d("Width dp:"+widthPixels/density+",Heigh dp:"+heightPixels/density);
+    }
 }

@@ -1,8 +1,8 @@
 package Helper;
 
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import java.util.List;
@@ -17,30 +17,33 @@ public class ViewPageAdapter extends PagerAdapter
 		}
 		
 		@Override
-		public void destroyItem(View container, int position, Object object) {
-			// TODO Auto-generated method stub
-			((ViewPager)container).removeView(list.get(position));
-
+		public void destroyItem(ViewGroup container, int position, Object object) {
+			//super.destroyItem(container, position, object);
+			container.removeView((View) object);
 		}
 
 		@Override
-		public Object instantiateItem(View container, int position) {
-			// TODO Auto-generated method stub
-			((ViewPager) container).addView(list.get(position));
+		public Object instantiateItem(ViewGroup container, int position) {
+			// return super.instantiateItem(container, position);
+			// 修改position
+			position = position % list.size();
+			// 将图片控件添加到容器
+			container.addView(list.get(position));
 
+			// 返回
 			return list.get(position);
 		}
 
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
-			return list.size();
+//			return list.size();
+			return Integer.MAX_VALUE;
 		}
 
 		@Override
-		public boolean isViewFromObject(View arg0, Object arg1) {
-			// TODO Auto-generated method stub
-			return (arg0 == arg1);
+		public boolean isViewFromObject(View view, Object object) {
+			return view == object;
 		}
 
 }

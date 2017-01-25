@@ -69,6 +69,10 @@ public class MainActivity extends AppCompatActivity
 
     private ListView listview;
 
+    private String TAG = "MainActivity";
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +88,8 @@ public class MainActivity extends AppCompatActivity
         AddHeadView();
 
         mlog.StartWriteLog(this);
+
+
 
 
     }
@@ -143,7 +149,6 @@ public class MainActivity extends AppCompatActivity
         mlog.e("onDestroy");
 
         mlog.StopWriteLog(this);
-
     }
 
 
@@ -173,6 +178,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            startActivity(new Intent(this, RxAndroidDemo.class));
             return true;
         }
 

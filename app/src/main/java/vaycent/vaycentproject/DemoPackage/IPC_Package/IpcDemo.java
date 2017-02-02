@@ -15,7 +15,7 @@ import vaycent.vaycentproject.R;
  * Created by Vaycent on 2016/10/27.
  */
 
-public class IPCDemo extends AppCompatActivity{
+public class IpcDemo extends AppCompatActivity{
 
 
     private Button CommonBtn,ChatBtn;

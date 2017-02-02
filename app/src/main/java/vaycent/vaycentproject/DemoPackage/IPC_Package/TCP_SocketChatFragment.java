@@ -201,7 +201,7 @@ public class TCP_SocketChatFragment extends Fragment{
 
 
 
-                IPCDemo ipcDemo = (IPCDemo)getActivity();
+                IpcDemo ipcDemo = (IpcDemo)getActivity();
                 mlog.d("ipcDemo.isFinishing():"+ipcDemo.isFinishing());
                 while (!ipcDemo.isFinishing()){
                     String msg = br.readLine();

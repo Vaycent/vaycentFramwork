@@ -49,7 +49,7 @@ import vaycent.vaycentproject.DemoPackage.ContentProviderPackage.ContentProvider
 import vaycent.vaycentproject.DemoPackage.DownloadManagerPackage.DownloadManagerDemo;
 import vaycent.vaycentproject.DemoPackage.EventPackage.EventDemo;
 import vaycent.vaycentproject.DemoPackage.FragmentPackage.FragmentDemo;
-import vaycent.vaycentproject.DemoPackage.IPC_Package.IPCDemo;
+import vaycent.vaycentproject.DemoPackage.IPC_Package.IpcDemo;
 import vaycent.vaycentproject.DemoPackage.MessagePackage.AndroidMessageDemo;
 import vaycent.vaycentproject.DemoPackage.NotificationPackage.NotificationDemo;
 import vaycent.vaycentproject.DemoPackage.OptimizationPackage.OptimizationDemo;
@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, FragmentDemo.class);
             startActivity(intent);
         } else if (id == R.id.ipc_demo) {
-            Intent intent = new Intent(this, IPCDemo.class);
+            Intent intent = new Intent(this, IpcDemo.class);
             startActivity(intent);
         } else if (id == R.id.event_demo) {
             Intent intent = new Intent(this, EventDemo.class);

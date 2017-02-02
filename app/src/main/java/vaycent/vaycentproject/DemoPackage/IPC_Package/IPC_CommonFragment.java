@@ -98,7 +98,7 @@ public class IPC_CommonFragment extends Fragment {
     }
 
     private void SerializeIn(){
-        IPCDemo ipcDemo= (IPCDemo)getActivity();
+        IpcDemo ipcDemo= (IpcDemo)getActivity();
         Intent intent = new Intent();
         intent.setClass(ipcDemo,SerializableTestActivity.class);
         startActivity(intent);
@@ -106,7 +106,7 @@ public class IPC_CommonFragment extends Fragment {
 
     private void ParcelableTest(){
         User user = new User(0,"tom",21);
-        IPCDemo ipcDemo = (IPCDemo)getActivity();
+        IpcDemo ipcDemo = (IpcDemo)getActivity();
         Intent intent = new Intent(ipcDemo, ParcelableTestActivity.class);
         intent.putExtra("userParcelable", user);
         startActivity(intent);

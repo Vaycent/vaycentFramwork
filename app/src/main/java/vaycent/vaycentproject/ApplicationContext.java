@@ -39,7 +39,7 @@ public class ApplicationContext extends Application {
         InitLeakCanary();
 
 //        InitRecovery();
-        initHotfix();
+//        initHotfix();
     }
 
     @Override
@@ -82,9 +82,7 @@ public class ApplicationContext extends Application {
                 .init(this);
     }
 
-    /**
-     * 为了测试的方便, initialize放在activity中, 但是实际上initialize应该放在Application的onCreate方法中, 需要尽可能早的做初始化.
-     */
+
     private void initHotfix() {
         String appId = "88210-1";
         String appVersion;

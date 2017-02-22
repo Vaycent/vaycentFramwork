@@ -1,1 +1,1 @@
-include ':app', ':router', ':resources', ':libs'
+include ':App', ':router', ':resources', ':libs', ':Setting'

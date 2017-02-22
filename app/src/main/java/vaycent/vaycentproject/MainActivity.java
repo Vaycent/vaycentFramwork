@@ -41,6 +41,7 @@ import vaycent.base.router.XRouter;
 import vaycent.base.router.XRules;
 import vaycent.magicLog.mlog;
 import vaycent.vaycentproject.DemoPackage.AnimationDemo;
+import vaycent.vaycentproject.DemoPackage.AnnotationPackage.AnnotationDemo;
 import vaycent.vaycentproject.DemoPackage.BackgroundControlPackage.BackgroundControlDemo;
 import vaycent.vaycentproject.DemoPackage.BroadcastReceiverPackage.BroadcastReceiverDemo;
 import vaycent.vaycentproject.DemoPackage.ButterKnifePackage.ButterKnifeDemo;
@@ -267,7 +268,13 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.cardio_demo) {
             Intent intent = new Intent(this, CardIoDemo.class);
             startActivity(intent);
+        }else if (id == R.id.annotation_demo) {
+            Intent intent = new Intent(this, AnnotationDemo.class);
+            startActivity(intent);
         }
+
+
+
 
 
 

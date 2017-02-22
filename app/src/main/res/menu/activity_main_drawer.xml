@@ -124,6 +124,10 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="Card Io Demo" />
 
+            <item
+                android:id="@+id/annotation_demo"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Annotation Demo" />
 
 
         </menu>

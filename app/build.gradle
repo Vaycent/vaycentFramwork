@@ -82,7 +82,7 @@ dependencies {
 
 
 
-    compile project(':base')
+    compile project(':router')
 //    compile('com.taobao.android:alisdk-hotfix:1.4.0') {
 //        transitive = false
 //    }

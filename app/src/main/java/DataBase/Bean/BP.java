@@ -4,6 +4,8 @@ package DataBase.Bean;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import vaycent.vaycentproject.DemoPackage.AnnotationPackage.AnnotationHelper;
+
 @DatabaseTable(tableName = "tb_bp")
 public class BP {
     @DatabaseField(generatedId = true)
@@ -110,4 +112,17 @@ public class BP {
     {
         this.missprevious = value;
     }
+
+
+    @AnnotationHelper.BindAddress("http://www.google.com.cn")
+    String address;
+    @AnnotationHelper.BindPort("8888")
+    private String port;
+
+    private int number;
+
+    public void printInfo() {
+        System.out.println("info is " + address + ":" + port);
+    }
+
 }

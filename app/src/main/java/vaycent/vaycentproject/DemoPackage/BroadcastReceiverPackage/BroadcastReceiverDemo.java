@@ -168,9 +168,9 @@ public class BroadcastReceiverDemo extends AppCompatActivity {
     class CustomBroadcastReceiver extends BroadcastReceiver{
         @Override
         public void onReceive(Context context, Intent intent) {
-            if(intent.getAction().equals(cunstomBroadcastStr)){
-                Toast.makeText(context,"Received custom Broadcast, only this App", Toast.LENGTH_SHORT).show();
-            }
+//            if(intent.getAction().equals(cunstomBroadcastStr)){
+//                Toast.makeText(context,"Received custom Broadcast, only this App", Toast.LENGTH_SHORT).show();
+//            }
         }
     }
 

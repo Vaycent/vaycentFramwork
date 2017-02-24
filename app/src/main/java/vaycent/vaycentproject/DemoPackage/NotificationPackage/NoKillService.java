@@ -32,6 +32,9 @@ public class NoKillService extends Service{
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
+        Intent innerIntent = new Intent(this, GrayInnerService.class);
+        startService(innerIntent);
+
         pushCanNotKillNotification();
 
         return START_STICKY;
@@ -81,11 +84,10 @@ public class NoKillService extends Service{
                 .setContentTitle("NoKill Notification Title")// 设置下拉列表里的标题
                 .setContentText("NoKill Notification Message")// 设置上下文内容
                 .build();
-       // nm.notify("nokillTest",2,updateNotification);
 
 
 //        // using id of ticker text as notif id
-        this.startForeground(R.string.app_name, updateNotification);
+        this.startForeground(169, updateNotification);
 
     }
 

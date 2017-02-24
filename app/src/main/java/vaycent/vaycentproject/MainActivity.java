@@ -92,6 +92,10 @@ public class MainActivity extends AppCompatActivity
         mlog.StartWriteLog(this);
 
 
+//        Intent intent =new Intent();
+//        ComponentName cn = new ComponentName("com.csair.mbp", "com.csair.mbp.WelcomeActivity");
+//        intent.setComponent(cn);
+//        startActivity(intent);
 
 
     }

@@ -190,6 +190,12 @@
 
         <!-- ***************** Service ***************** -->
         <service android:name=".DemoPackage.NotificationPackage.NoKillService"/>
+
+        <service android:name=".DemoPackage.NotificationPackage.GrayInnerService"/>
+
+
+
+
         <service android:name=".MyService">
             <intent-filter>
                 <action android:name="vaycent.vaycentproject.DemoPackage.IPC_Package.IMyService"/>

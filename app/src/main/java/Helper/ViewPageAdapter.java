@@ -7,8 +7,7 @@ import android.widget.ImageView;
 
 import java.util.List;
 
-public class ViewPageAdapter extends PagerAdapter
-	{
+public class ViewPageAdapter extends PagerAdapter {
 
 		List<ImageView> list = null;
 		public ViewPageAdapter(List<ImageView> _list)

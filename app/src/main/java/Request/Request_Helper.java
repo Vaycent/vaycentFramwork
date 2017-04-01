@@ -30,7 +30,7 @@ public class Request_Helper {
 
     public  void testGetRequest(){
         StringListenerInterface listenerInterface;
-        listenerInterface=new StringListenerInterface(context, StringListenerInterface.responseListener, StringListenerInterface.errorListener)
+        listenerInterface=new StringListenerInterface(context)
         {
             @Override
             public void responseAction(String response) {
@@ -52,7 +52,7 @@ public class Request_Helper {
 
     public  void testPostRequest(){
         StringListenerInterface listenerInterface;
-        listenerInterface=new StringListenerInterface(context, StringListenerInterface.responseListener, StringListenerInterface.errorListener)
+        listenerInterface=new StringListenerInterface(context)
         {
             @Override
             public void responseAction(String response) {
@@ -85,7 +85,7 @@ public class Request_Helper {
 
     public void testJsonRequest(){
         JsonListenerInterface listenerInterface;
-        listenerInterface=new JsonListenerInterface(context, JsonListenerInterface.responseListener, StringListenerInterface.errorListener)
+        listenerInterface=new JsonListenerInterface(context)
         {
             @Override
             public void responseAction(String response) {

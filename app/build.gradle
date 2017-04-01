@@ -92,7 +92,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support:design:25.3.0'
     compile 'com.android.support:multidex:1.0.1'
-    compile 'com.github.Vaycent:VolleySharp:1.5.1'
+    compile 'com.github.Vaycent:VolleySharp:1.5.4'
     compile 'com.github.Vaycent:ormlitesharp:1.5.110'
     compile 'com.github.Vaycent:MagicLog:1.2.6'
     compile 'com.jakewharton:butterknife:8.4.0'

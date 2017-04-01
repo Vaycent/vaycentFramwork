@@ -3,12 +3,11 @@ package vaycent.vaycentproject.DemoPackage.RecycleViewPackage;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +21,6 @@ import vaycent.vaycentproject.R;
 public class ListFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
-    private List<String> mDatas;
-    private HomeAdapter mAdapter;
 
     private Context context;
 
@@ -46,56 +43,30 @@ public class ListFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
+        List<String> mDatas = initData();
 
+        //Setup LinearLayoutManager、GridLayoutManager、StaggeredGridLayoutManager
+//        mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
+//        mRecyclerView.setLayoutManager(new GridLayoutManager(this.getActivity(),4));
+        mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
 
-        initData();
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
-        mRecyclerView.setAdapter(mAdapter = new HomeAdapter());
+        //Setup adapter
+        HomeAdapter mAdapter = new HomeAdapter(this.getActivity(),mDatas);
+        mRecyclerView.setAdapter(mAdapter);
+        //Setup divider
+//        mRecyclerView.addItemDecoration(new DividerItemDecoration(this.getActivity(),
+//                DividerItemDecoration.VERTICAL_LIST));
+        mRecyclerView.addItemDecoration(new DividerGridItemDecoration(this.getActivity()));
     }
 
-    protected void initData() {
+    private List<String> initData() {
+        List<String> mDatas;
         mDatas = new ArrayList<String>();
         for (int i = 'A'; i < 'z'; i++)
         {
             mDatas.add("" + (char) i);
         }
-    }
-
-    class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder>
-    {
-
-        @Override
-        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
-        {
-            MyViewHolder holder = new MyViewHolder(LayoutInflater.from(
-                    context).inflate(R.layout.item_home, parent,
-                    false));
-            return holder;
-        }
-
-        @Override
-        public void onBindViewHolder(MyViewHolder holder, int position)
-        {
-            holder.tv.setText(mDatas.get(position));
-        }
-
-        @Override
-        public int getItemCount()
-        {
-            return mDatas.size();
-        }
-
-        class MyViewHolder extends RecyclerView.ViewHolder
-        {
-
-            TextView tv;
-
-            public MyViewHolder(View view)
-            {
-                super(view);
-                tv = (TextView) view.findViewById(R.id.id_num);
-            }
-        }
+        return mDatas;
     }
 
 

@@ -6,16 +6,16 @@
         <item
             android:id="@+id/ormlitesharp_demo"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="OrmliteSharp Demo" />
+            android:title="OrmliteSharp Demo"/>
         <item
             android:id="@+id/volleysharp_demo"
             android:icon="@drawable/ic_menu_manage"
-            android:title="VolleySharp Demo" />
+            android:title="VolleySharp Demo"/>
 
         <item
             android:id="@+id/recycleview_demo"
             android:icon="@drawable/ic_menu_manage"
-            android:title="RecycleView Demo" />
+            android:title="RecycleView Demo"/>
 
 
     </group>
@@ -26,119 +26,127 @@
             <item
                 android:id="@+id/textview_demo"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="TextView Demo" />
+                android:title="TextView Demo"/>
             <item
                 android:id="@+id/notification_demo"
                 android:icon="@drawable/ic_menu_gallery"
-                android:title="Notification Demo" />
+                android:title="Notification Demo"/>
             <item
                 android:id="@+id/animation_demo"
                 android:icon="@drawable/ic_menu_slideshow"
-                android:title="Animation Demo" />
+                android:title="Animation Demo"/>
             <item
                 android:id="@+id/broadcast_receive_demo"
                 android:icon="@drawable/ic_menu_manage"
-                android:title="BroadcastReceive Demo" />
+                android:title="BroadcastReceive Demo"/>
 
             <item
                 android:id="@+id/content_provider_demo"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Content Provider Demo" />
+                android:title="Content Provider Demo"/>
             <item
                 android:id="@+id/fragment_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Fragment Demo" />
+                android:title="Fragment Demo"/>
 
             <item
                 android:id="@+id/ipc_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="IPC Demo" />
+                android:title="IPC Demo"/>
 
             <item
                 android:id="@+id/event_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Event Demo" />
+                android:title="Event Demo"/>
 
             <item
                 android:id="@+id/view_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="View Demo" />
+                android:title="View Demo"/>
 
             <item
                 android:id="@+id/view_demo2"
                 android:icon="@drawable/ic_menu_send"
-                android:title="View Demo 2" />
+                android:title="View Demo 2"/>
 
             <item
                 android:id="@+id/sms_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="SMS Demo" />
+                android:title="SMS Demo"/>
 
             <item
                 android:id="@+id/androidmessage_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Android Message Demo" />
+                android:title="Android Message Demo"/>
 
             <item
                 android:id="@+id/optimization_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Optimization Demo" />
+                android:title="Optimization Demo"/>
 
             <item
                 android:id="@+id/webview_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="WebView Demo" />
+                android:title="WebView Demo"/>
 
             <item
                 android:id="@+id/shortcut_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Shortcut Demo" />
+                android:title="Shortcut Demo"/>
 
             <item
                 android:id="@+id/butterknife_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="ButterKnife Demo" />
+                android:title="ButterKnife Demo"/>
 
             <item
                 android:id="@+id/test_special_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Test Special Demo" />
+                android:title="Test Special Demo"/>
 
             <item
                 android:id="@+id/background_control_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Background Control Demo" />
+                android:title="Background Control Demo"/>
 
             <item
                 android:id="@+id/download_manager_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Download Manager Demo" />
+                android:title="Download Manager Demo"/>
 
             <item
                 android:id="@+id/databingding_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="DataBinding Demo" />
+                android:title="DataBinding Demo"/>
 
             <item
                 android:id="@+id/cardio_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Card Io Demo" />
+                android:title="Card Io Demo"/>
 
             <item
                 android:id="@+id/annotation_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Annotation Demo" />
+                android:title="Annotation Demo"/>
 
             <item
                 android:id="@+id/matisse_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Matisse Demo" />
+                android:title="Matisse Demo"/>
             <item
                 android:id="@+id/observer_demo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Observer Demo" />
+                android:title="Observer Demo"/>
 
+            <item
+                android:id="@+id/language_test_demo"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Language Test Demo"/>
 
+            <item
+                android:id="@+id/finger_test_demo"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Finger Test Demo"/>
 
 
         </menu>

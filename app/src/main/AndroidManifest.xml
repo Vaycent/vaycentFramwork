@@ -52,9 +52,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:name,android:allowBackup,android:label">
-
-
-
         <meta-data
             android:name="CHANNEL"
             android:value="${CHANNEL_VALUE}"/>
@@ -186,11 +183,9 @@
             android:configChanges="keyboardHidden|orientation"/>
         <activity android:name="io.card.payment.DataEntryActivity"/>
         <activity android:name=".RxAndroidDemo"/>
-
         <activity android:name=".DemoPackage.Matisse.MatisseActivity"/>
         <activity android:name=".DemoPackage.Observer.ObserverActivity"/>
-
-
+        <activity android:name=".DemoPackage.LanguageTest.LanguageTestActivity"/>
         <activity
             android:name=".DemoPackage.AnnotationPackage.AnnotationDemo"
             android:configChanges="keyboardHidden|orientation"
@@ -198,12 +193,7 @@
 
         <!-- ***************** Service ***************** -->
         <service android:name=".DemoPackage.NotificationPackage.NoKillService"/>
-
         <service android:name=".DemoPackage.NotificationPackage.GrayInnerService"/>
-
-
-
-
         <service android:name=".MyService">
             <intent-filter>
                 <action android:name="vaycent.vaycentproject.DemoPackage.IPC_Package.IMyService"/>
@@ -264,6 +254,9 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/new_app_widget_info"/>
         </receiver>
+
+        <activity android:name=".DemoPackage.FingerTest.FingerTest">
+        </activity>
     </application>
 
 </manifest>

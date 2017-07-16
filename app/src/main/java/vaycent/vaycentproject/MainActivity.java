@@ -49,8 +49,10 @@ import vaycent.vaycentproject.DemoPackage.CardIoPackage.CardIoDemo;
 import vaycent.vaycentproject.DemoPackage.ContentProviderPackage.ContentProviderDemo;
 import vaycent.vaycentproject.DemoPackage.DownloadManagerPackage.DownloadManagerDemo;
 import vaycent.vaycentproject.DemoPackage.EventPackage.EventDemo;
+import vaycent.vaycentproject.DemoPackage.FingerTest.FingerTest;
 import vaycent.vaycentproject.DemoPackage.FragmentPackage.FragmentDemo;
 import vaycent.vaycentproject.DemoPackage.IPC_Package.IpcDemo;
+import vaycent.vaycentproject.DemoPackage.LanguageTest.LanguageTestActivity;
 import vaycent.vaycentproject.DemoPackage.Matisse.MatisseActivity;
 import vaycent.vaycentproject.DemoPackage.MessagePackage.AndroidMessageDemo;
 import vaycent.vaycentproject.DemoPackage.NotificationPackage.NotificationDemo;
@@ -283,7 +285,14 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.observer_demo) {
             Intent intent = new Intent(this, ObserverActivity.class);
             startActivity(intent);
+        }else if (id == R.id.language_test_demo) {
+            Intent intent = new Intent(this, LanguageTestActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.finger_test_demo) {
+            Intent intent = new Intent(this, FingerTest.class);
+            startActivity(intent);
         }
+
 
 
 

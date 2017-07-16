@@ -51,6 +51,7 @@ import vaycent.vaycentproject.DemoPackage.DownloadManagerPackage.DownloadManager
 import vaycent.vaycentproject.DemoPackage.EventPackage.EventDemo;
 import vaycent.vaycentproject.DemoPackage.FragmentPackage.FragmentDemo;
 import vaycent.vaycentproject.DemoPackage.IPC_Package.IpcDemo;
+import vaycent.vaycentproject.DemoPackage.Matisse.MatisseActivity;
 import vaycent.vaycentproject.DemoPackage.MessagePackage.AndroidMessageDemo;
 import vaycent.vaycentproject.DemoPackage.NotificationPackage.NotificationDemo;
 import vaycent.vaycentproject.DemoPackage.OptimizationPackage.OptimizationDemo;
@@ -274,6 +275,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }else if (id == R.id.annotation_demo) {
             Intent intent = new Intent(this, AnnotationDemo.class);
+            startActivity(intent);
+        }else if (id == R.id.matisse_demo) {
+            Intent intent = new Intent(this, MatisseActivity.class);
             startActivity(intent);
         }
 

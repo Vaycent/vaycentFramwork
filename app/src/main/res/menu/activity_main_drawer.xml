@@ -129,6 +129,12 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="Annotation Demo" />
 
+            <item
+                android:id="@+id/matisse_demo"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Matisse Demo" />
+
+
 
         </menu>
     </item>

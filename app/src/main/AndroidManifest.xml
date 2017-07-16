@@ -188,6 +188,7 @@
         <activity android:name=".RxAndroidDemo"/>
 
         <activity android:name=".DemoPackage.Matisse.MatisseActivity"/>
+        <activity android:name=".DemoPackage.Observer.ObserverActivity"/>
 
 
         <activity

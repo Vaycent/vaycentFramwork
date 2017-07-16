@@ -133,6 +133,11 @@
                 android:id="@+id/matisse_demo"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Matisse Demo" />
+            <item
+                android:id="@+id/observer_demo"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Observer Demo" />
+
 
 
 

@@ -54,6 +54,7 @@ import vaycent.vaycentproject.DemoPackage.IPC_Package.IpcDemo;
 import vaycent.vaycentproject.DemoPackage.Matisse.MatisseActivity;
 import vaycent.vaycentproject.DemoPackage.MessagePackage.AndroidMessageDemo;
 import vaycent.vaycentproject.DemoPackage.NotificationPackage.NotificationDemo;
+import vaycent.vaycentproject.DemoPackage.Observer.ObserverActivity;
 import vaycent.vaycentproject.DemoPackage.OptimizationPackage.OptimizationDemo;
 import vaycent.vaycentproject.DemoPackage.OrmliteSharpDemo;
 import vaycent.vaycentproject.DemoPackage.RecycleViewPackage.RecycleViewDemo;
@@ -278,6 +279,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }else if (id == R.id.matisse_demo) {
             Intent intent = new Intent(this, MatisseActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.observer_demo) {
+            Intent intent = new Intent(this, ObserverActivity.class);
             startActivity(intent);
         }
 

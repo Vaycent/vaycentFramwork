@@ -4,7 +4,6 @@
     android:layout_height="match_parent">
 
     <vaycent.vaycentproject.DemoPackage.ViewPackage.MoveView
-        android:id="@+id/img_view"
         android:layout_width="100dp"
         android:layout_height="100dp" />
 

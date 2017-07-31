@@ -3,8 +3,7 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="vaycent.vaycentproject">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REMOVED"/>
@@ -52,15 +51,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:name,android:allowBackup,android:label">
-        <meta-data
-            android:name="CHANNEL"
-            android:value="${CHANNEL_VALUE}"/>
+
         <meta-data
             android:name="com.taobao.android.hotfix.APPSECRET"
             android:value="af346a75cdffedc57c2b463e52198736"/>
         <meta-data
             android:name="com.taobao.android.hotfix.RSASECRET"
             android:value="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCMVsysgxBLal2H5O6fgqOkrzbBk8Dz2uypWnxJ2Nxb98f5eqAxW8EeTliutDoUel2oy3GW5mnGMUgxCLCjZm3Vv5W6DwsKjrKi75GmVk4Muj1CYS9qoMcFuILOCGFy8rQ71WTvItNFAdvEs5uqKGD1wtsn8pqpMCvm0R8vJCTmfOvGNs0F6x/lQ28fy5tQBNJzOEcM7EHFmNY8d3tO07GJcglW3ez1yXsY7vWGRsSH8tMVGBALb1n/1/k+Lwv86lQkg+POfyTeOswG8MCUrEV3vIq5liZrmybpw3ytLzHElsJFZMY/RvV4yUlRsKGD6iXiaVbrPXdExm37QFRDKdxjAgMBAAECggEAcd4Prb2eIALKpvOapfQCwSGlZQV0nqe4NGUFyYlaqohuSj8z8TiIhgV9sSrsoSb0DXwcyxpjIntkHtz1LW9zmOYdH10LUWKdENUfMX5/T5ZhFBX0uih/s2WVRITKRNEmahHoFpwEHc63OW+d0z92BJI47b3LvZEnXd251q8V/aiJxhn/v/vEp586rL4E9yYAQSAQjRgY+6ii+UPQNFax3Ynm5S/EMtb2UATERtgaxtnqWIIQWm5QzCrf7Y/L2P9CMIT4rNTOfudujcZ1CUVocrsd+4JJjvi3LHiWoTEiJA+4bqNS0o85Gqn0n/XzysazVagaJoUj9WQG1QTRrgJBKQKBgQD3Pq9UERFwkh7pae4qIvAMLfsCNDpvPkNapTK4xvocl046hGguHSUd+79oBr+7xlLIyAn4AnRpTyxjEpPnPTLdiOAjUcuMSuAo3oimSQt5kB5omI7ptdw9zVUbPWhJ9OH/EwvHIK4CwanPiB9ESPnhPDj3NOAHtm8brMKP40xAxwKBgQCRTv787kRGaOsTpUCafdYUsdaux4YTFHFSHv1FK6qVblSafYXkCd9KOQp2RWSfm4urhlkU/DlVE06bkx6U1hQalXZPEXJIorszQOCtdcP2IVfZ0Ll9phB0UftQUDEI9PIAspFf4LMrGdIKkCyCwQ67gyh3BSn2v5igViDgc8cjhQKBgQDAKEjt5mIOgpJhyMGgoAy++pGGUf9EbDi+33u/Xm4PAI19L2EkzeQGHJ3ThMNJdkbq44XT6lx9aFpQGaU36Dl7MiE5ch3nyF3Vhbbgvg6cCSWJF2CjRYOJyOcnR5+hMyDeNPhHaB+15rxKnjnmwWzr3/lKMB8Z/3D1Kl0ApaCjCwKBgCitz86pOW3os17FlYdqkQMsIii97LfssijGSisSJWg+AetaFqCXbu5Nd7NSi+/u0LQNIWUxky9Q/2GoVxhdsjUbAIr0HGVfQT8A+6Uz4c9G2Fw/BZ66XcLirJN4T7HtOM6fLvmDY0U+rkGMyRk1yNUPy8U+KdhNHQJN+lg7sVUtAoGAEE3/QePoSWaEtsJP3JvHDtqAN3+pmUlYjYwK+/ZZOox8SRPOxMrfCSqeJPQTYGTYsuD/3uVZWTj6xngZDnaxzYPLjTG7UtPyhp4RASpFresYlZI/2vOS3TC3o3D0xK3wngHw+g5gsbEeHu8VCJKve5syB7nt9/HZNhqUFNzvayM="/>
+
+        <!--友盟统计-->
+        <!--<meta-data-->
+            <!--android:value="535f487******"-->
+            <!--android:name="UMENG_APPKEY"/>-->
+        <!--<meta-data-->
+            <!--android:value="Test001"-->
+            <!--android:name="UMENG_CHANNEL”/>-->
+
 
         <activity
             android:name=".MainActivity"
@@ -129,9 +135,6 @@
         <activity
             android:name=".DemoPackage.ViewPackage.ViewDemo"
             android:label="View Demo"/>
-        <activity
-            android:name=".DemoPackage.ViewPackage.view_demo2"
-            android:label="View Demo 2"/>
         <activity
             android:name=".DemoPackage.SmsPackage.SmsDemo"
             android:label="SMS Demo"

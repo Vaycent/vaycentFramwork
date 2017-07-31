@@ -2,6 +2,7 @@ package vaycent.vaycentproject;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 import android.support.multidex.MultiDex;
 
 import com.facebook.stetho.Stetho;
@@ -39,7 +40,7 @@ public class ApplicationContext extends Application {
     }
 
     @Override
-    protected void attachBaseContext(Context base){
+    protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         MultiDex.install(this);
     }
@@ -48,21 +49,26 @@ public class ApplicationContext extends Application {
         volleySharp = new VolleySharp(this);
     }
 
-    private void InitMagicLog(){
+    private void InitMagicLog() {
         mlog.setLogFilePath(BaseValue.LOG_FILE_PATH);
     }
 
-    private void InitLeakCanary(){
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            // This process is dedicated to LeakCanary for heap analysis.
-            // You should not init your app in this process.
-            return;
+    private void InitLeakCanary() {
+
+        if (isApkDebugable(this)) {
+            if (LeakCanary.isInAnalyzerProcess(this)) {
+                // This process is dedicated to LeakCanary for heap analysis.
+                // You should not init your app in this process.
+                return;
+            }
+            LeakCanary.install(this);
+            // Normal app init code...
         }
-        LeakCanary.install(this);
-        // Normal app init code...
+
+
     }
 
-    private void InitRecovery(){
+    private void InitRecovery() {
 //        Recovery.getInstance()
 //                .debug(true)
 //                .recoverInBackground(false)
@@ -118,4 +124,13 @@ public class ApplicationContext extends Application {
 ////            requestExternalStoragePermission();
 ////        }
 //    }
+
+    public static boolean isApkDebugable(Context context) {
+        try {
+            ApplicationInfo info = context.getApplicationInfo();
+            return (info.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
+        } catch (Exception e) {
+        }
+        return false;
+    }
 }

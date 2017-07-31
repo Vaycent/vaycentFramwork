@@ -1,0 +1,41 @@
+ext{
+    android = [compileSdkVersion:25,
+               buildToolsVersion:'25.0.2',
+               applicationId    : "vaycent.vaycentproject",
+               minSdkVersion    : 16,
+               targetSdkVersion : 25,
+               versionCode      : 1,
+               versionName      : "1.0",
+               multiDexEnabled  : true]
+
+    dependencies = ["support-v7"        :'com.android.support:appcompat-v7:25.3.1',
+                    "support-design"    :'com.android.support:design:25.3.1',
+                    "support-multidex"  :'com.android.support:multidex:1.0.1',
+                    "butterknife"       :'com.jakewharton:butterknife:8.4.0',
+                    "glide"             :'com.github.bumptech.glide:glide:3.7.0',
+                    "recycleview"       :'com.android.support:recyclerview-v7:25.3.1',
+                    "gson"              :'com.google.code.gson:gson:2.7',
+                    "constraint"        :'com.android.support.constraint:constraint-layout:+',
+                    "matisse"           :'com.zhihu.android:matisse:0.4.3',
+                    "recovery"          :'com.zxy.android:recovery:0.0.8',
+                    "volleysharp"       :'com.github.Vaycent:VolleySharp:1.6.2',
+                    "ormlitesharp"      :'com.github.Vaycent:ormlitesharp:1.5.110',
+                    "magiclog"          :'com.github.Vaycent:MagicLog:1.2.6',
+                    "umeng-analytics"   :'com.umeng.analytics:analytics:latest.integration',
+                    "nineoldandroids"   :'com.nineoldandroids:library:2.4.0',
+                    "rxjava"            :'io.reactivex.rxjava2:rxjava:2.0.1',
+                    "rxandroid"         :'io.reactivex.rxjava2:rxandroid:2.0.1',
+                    "io-card"           :'io.card:android-sdk:5.4.2',
+                    "leakcanarytest"    :'com.squareup.leakcanary:leakcanary-android-no-op:1.5',
+                    "leakcanarydebug"   :'com.squareup.leakcanary:leakcanary-android:1.5',
+                    "leakcanaryrelease" :'com.squareup.leakcanary:leakcanary-android-no-op:1.5']
+
+
+
+
+    testdependencies = ["junit"        :'junit:junit:4.12',
+                         "stetho"       :'com.facebook.stetho:stetho:1.3.1',
+                         "leakcanary"   :'com.squareup.leakcanary:leakcanary-android:1.5',
+                         "leakcanary-no-op":'com.squareup.leakcanary:leakcanary-android-no-op:1.5']
+
+}

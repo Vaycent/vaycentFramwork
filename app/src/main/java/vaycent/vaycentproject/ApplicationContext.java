@@ -2,7 +2,6 @@ package vaycent.vaycentproject;
 
 import android.app.Application;
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
 import android.support.multidex.MultiDex;
 
 import com.facebook.stetho.Stetho;
@@ -55,16 +54,14 @@ public class ApplicationContext extends Application {
 
     private void InitLeakCanary() {
 
-        if (isApkDebugable(this)) {
-            if (LeakCanary.isInAnalyzerProcess(this)) {
-                // This process is dedicated to LeakCanary for heap analysis.
-                // You should not init your app in this process.
-                return;
-            }
-            LeakCanary.install(this);
-            // Normal app init code...
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
         }
-
+        LeakCanary.install(this);
+        // Normal app init code...
+        
 
     }
 
@@ -125,12 +122,4 @@ public class ApplicationContext extends Application {
 ////        }
 //    }
 
-    public static boolean isApkDebugable(Context context) {
-        try {
-            ApplicationInfo info = context.getApplicationInfo();
-            return (info.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
-        } catch (Exception e) {
-        }
-        return false;
-    }
 }

@@ -61,7 +61,7 @@ public class ApplicationContext extends Application {
         }
         LeakCanary.install(this);
         // Normal app init code...
-        
+
 
     }
 

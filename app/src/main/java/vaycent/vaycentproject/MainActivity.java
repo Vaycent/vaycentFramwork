@@ -37,7 +37,7 @@ import HelpFulClass.RoundTransform;
 import Helper.MainGrid;
 import Helper.NineGridViewAdapter;
 import Helper.ViewPageAdapter;
-import vaycent.magicLog.mlog;
+import vaycent.magicloglib.mlog;
 import vaycent.service.router.router.XRouter;
 import vaycent.service.router.router.XRules;
 import vaycent.vaycentproject.DemoPackage.AnimationDemo;
@@ -94,6 +94,8 @@ public class MainActivity extends AppCompatActivity
         AddHeadView();
 
         mlog.StartWriteLog(this);
+
+
 
 
 //        Intent intent =new Intent();
